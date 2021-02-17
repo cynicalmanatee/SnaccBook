@@ -4,6 +4,12 @@
 * [Technologies](#technologies)
 * [Contents](#content)
 
+## Authors:
+
+Harry Ze Zhong He
+Steven Nguyen
+Joshua Martinez
+
 ## General Info
 This browser based web application to ...
 	
