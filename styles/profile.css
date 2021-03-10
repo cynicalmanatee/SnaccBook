@@ -6,10 +6,8 @@ body {
 #navbar {
     background-color: rgba(255, 20, 20, 0.712);
 }
-.page-inner.no-page-title {
+#inner {
     padding-top: 30px;
-}
-.page-inner {
     position: relative;
     min-height: calc(100% - 56px);
     padding: 20px 30px 40px 30px;
