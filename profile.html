@@ -8,36 +8,44 @@
     <meta name="author" content="BCIT">
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
+    <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="styles/profile.css">
     <!-- Optional styles and scripts of your own -->
 
 
 </head>
 
 <body>
-
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">SnaccBook</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+<<<<<<< HEAD
+=======
+            <a class="navbar-brand" href="#">Navbar</a>
+>>>>>>> 2cd7127bb6b172a118a4b2a6b6b6c979ba3b35d9
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Explore</a>
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recipes</a>
                     </li>
                     <li>
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -62,6 +70,7 @@
         </div>
     </nav>
 
+<<<<<<< HEAD
     <div>
         <h1>Sign Up for a Free Account!</h1>
     </div>
@@ -86,20 +95,218 @@
 
 
 
+=======
+>>>>>>> 2cd7127bb6b172a118a4b2a6b6b6c979ba3b35d9
     <div class="container">
-        <h1 class="display-4">Hello, World!</h1>
+        <div class="page-inner no-page-title">
+            <!-- start page main wrapper -->
+            <div id="main-wrapper">
+                <div class="row">
+                    <div class="col-lg-5 col-xl-3">
+                        <div class="card card-white grid-margin">
+                            <div class="card-heading clearfix">
+                                <h4 class="card-title">User Profile</h4>
+                            </div>
+                            <div class="card-body user-profile-card mb-3">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                    class="user-profile-image rounded-circle" alt="" />
+                                <h4 class="text-center h6 mt-2">Lois Anderson</h4>
+                                <p class="text-center small">UI/UX Designer</p>
+                                <button class="btn btn-theme btn-sm">Follow</button>
+                                <button class="btn btn-theme btn-sm">Message</button>
+                            </div>
+                            <hr />
+                            <div class="card-heading clearfix mt-3">
+                                <h4 class="card-title">User Profile</h4>
+                            </div>
+                            <div class="card-body mb-3">
+                                <a href="#" class="label label-success mb-2">HTML</a>
+                                <a href="#" class="label label-success mb-2">CSS</a>
+                                <a href="#" class="label label-success mb-2">Sass</a>
+                                <a href="#" class="label label-success mb-2">Bootstrap</a>
+                                <a href="#" class="label label-success mb-2">Javascript</a>
+                                <a href="#" class="label label-success mb-2">Photoshop</a>
+                                <a href="#" class="label label-success">UI</a>
+                                <a href="#" class="label label-success">UX</a>
+                            </div>
+                            <hr />
+                            <div class="card-heading clearfix mt-3">
+                                <h4 class="card-title">About</h4>
+                            </div>
+                            <div class="card-body mb-3">
+                                <p class="mb-0">Lorem ipsum dolor sitelt amet, consectetur adipis icing elit,
+                                    sed do
+                                    eiusmod
+                                    tempor incididunt utitily labore et dolore magna aliqua metavta.</p>
+                            </div>
+                            <hr />
+                            <div class="card-heading clearfix mt-3">
+                                <h4 class="card-title">Contact Information</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless mb-0 text-muted">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Email:</th>
+                                                <td id="email">addyour@emailhere</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Phone:</th>
+                                                <td id="phone">(+44) 123 456 789</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Address:</th>
+                                                <td id="address">74 Guild Street 542B, Great North Town MT.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-xl-6">
+                        <div class="card card-white grid-margin">
+                            <div class="card-body">
+                                <div class="post">
+                                    <textarea class="form-control" placeholder="Post" rows="4"></textarea>
+                                    <div class="post-options">
+                                        <a href="#"><i class="fa fa-camera"></i></a>
+                                        <a href="#"><i class="fas fa-video"></i></a>
+                                        <a href="#"><i class="fa fa-music"></i></a>
+                                        <button class="btn btn-outline-primary float-right">Post</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-timeline">
+                            <ul class="list-unstyled">
+                                <li class="timeline-item">
+                                    <div class="card card-white grid-margin">
+                                        <div class="card-body">
+                                            <div class="timeline-item-header">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
+                                                <p>Vikash smith <span>posted a status</span></p>
+                                                <small>3 hours ago</small>
+                                            </div>
+                                            <div class="timeline-item-post">
+                                                <p>Elavita veritatis et quasi architecto beatae vitae dicta sunt
+                                                    explicabo.
+                                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+                                                    odit aut
+                                                    fugit, sed quia consequuntur.</p>
+                                                <div class="timeline-options">
+                                                    <a href="#"><i class="fa fa-thumbs-up"></i> Like (15)</a>
+                                                    <a href="#"><i class="fa fa-comment"></i> Comment (4)</a>
+                                                    <a href="#"><i class="fa fa-share"></i> Share (6)</a>
+                                                </div>
+                                                <div class="timeline-comment">
+                                                    <div class="timeline-comment-header">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                                            alt="" />
+                                                        <p>Jamara Karle <small>1 hour ago</small></p>
+                                                    </div>
+                                                    <p class="timeline-comment-text">Xullamco laboris nisi ut
+                                                        aliquip ex
+                                                        ea
+                                                        commodo consequat.</p>
+                                                </div>
+                                                <div class="timeline-comment">
+                                                    <div class="timeline-comment-header">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                                            alt="" />
+                                                        <p>Lois Anderson <small>3 hours ago</small></p>
+                                                    </div>
+                                                    <p class="timeline-comment-text">Coluptate velit esse cillum
+                                                        dolore
+                                                        eu
+                                                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                                        non
+                                                        proident, sunt in culpa qui officia.</p>
+                                                </div>
+                                                <textarea class="form-control" placeholder="Replay"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-item">
+                                    <div class="card card-white grid-margin">
+                                        <div class="card-body">
+                                            <div class="timeline-item-header">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
+                                                <p>Veema Walkeror <span>uploaded a photo</span></p>
+                                                <small>7 hours ago</small>
+                                            </div>
+                                            <div class="timeline-item-post">
+                                                <p>totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+                                                <img src="img/post-img01.jpg" alt="" />
+                                                <div class="timeline-options">
+                                                    <a href="#"><i class="fa fa-thumbs-up"></i> Like (22)</a>
+                                                    <a href="#"><i class="fa fa-comment"></i> Comment (7)</a>
+                                                    <a href="#"><i class="fa fa-share"></i> Share (9)</a>
+                                                </div>
+                                                <div class="timeline-comment">
+                                                    <div class="timeline-comment-header">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                                            alt="" />
+                                                        <p>Memila moriya <small>1 hour ago</small></p>
+                                                    </div>
+                                                    <p class="timeline-comment-text">Explicabo Nemo enim ipsam
+                                                        voluptatem
+                                                        quia voluptas.</p>
+                                                </div>
+                                                <textarea class="form-control" placeholder="Replay"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-xl-3">
+                        <div class="card card-white grid-margin">
+                            <div class="card-heading clearfix">
+                                <h4 class="card-title">Suggestions</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="team">
+                                    <div class="team-member">
+                                        <div class="online on"></div>
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="online on"></div>
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
+                                    </div>
+                                    <div class="team-member">
+                                        <div class="online off"></div>
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-white grid-margin">
+                            <div class="card-heading clearfix">
+                                <h4 class="card-title">Some Info</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                    doloremque
+                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis
+                                    architecto.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row -->
+            </div>
+            <!-- end page main wrapper -->
+            <div class="page-footer">
+                <p>Copyright © 2020 Evince All rights reserved.</p>
+            </div>
+        </div>
     </div>
-
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
-
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
 
 </body>
 
