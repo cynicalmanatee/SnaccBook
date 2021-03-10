@@ -29,10 +29,10 @@
             text-align: center;
         }
 
-        #search-button {
+        /* #search-button {
             text-align: center;
             background-color: beige;
-        }
+        } */
 
         body {
             background-color: rgb(238, 192, 205);
@@ -50,7 +50,7 @@
     <!-- Header Navigation Bar -->
     <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <h1><strong>SnaccBook</strong></h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -84,11 +84,9 @@
         </div>
     </nav>
 
+    </br></br></br>
 
     <div id=search-button>
-        <h1 id="header-text">Sign Up And Join Your Fellow Foodies Today!</h1>
-        <button type="button" class="btn btn-danger btn-lg">Create An Account</button>
-        </br>
         <div id="firebaseui-auth-container"></div>
         <div id="loader">Loading...</div>
     </div>
@@ -103,25 +101,25 @@
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
         </script>
 
+    <!-- <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script> -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 
-    
+
     <script>// For Firebase JS SDK v7.20.0 and later, measurementId is optional
         var firebaseConfig = {
-            apiKey: "AIzaSyCQat20xyo2pIc-4V_xh9i42AXWCQ6FVKs",
-            authDomain: "snacc-5d013.firebaseapp.com",
-            projectId: "snacc-5d013",
-            storageBucket: "snacc-5d013.appspot.com",
-            messagingSenderId: "173783266672",
-            appId: "1:173783266672:web:216764e3109e8d6b930bb5",
-            measurementId: "G-0W4KMYBS0Y"
+            apiKey: "AIzaSyB77z93aGlpo8ko4CAKJm2YRQVrqH-VDro",
+            authDomain: "snaccbook.firebaseapp.com",
+            projectId: "snaccbook",
+            storageBucket: "snaccbook.appspot.com",
+            messagingSenderId: "420630747584",
+            appId: "1:420630747584:web:9af99ee7ffd7cc74ef9025"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
+        const db = firebase.firestore();
     </script>
 
     <script>
@@ -166,7 +164,7 @@
             },
             // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
             signInFlow: 'popup',
-            signInSuccessUrl: 'login.html',
+            signInSuccessUrl: 'profile.html',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
                 // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
