@@ -36,6 +36,18 @@
 
         body {
             background-color: rgb(238, 192, 205);
+            background-image: url(/images/background.jpg);
+            background-size: 100%;
+        }
+
+        #header-text {
+            /* background-color: black; */
+            text-align: center;
+            font-size: 60pt;
+        }
+
+        .navbar-custom {
+            background-color: #db3b30;
         }
     </style>
 
@@ -48,16 +60,16 @@
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <a class="navbar-brand" href="index.html">
                 <h1><strong>SnaccBook</strong></h1>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -70,22 +82,32 @@
                         <a class="nav-link" href="#">Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Recipes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Promotion</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Looking for Food?" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Let's find some!</button>
+                    <input class="form-control me-2" type="search" placeholder="Search SnaccBook..."
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Let's Go!</button>
                 </form>
             </div>
         </div>
     </nav>
 
     </br></br></br>
+    <div class="hero-image">
+        </br></br></br></br>
 
+        <div id=search-button>
+            <h1 id="header-text">Sign-up below:</h1>
+            </br>
+        </div>
+
+        </br>
+
+
+
+    </div>
     <div id=search-button>
         <div id="firebaseui-auth-container"></div>
         <div id="loader">Loading...</div>
@@ -101,14 +123,21 @@
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
         </script>
 
-    <!-- <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script> -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
 
-    <script>// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+
+
+
+    <script>
+        // Your web app's Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyB77z93aGlpo8ko4CAKJm2YRQVrqH-VDro",
             authDomain: "snaccbook.firebaseapp.com",
@@ -122,9 +151,17 @@
         const db = firebase.firestore();
     </script>
 
+
+
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+
     <script>
         // Initialize the FirebaseUI Widget using Firebase.
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+
         var uiConfig = {
             callbacks: {
                 signInSuccessWithAuthResult: function (authResult, redirectUrl) {
@@ -164,7 +201,7 @@
             },
             // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
             signInFlow: 'popup',
-            signInSuccessUrl: 'profile.html',
+            signInSuccessUrl: 'main test.html',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
                 // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -179,13 +216,9 @@
             // Privacy policy url.
             privacyPolicyUrl: '<your-privacy-policy-url>'
         };
-        // The start method will wait until the DOM is loaded.
+
         ui.start('#firebaseui-auth-container', uiConfig);
     </script>
-
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
 
 </body>
 
