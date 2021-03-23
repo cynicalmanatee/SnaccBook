@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
+    <title>SnaccBook Profile</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -12,11 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/profile.css">
     <!-- Optional styles and scripts of your own -->
-
+    <style>
+        .navbar-custom {
+            background-color: #db3b30;
+        }
+    </style>
 
 </head>
 
@@ -25,282 +28,207 @@
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="index.html">
+                <h1><strong>SnaccBook</strong></h1>
+            </a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Recipes</a>
-                    </li>
-                    <li>
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Search SnaccBook..."
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Let's Go!</button>
                 </form>
             </div>
         </div>
     </nav>
 
-    <div>
-        <h1>Sign Up for a Free Account!</h1>
-    </div>
+    <div id="main">
+        <div id="left">
+            <img src="https://dummyimage.com/600x400/000/fff" width="80%">
+            <br />
+            <span>Name Name</span>
+            <br />
+            <span>Some Job Title</span>
+            <br />
+            <table>
+                <tr>
+                    <td>skill 1</td>
+                    <td>skill 2</td>
+                    <td>skill 3</td>
+                </tr>
+                <tr>
+                    <td>skill 4</td>
+                    <td>skill 5</td>
+                    <td>skill 6</td>
+                </tr>
+            </table>
+            <hr />
+            <span>Location:</span> <span id="location"> some location</span>
+            <br />
+            <h4>Contact info:</h4>
+            <span>Email:</span> <span id="email"> some@email.address</span>
+            <br />
+            <span>Website:</span> <span id="website"> https://www.some.website</span>
+            <br />
+            <button type="button" id="edit" class="btn btn-primary">Edit</button>
 
-    <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
 
+        <div id="middle">
+            <form id="userPost">
+                <div class="mb-3">
+                    <label for="post" class="form-label">Post</label>
+                    <textarea class="form-control" id="post" rows="3" placeholder="Share"></textarea>
+                    <div class="btn-toolbar justify-content-between" role="toolbar"
+                        aria-label="Toolbar with button groups">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="First group">
+                            <input class="form-control" type="file" id="imgFile" accept="image/*">
+                            <button type="button" class="btn btn-outline-secondary" type="file" id="imgFile" accept="image/*"><img src="images/pictureicon.png"
+                                    width="20px" /></button>
+                            <!-- <button type="button" class="btn btn-outline-secondary"><img src="images/videoicon.png"
+                                    width="20px" /></button>
+                            <button type="button" class="btn btn-outline-secondary"><img src="images/audioicon.png"
+                                    width="20px" /></button> -->
 
-
-    <div class="container">
-        <div class="page-inner no-page-title">
-            <!-- start page main wrapper -->
-            <div id="main-wrapper">
-                <div class="row">
-                    <div class="col-lg-5 col-xl-3">
-                        <div class="card card-white grid-margin">
-                            <div class="card-heading clearfix">
-                                <h4 class="card-title">User Profile</h4>
-                            </div>
-                            <div class="card-body user-profile-card mb-3">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                    class="user-profile-image rounded-circle" alt="" />
-                                <h4 class="text-center h6 mt-2">Lois Anderson</h4>
-                                <p class="text-center small">UI/UX Designer</p>
-                                <button class="btn btn-theme btn-sm">Follow</button>
-                                <button class="btn btn-theme btn-sm">Message</button>
-                            </div>
-                            <hr />
-                            <div class="card-heading clearfix mt-3">
-                                <h4 class="card-title">User Profile</h4>
-                            </div>
-                            <div class="card-body mb-3">
-                                <a href="#" class="label label-success mb-2">HTML</a>
-                                <a href="#" class="label label-success mb-2">CSS</a>
-                                <a href="#" class="label label-success mb-2">Sass</a>
-                                <a href="#" class="label label-success mb-2">Bootstrap</a>
-                                <a href="#" class="label label-success mb-2">Javascript</a>
-                                <a href="#" class="label label-success mb-2">Photoshop</a>
-                                <a href="#" class="label label-success">UI</a>
-                                <a href="#" class="label label-success">UX</a>
-                            </div>
-                            <hr />
-                            <div class="card-heading clearfix mt-3">
-                                <h4 class="card-title">About</h4>
-                            </div>
-                            <div class="card-body mb-3">
-                                <p class="mb-0">Lorem ipsum dolor sitelt amet, consectetur adipis icing elit,
-                                    sed do
-                                    eiusmod
-                                    tempor incididunt utitily labore et dolore magna aliqua metavta.</p>
-                            </div>
-                            <hr />
-                            <div class="card-heading clearfix mt-3">
-                                <h4 class="card-title">Contact Information</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-borderless mb-0 text-muted">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Email:</th>
-                                                <td id="email">addyour@emailhere</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Phone:</th>
-                                                <td id="phone">(+44) 123 456 789</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Address:</th>
-                                                <td id="address">74 Guild Street 542B, Great North Town MT.</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Second group">
+                            <button type="submit" class="btn btn-outline-secondary">Post</button>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-xl-6">
-                        <div class="card card-white grid-margin">
-                            <div class="card-body">
-                                <div class="post">
-                                    <textarea class="form-control" placeholder="Post" rows="4"></textarea>
-                                    <div class="post-options">
-                                        <a href="#"><i class="fa fa-camera"></i></a>
-                                        <a href="#"><i class="fas fa-video"></i></a>
-                                        <a href="#"><i class="fa fa-music"></i></a>
-                                        <button class="btn btn-outline-primary float-right">Post</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="profile-timeline">
-                            <ul class="list-unstyled">
-                                <li class="timeline-item">
-                                    <div class="card card-white grid-margin">
-                                        <div class="card-body">
-                                            <div class="timeline-item-header">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
-                                                <p>Vikash smith <span>posted a status</span></p>
-                                                <small>3 hours ago</small>
-                                            </div>
-                                            <div class="timeline-item-post">
-                                                <p>Elavita veritatis et quasi architecto beatae vitae dicta sunt
-                                                    explicabo.
-                                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-                                                    odit aut
-                                                    fugit, sed quia consequuntur.</p>
-                                                <div class="timeline-options">
-                                                    <a href="#"><i class="fa fa-thumbs-up"></i> Like (15)</a>
-                                                    <a href="#"><i class="fa fa-comment"></i> Comment (4)</a>
-                                                    <a href="#"><i class="fa fa-share"></i> Share (6)</a>
-                                                </div>
-                                                <div class="timeline-comment">
-                                                    <div class="timeline-comment-header">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                                            alt="" />
-                                                        <p>Jamara Karle <small>1 hour ago</small></p>
-                                                    </div>
-                                                    <p class="timeline-comment-text">Xullamco laboris nisi ut
-                                                        aliquip ex
-                                                        ea
-                                                        commodo consequat.</p>
-                                                </div>
-                                                <div class="timeline-comment">
-                                                    <div class="timeline-comment-header">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                                            alt="" />
-                                                        <p>Lois Anderson <small>3 hours ago</small></p>
-                                                    </div>
-                                                    <p class="timeline-comment-text">Coluptate velit esse cillum
-                                                        dolore
-                                                        eu
-                                                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                                        non
-                                                        proident, sunt in culpa qui officia.</p>
-                                                </div>
-                                                <textarea class="form-control" placeholder="Replay"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-item">
-                                    <div class="card card-white grid-margin">
-                                        <div class="card-body">
-                                            <div class="timeline-item-header">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
-                                                <p>Veema Walkeror <span>uploaded a photo</span></p>
-                                                <small>7 hours ago</small>
-                                            </div>
-                                            <div class="timeline-item-post">
-                                                <p>totam rem aperiam, eaque ipsa quae ab illo inventore</p>
-                                                <img src="img/post-img01.jpg" alt="" />
-                                                <div class="timeline-options">
-                                                    <a href="#"><i class="fa fa-thumbs-up"></i> Like (22)</a>
-                                                    <a href="#"><i class="fa fa-comment"></i> Comment (7)</a>
-                                                    <a href="#"><i class="fa fa-share"></i> Share (9)</a>
-                                                </div>
-                                                <div class="timeline-comment">
-                                                    <div class="timeline-comment-header">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                                            alt="" />
-                                                        <p>Memila moriya <small>1 hour ago</small></p>
-                                                    </div>
-                                                    <p class="timeline-comment-text">Explicabo Nemo enim ipsam
-                                                        voluptatem
-                                                        quia voluptas.</p>
-                                                </div>
-                                                <textarea class="form-control" placeholder="Replay"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-xl-3">
-                        <div class="card card-white grid-margin">
-                            <div class="card-heading clearfix">
-                                <h4 class="card-title">Suggestions</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="team">
-                                    <div class="team-member">
-                                        <div class="online on"></div>
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
-                                    </div>
-                                    <div class="team-member">
-                                        <div class="online on"></div>
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
-                                    </div>
-                                    <div class="team-member">
-                                        <div class="online off"></div>
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card-white grid-margin">
-                            <div class="card-heading clearfix">
-                                <h4 class="card-title">Some Info</h4>
-                            </div>
-                            <div class="card-body">
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                    doloremque
-                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis
-                                    architecto.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Row -->
-            </div>
-            <!-- end page main wrapper -->
-            <div class="page-footer">
-                <p>Copyright © 2020 Evince All rights reserved.</p>
+            </form>
+        </div>
+
+
+        <div class="content">
+            <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
+            <span class="postText"></span>
+            <div class="mb-3 comment">
+                <!-- this is where the ID is pointing to for the post -->
+                <textarea class="form-control" id="post1" rows="1" placeholder="comment"></textarea>
             </div>
         </div>
+        <div class="content">
+            <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
+            <span class="postText"></span>
+            <div class="mb-3 comment">
+                <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
+            </div>
+        </div>
+        <div class="content">
+            <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
+            <span class="postText"></span>
+            <div class="mb-3 comment">
+                <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
+            </div>
+        </div>
+
+
     </div>
+    <div id="right">
+        <div class="contact">
+            <img class="contactProfile" src="https://dummyimage.com/600x400/000/fff" width="100%">
+            <span class="contactName">John Doe</span>
+        </div>
+
+    </div>
+
+    </div>
+
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, JQuery, Firebase, API related-->
+    <!----------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebase_api_josh.js"></script>
+
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script src="scripts/my_functions.js"></script>
+
+    <script>
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //uploading a post (need to change resturant to current user)
+        //Listen for for submit
+        document.getElementById('userPost').addEventListener('submit', postForm);
+
+        // Submit form function
+        function postForm(e) {
+            e.preventDefault();
+
+            //Get Values
+            let post = document.getElementById('post').value;
+
+            console.log(post);
+            //Write Post to database
+            function writePostToDb() {
+                var userPostRef = db.collection("BetaTester");
+
+                userPostRef.add({
+                    //random code for later so you can pull the data from the DB. created a comment marker for where the code is going.
+                    randomCode: "post1",
+                    userPost: post,
+                });
+            }
+            writePostToDb();
+        }
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+    </script>
+
+    <script>
+        //displaying content and writting it to first comment box... Need to find a way to random generate codes and pull random codes to the comment box
+        function displayContent() {
+            db.collection("BetaTester").get()
+                .then(function (snap) {
+                    snap.forEach(function (doc) {
+                        var n = doc.data().userPost;             //gets the name field
+                        console.log(n);
+                        var randomId = doc.data().randomCode;        //gets the unique ID field
+                        console.log(randomId);
+                        document.getElementById(randomId).innerText = n;
+                    })
+
+                })
+        }
+        displayContent();
+    </script>
+
+
+
 
 </body>
 
