@@ -102,9 +102,11 @@
                     <div class="btn-toolbar justify-content-between" role="toolbar"
                         aria-label="Toolbar with button groups">
                         <div class="btn-group btn-group-sm" role="group" aria-label="First group">
-                            <input class="form-control" type="file" id="imgFile" accept="image/*">
-                            <button type="button" class="btn btn-outline-secondary" type="file" id="imgFile"
-                                accept="image/*"><img src="images/pictureicon.png" width="20px" /></button>
+                            <div class="container text-center py-3">
+                                <input type="file" id="mypic-input" accept="image/*" />
+                        </div>
+                            <!-- <button type="button" class="btn btn-outline-secondary" type="file" id="imgFile"
+                                accept="image/*"><img src="images/pictureicon.png" width="20px" /></button> -->
                             <!-- <button type="button" class="btn btn-outline-secondary"><img src="images/videoicon.png"
                                     width="20px" /></button>
                             <button type="button" class="btn btn-outline-secondary"><img src="images/audioicon.png"
@@ -116,6 +118,27 @@
                         </div>
                     </div>
             </form>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/images/steak.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/images/sushi.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/images/ramen.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
         </div>
 
 
@@ -151,8 +174,8 @@
         </div>
 
     </div>
-
     </div>
+ 
 
     <!----------------------------------------------->
     <!-- JS: Boostrap, JQuery, Firebase, API related-->
@@ -171,6 +194,7 @@
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
 
     <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebase_api_josh.js"></script>
@@ -227,6 +251,13 @@
         displayContent();
     </script>
 
+    <!-- <script>
+        //event listener for when img file is picked
+        fileButton.addEventListener('change', function (e) {       //event listener
+            const pickedfile = e.target.files[0];  // file that user picked
+            image.src = URL.createObjectURL(pickedfile); //event handler
+        })
+    </script> -->
 
 
 
