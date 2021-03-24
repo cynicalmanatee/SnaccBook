@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
+
+body{
+    background-color: darkgrey;
+    margin: 0;
+}
+
+#banner{
+    background-image: url("../assets/bg1.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    color:white;
+    display: grid;
+    grid-template-rows: 50% 12.5% 12.5% 12.5% 12.5%;
+}
+
+#bannerName{
+    font-family: 'Ballet', cursive;
+    font-weight: 600;
+
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(-15%) scaleX(1.3);
+    font-size: 5rem;
+}
+
+#bannerSubtitle{
+    margin: auto;
+    transform: translateX(15%);
+    font-size: 1.5rem;
+}
+
+#bannerReviews{
+    grid-row-start: 4;
+    margin: auto;
+    transform: translateX(30%);
+    font-size: 1rem;
+    display:grid;
+    grid-template-rows: auto auto;
+}
+#bannerReviews span{
+    display: block;
+    margin-left: auto;
+}
+
+#tabs{
+    color: #bed7fa;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 11% 26% 26% 26% 11%;
+}
+#tab2{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.tabButtons{
+    font-family: 'Orbitron', sans-serif;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 2rem;
+    border-left:  3px solid #5d8fd4;
+    border-right: 3px solid #5d8fd4;
+}
+
+#content{
+    margin-left: 11%;
+    margin-right: 11%;
+    display: grid;
+    grid-template-columns: 100% 0% 0%;
+}
+
+#content1{
+    visibility: visible;
+    
+}
+#content2{
+    visibility: hidden;
+}
+#content3{
+    visibility: hidden;
+}
