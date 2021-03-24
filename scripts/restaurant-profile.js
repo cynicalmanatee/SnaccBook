@@ -1,3 +1,11 @@
+/**to do list:
+- ADD JS to make the font of the banner title dymanic to the lenth of the name 
+
+*/
+
+
+
+
 $(document).ready(function () {
 
     var showC1 = { 'grid-template-columns': '100% 0% 0%' };
