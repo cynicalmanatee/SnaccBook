@@ -1,0 +1,10 @@
+This is a list of things to do:
+
+Please add any items that you think of to the list.
+If an item is complete, please delete from the list.
+
+- User profile edit page.
+- Restaurant User profile page  where the restaurant owners can change information and post things related to their restaurant
+- Log out button?
+- Update Nav Bar to better reflect what we need.
+- friends list/location page. manage things the user want to subscribe to (probably out of the scope of 1800).

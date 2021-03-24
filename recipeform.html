@@ -1,0 +1,196 @@
+<!--
+    To do:
+
+    To note: This page is not currently connected to firebase, API key Needed.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>SnaccBook Profile</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles/profile.css">
+    <!-- Optional styles and scripts of your own -->
+    <style>
+        .navbar-custom {
+            background-color: #db3b30;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-------------------------------------->
+    <!-- The following is HTML for layout -->
+    <!-------------------------------------->
+    <!-- Header Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <h1><strong>SnaccBook</strong></h1>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search SnaccBook..."
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Let's Go!</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="heading">
+        <!--
+            Title:
+            Author:
+            prep time:
+            special notes:
+        -->
+        <form class="row g-3">
+            <div class="col-12">
+                <label for="recipe-title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="recipe-title" placeholder="Macaroni and Cheese">
+            </div>
+            <div class="col-md-6">
+                <label for="recipe-author" class="form-label">Author</label>
+                <input type="text" class="form-control" id="recipe-author" placeholder="John Snow">
+            </div>
+            <div class="col-md-6">
+                <label for="recipe-prep-time" class="form-label">Prep Time</label>
+                <input type="text" class="form-control" id="recipe-prep-time" placeholder="00hr00min">
+            </div>
+            <div class="col-12">
+                <label for="recipe-special-instruction" class="form-label">Special Instructions</label>
+                <textarea class="form-control" id="recipe-special-instruction" rows="2" placeholder="none"></textarea>
+            </div>
+        </form>
+    </div>
+    <div id="ingredient">
+        <!--
+            implement <div style="display: grid">
+            grid template in 3 columns
+            quantity   unit   name   preparation notes
+        -->
+        <div id="ingredient-table"
+            style="display:grid; grid-template-columns: calc(100%/6) calc(100%/12) calc(100%/4) calc(100%/2);">
+            <span>qty.</span>
+            <span>unit</span>
+            <span>name</span>
+            <span>special instructions</span>
+        </div>
+        <form class="row g-3">
+            <div class="col-md-2">
+
+                <input type="text" class="form-control ingredient-quantity" id="ingredient-quantity-1" placeholder="">
+            </div>
+            <div class="col-md-1">
+
+                <input type="text" class="form-control ingredient-unit" id="ingredient-unit-1" placeholder="">
+            </div>
+            <div class="col-md-3">
+
+                <input type="text" class="form-control ingredient-name" id="ingredient-name-1" placeholder="">
+            </div>
+            <div class="col-md-6">
+
+                <input type="text" class="form-control ingredient-instruction" id="ingredient-instruction-1"
+                    placeholder="">
+            </div>
+            <div class="col-md-2">
+
+                <input type="text" class="form-control ingredient-quantity" id="ingredient-quantity-2" placeholder="">
+            </div>
+            <div class="col-md-1">
+
+                <input type="text" class="form-control ingredient-unit" id="ingredient-unit-2" placeholder="">
+            </div>
+            <div class="col-md-3">
+
+                <input type="text" class="form-control ingredient-name" id="ingredient-name-2" placeholder="">
+            </div>
+            <div class="col-md-6">
+
+                <input type="text" class="form-control ingredient-instruction" id="ingredient-instruction-2"
+                    placeholder="">
+            </div>
+        </form>
+    </div>
+    <hr />
+    <div>
+        <!--
+            blocks of text input.
+            box for step number, change is achronological
+            box for amount of time it takes (can be used to calculate overall time, but does not have to be indicative)
+            box for details within the step
+
+            optional: ability to add picture for the specific step
+        -->
+        <form class="row g-3">
+            <div class="recipe-instruction"
+                style="display: grid; grid-template-columns: 25% 75%; grid-template-rows: auto auto;">
+                <input type="text" class="form-control ingredient-instruction" id="recipe-step-" placeholder="Step"
+                    style="grid-column-start: 1; grid-row-start:1;">
+                <input type="text" class="form-control ingredient-instruction" id="recipe-step-time-1"
+                    placeholder="Time req" style="grid-column-start: 1; grid-row-start:2;">
+                <textarea class="form-control" id="recipe--instruction-1" rows="2" placeholder="Instructions"
+                    style="grid-column-start: 2; grid-row:1/span 2;"></textarea>
+            </div>
+            <div class="recipe-instruction"
+                style="display: grid; grid-template-columns: 25% 75%; grid-template-rows: auto auto;">
+                <input type="text" class="form-control ingredient-instruction" id="recipe-step-2" placeholder="Step"
+                    style="grid-column-start: 1; grid-row-start:1;">
+                <input type="text" class="form-control ingredient-instruction" id="recipe-step-time-2"
+                    placeholder="Time req" style="grid-column-start: 1; grid-row-start:2;">
+                <textarea class="form-control" id="recipe--instruction-2" rows="2" placeholder="Instructions"
+                    style="grid-column-start: 2; grid-row:1/span 2;"></textarea>
+            </div>
+            <div class="recipe-instruction"
+                style="display: grid; grid-template-columns: 25% 75%; grid-template-rows: auto auto;">
+                <input type="text" class="form-control ingredient-instruction" id="recipe-step-3" placeholder="Step"
+                    style="grid-column-start: 1; grid-row-start:1;">
+                <input type="text" class="form-control ingredient-instruction" id="recipe-step-time-3"
+                    placeholder="Time req" style="grid-column-start: 1; grid-row-start:2;">
+                <textarea class="form-control" id="recipe--instruction-3" rows="2" placeholder="Instructions"
+                    style="grid-column-start: 2; grid-row:1/span 2;"></textarea>
+            </div>
+        </form>
+    </div>
+    <hr />
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="button" id="recipe-form-submit">Submit</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+
+</body>
