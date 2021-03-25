@@ -1,1 +1,44 @@
 
+img {
+    max-width: 100%;
+    max-height: 30%;
+}
+
+#center {
+    text-align: center;
+}
+
+#search-button {
+    text-align: center;
+    /* background-color:beige; */
+}
+
+body {
+    background-color: rgb(238, 192, 205);
+    background-image: url(/images/background.jpg);
+    background-size: 100%;
+}
+
+#header-text {
+    color: white;
+    text-shadow: 0px 0px 20px black;
+    font-size: 80pt;
+}
+
+#login-button {
+    box-shadow: 0px 0px 20px black;
+}
+
+div {
+    width: 80%;
+    padding-left: auto;
+    margin: auto;
+}
+
+.card {
+    height: 20%;
+}
+
+.navbar-custom {
+    background-color: #db3b30;
+}
