@@ -14,6 +14,7 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link rel="stylesheet" href="styles/profile.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Optional styles and scripts of your own -->
     <style>
         .navbar-custom {
@@ -170,7 +171,7 @@
     <div id="right">
         <div class="contact">
             <img class="contactProfile" src="https://dummyimage.com/600x400/000/fff" width="100%">
-            <span class="contactName">John Doe</span>
+            <span id="name-goes-here">John Doe</span>
         </div>
 
     </div>
@@ -198,68 +199,11 @@
 
     <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebase_api_josh.js"></script>
-
+  
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
     <script src="scripts/my_functions.js"></script>
-
-    <script>
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //uploading a post (need to change resturant to current user)
-        //Listen for for submit
-        document.getElementById('userPost').addEventListener('submit', postForm);
-
-        // Submit form function
-        function postForm(e) {
-            e.preventDefault();
-
-            //Get Values
-            let post = document.getElementById('post').value;
-
-            console.log(post);
-            //Write Post to database
-            function writePostToDb() {
-                var userPostRef = db.collection("BetaTester");
-
-                userPostRef.add({
-                    //random code for later so you can pull the data from the DB. created a comment marker for where the code is going.
-                    randomCode: "post1",
-                    userPost: post,
-                });
-            }
-            writePostToDb();
-        }
-        ///////////////////////////////////////////////////////////////////////////////////////////////////
-    </script>
-
-    <script>
-        //displaying content and writting it to first comment box... Need to find a way to random generate codes and pull random codes to the comment box
-        function displayContent() {
-            db.collection("BetaTester").get()
-                .then(function (snap) {
-                    snap.forEach(function (doc) {
-                        var n = doc.data().userPost;             //gets the name field
-                        console.log(n);
-                        var randomId = doc.data().randomCode;        //gets the unique ID field
-                        console.log(randomId);
-                        document.getElementById(randomId).innerText = n;
-                    })
-
-                })
-        }
-        displayContent();
-    </script>
-
-    <!-- <script>
-        //event listener for when img file is picked
-        fileButton.addEventListener('change', function (e) {       //event listener
-            const pickedfile = e.target.files[0];  // file that user picked
-            image.src = URL.createObjectURL(pickedfile); //event handler
-        })
-    </script> -->
-
-
 
 </body>
 
