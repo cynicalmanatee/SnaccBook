@@ -26,7 +26,6 @@ function postForm(e) {
     //Get Values from the post
     var post = document.getElementById('post').value;
     console.log(post);
-    writePostToDb;
 
     function writePostToDb() {
         firebase.auth().onAuthStateChanged(function (user) {
@@ -37,6 +36,7 @@ function postForm(e) {
                 .get()
                 .then(function(doc){
                     console.log(doc.data().name);                
+                    //change 
                     db.collection("posts").add( {userpost: post, userName: doc.data().name, date: date, time: time});
                     
                 })
@@ -50,20 +50,20 @@ function postForm(e) {
 var today = new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
 //
 
 
-//             //displaying content and writting it to first comment box..
-//             function displayContent() {
-//                 db.collection("posts").get()
-//                     .then(function (snap) {
-//                         snap.forEach(function (doc) {
-//                             var m = doc.data().userPost;             //gets the name field
-//                             console.log(m);
-//                             document.getElementById(userPost).innerText = m;
-//                         })
 
-//                     })
-//             }
-//             displayContent()
+            //displaying content and writting it to first comment box..
+            function displayContent() {
+                db.collection("posts").get()
+                    .then(function (snap) {
+                        snap.forEach(function (doc) {
+                            var m = doc.data().userPost;             //gets the name field
+                            console.log(m);
+                            document.getElementById(userPost).innerText = m;
+                        })
+
+                    })
+            }
+            displayContent()
