@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SnaccBook Profile</title>
+    <title>SnaccBook Recipe Page</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -70,6 +70,8 @@
         <span id="recipe-title">Some Generic Type of Food</span>
         <span id="recipe-author">Some Random Poster</span>
     </div>
+    <!-- Writing to page the whole data, we need to sort this -->
+    <div id ="testingRecipe"></div>
     <div id="picture-gallery" style="margin-left: 15%; margin-right: 15%;">
         <!--
             Picture gallery for the recipe in question, can be animated multiple pictures or scrolling album, or cards
@@ -202,9 +204,30 @@
 
 
 
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, JQuery, Firebase, API related-->
+    <!----------------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
         </script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-    <script src="scripts/api_key.js"></script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebase_api_josh.js"></script>
+  
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script src="scripts/recipeform.js"></script>
 </body>
