@@ -65,22 +65,22 @@ function postRecipe(e) {
     })
 }
 
-function recipeQuery(){
+function recipeQuery() {
     db.collection("recipes")
-    //can query the recipe name to user input
-    .where("RecipeTitle", "==", "Snake Meat Pie")
-    .get()
-    .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            //console.log(doc.data());
-            var recipe = doc.data();
-            console.log(recipe);
-            //prints out the object will have to directly move everything
-            //dynamically update recipe page
-            str = JSON.stringify(recipe)
-            document.getElementById("testingRecipe").innerHTML= str;
-        
+        //can query the recipe name to user input
+        .where("RecipeTitle", "==", "Snake Meat Pie")
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
+                //console.log(doc.data());
+                var recipe = doc.data();
+                console.log(recipe);
+                //prints out the object will have to directly move everything
+                //dynamically update recipe page
+                str = JSON.stringify(recipe)
+                document.getElementById("testingRecipe").innerHTML = str;
+
+            })
         })
-    })
 }
