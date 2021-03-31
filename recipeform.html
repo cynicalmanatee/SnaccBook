@@ -16,8 +16,7 @@
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/recipeform.css">
     <link href="styles/navbar.css" rel="stylesheet">
@@ -33,17 +32,16 @@
     <!-- Header Navigation Bar -->
     <div id="navbar">
         <div class="nav-item dropdown" id="hamburger">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="images/list.png" width="25">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <li><a class="dropdown-item" href="#">Default Location</a></li>
                 <hr class="dropdown-divider">
                 <li><a class="dropdown-item" href="main.html">Home</a></li>
-                <li><a class="dropdown-item" href="#">Recipes</a></li>
-                <li><a class="dropdown-item" href="#">Reviews</a></li>
-                <li><a class="dropdown-item" href="#">Promotions</a></li>
+                <li><a class="dropdown-item" href="recipe.html">Recipes</a></li>
+                <li><a class="dropdown-item" href="reviewform.html">Reviews</a></li>
+                <li><a class="dropdown-item" href="recipegallery.html">Gallery</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
@@ -55,10 +53,9 @@
         <a href="main.html" id="nav-logo"><img src="images/Logo.png" width="25" /></a>
 
         <div class="nav-item dropdown" id="nav-location">
-            <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Default Location
-            </span>
+            <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Default Location
+      </span>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -68,9 +65,9 @@
         <div id="nav-center">
             <div id="blank"></div>
             <a href="main.html"><img src="images/home.png" width="60%"></a>
-            <a href="#"><img src="images/recipe.png" width="60%"></a>
-            <a href="#"><img src="images/feedback.png" width="60%"></a>
-            <a href="#"><img src="images/megaphone.png" width="60%"></a>
+            <a href="recipeform.html"><img src="images/recipe.png" width="60%"></a>
+            <a href="recipe.html"><img src="images/feedback.png" width="60%"></a>
+            <a href="recipegallery.html"><img src="images/megaphone.png" width="60%"></a>
         </div>
         <div id="nav-right">
             <div id="blank"></div>
@@ -85,30 +82,33 @@
     </div>
 
     <form id="recipe-form">
+        <div id="header">
+            <h1>Share Your Recipe!</h1>
+        </div>
         <div id="heading">
+
             <!--
             Title:
             Author:
             prep time:
             special notes:
         -->
-            <form class="row g-3">
+            <form class="row g-3" id="form1">
                 <div class="col-12">
-                    <label for="recipe-title" class="form-label">Title</label>
+                    <label for="recipe-title" class="form-label"><b>Title</b></label>
                     <input type="text" class="form-control" id="recipe-title" placeholder="Macaroni and Cheese">
                 </div>
                 <div class="col-md-6">
-                    <label for="recipe-author" class="form-label">Author</label>
-                    <input type="text" class="form-control" id="recipe-author" placeholder="John Snow">
+                    <label for="recipe-author" class="form-label"><b>Author</b></label>
+                    <input type="text" class="form-control" id="recipe-author" placeholder="Your Name">
                 </div>
                 <div class="col-md-6">
-                    <label for="recipe-prep-time" class="form-label">Prep Time</label>
+                    <label for="recipe-prep-time" class="form-label"><b>Prep Time</b></label>
                     <input type="text" class="form-control" id="recipe-prep-time" placeholder="00hr00min">
                 </div>
                 <div class="col-12">
-                    <label for="recipe-special-instructions" class="form-label">Special Instructions</label>
-                    <textarea class="form-control" id="recipe-special-instructions" rows="2"
-                        placeholder="none"></textarea>
+                    <label for="recipe-special-instructions" class="form-label"><b>Special Instructions</b></label>
+                    <textarea class="form-control" id="recipe-special-instructions" rows="2" placeholder="Fill in here"></textarea>
                 </div>
             </form>
         </div>
@@ -118,25 +118,23 @@
             grid template in 3 columns
             quantity   unit   name   preparation notes
         -->
-            <div id="ingredient-table"
-                style="display:grid; grid-template-columns: calc(100%/6) calc(100%/12) calc(100%/4) calc(100%/2);">
-                <span>qty.</span>
-                <span>unit</span>
-                <span>name</span>
-                <span>special instructions</span>
+            <h3>Ingredients:</h3>
+            <div id="ingredient-table">
+                <span><b>QTY</b></span>
+                <span><b>Unit</b></span>
+                <span><b>Name</b></span>
+                <span><b>ingredient prep</b></span>
             </div>
             <form class="row g-3" id="ingredient-form">
                 <div id="ingredient-group-1" class="ingredient-group">
 
-                    <input type="text" class="form-control ingredient-quantity" id="ingredient-quantity-1"
-                        placeholder="">
+                    <input type="text" class="form-control ingredient-quantity" id="ingredient-quantity-1" placeholder="">
 
                     <input type="text" class="form-control ingredient-unit" id="ingredient-unit-1" placeholder="">
 
                     <input type="text" class="form-control ingredient-name" id="ingredient-name-1" placeholder="">
 
-                    <input type="text" class="form-control ingredient-instruction" id="ingredient-instruction-1"
-                        placeholder="">
+                    <input type="text" class="form-control ingredient-instruction" id="ingredient-instruction-1" placeholder="">
 
                     <button type="button" class="btn btn-primary ingredient-minus" id="ingredient-minus-1">x</button>
 
@@ -147,7 +145,7 @@
             </form>
         </div>
         <hr />
-        <div>
+        <div id="steps">
             <!--
             blocks of text input.
             box for step number, change is achronological
@@ -157,16 +155,13 @@
             optional: ability to add picture for the specific step
             optional: ability to rearrange instruction blocks
         -->
+            <h3>Instructions</h3>
             <form class="row g-3" id="instructions">
                 <div class="recipe-instruction" id="recipe-instruction-1">
-                    <input type="text" class="form-control recipe-instruction-step" id="recipe-step-1"
-                        placeholder="Step">
-                    <input type="text" class="form-control recipe-instruction-time" id="recipe-step-time-1"
-                        placeholder="Time req">
-                    <button type="button" class="btn btn-primary recipe-instruction-minus"
-                        id="recipe-instruction-minus-1">x</button>
-                    <textarea class="form-control recipe-instruction-description" id="recipe-instruction-description-1"
-                        rows="2" placeholder="Instructions"></textarea>
+                    <input type="text" class="form-control recipe-instruction-step" id="recipe-step-1" placeholder="Step">
+                    <input type="text" class="form-control recipe-instruction-time" id="recipe-step-time-1" placeholder="Time req">
+                    <button type="button" class="btn btn-primary recipe-instruction-minus" id="recipe-instruction-minus-1">x</button>
+                    <textarea class="form-control recipe-instruction-description" id="recipe-instruction-description-1" rows="2" placeholder="Instructions"></textarea>
                 </div>
                 <div id="recipe-add-instruction">
                     <button type="button" class="btn btn-primary">+</button>
@@ -174,7 +169,7 @@
             </form>
         </div>
         <hr />
-        <div class="d-grid gap-2">
+        <div class="d-grid gap-2" id="submit">
             <button class="btn btn-primary" id="submit-button">Submit</button>
         </div>
     </form>
@@ -183,9 +178,8 @@
     <!----------------------------------------------->
     <!-- JS: Boostrap, JQuery, Firebase, API related-->
     <!----------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
