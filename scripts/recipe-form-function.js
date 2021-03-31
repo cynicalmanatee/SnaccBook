@@ -1,91 +1,284 @@
+//ctrl+f "author" to change the userid near it to the active user logged in who submitted the recipe.
+
+
 $(document).ready(function () {
+    firebase.auth().onAuthStateChanged(function (somebody) {
+        var user = somebody.uid;
 
-    var counter = 1;
+        var ingredientCounter = 1;
+        var instructionCounter = 1;
 
-    $("#recipe-add-ingredient").click(function () {
-        counter++;
-        var classString = "ingredient-group-" + counter;
+        $("#recipe-add-ingredient").click(function () {
+            ingredientCounter++;
+            var classString = "ingredient-group-" + ingredientCounter;
 
-        var qtyBox = document.createElement("div");
+            var ingredientGroup = document.createElement("div");
+            ingredientGroup.setAttribute("id", classString);
+            ingredientGroup.setAttribute("class", "ingredient-group");
 
-        qtyBox.setAttribute("class", "col-md-2 " + classString);
-
-        var qtyid = "ingredient-quantity-" + counter;
-        var qtyfield = document.createElement("input");
-        qtyfield.setAttribute("type", "text");
-        qtyfield.setAttribute("class", "form-control ingredient-quantity");
-        qtyfield.setAttribute("id", qtyid);
-        qtyfield.setAttribute("placeholder", "");
-        $(qtyBox).append(qtyfield);
-
-
-        var unitBox = document.createElement("div");
-        unitBox.setAttribute("class", "col-md-1 " + classString);
-
-        var unitid = "ingredient-unit-" + counter;
-        var unitfield = document.createElement("input");
-        unitfield.setAttribute("type", "text");
-        unitfield.setAttribute("class", "form-control ingredient-quantity");
-        unitfield.setAttribute("id", unitid);
-        unitfield.setAttribute("placeholder", "");
-        $(unitBox).append(unitfield);
-
-        var nameBox = document.createElement("div");
-        nameBox.setAttribute("class", "col-md-3 " + classString);
-
-        var nameid = "ingredient-name-" + counter;
-        var namefield = document.createElement("input");
-        namefield.setAttribute("type", "text");
-        namefield.setAttribute("class", "form-control ingredient-quantity");
-        namefield.setAttribute("id", nameid);
-        namefield.setAttribute("placeholder", "");
-        $(nameBox).append(namefield);
+            var qtyid = "ingredient-quantity-" + ingredientCounter;
+            var qtyfield = document.createElement("input");
+            qtyfield.setAttribute("type", "text");
+            qtyfield.setAttribute("class", "form-control ingredient-quantity");
+            qtyfield.setAttribute("id", qtyid);
+            qtyfield.setAttribute("placeholder", "");
 
 
-        var instructionBox = document.createElement("div");
-        instructionBox.setAttribute("class", "col-md-5 " + classString);
-
-        var instructionid = "ingredient-instruction-" + counter;
-        var instructionfield = document.createElement("input");
-        instructionfield.setAttribute("type", "text");
-        instructionfield.setAttribute("class", "form-control ingredient-quantity");
-        instructionfield.setAttribute("id", instructionid);
-        instructionfield.setAttribute("placeholder", "");
-        $(instructionBox).append(instructionfield);
-
-        var minusBox = document.createElement("div");
-        minusBox.setAttribute("class", "col-md-1 minus " + classString);
-        minusBox.setAttribute("data-id", counter);
+            var unitid = "ingredient-unit-" + ingredientCounter;
+            var unitfield = document.createElement("input");
+            unitfield.setAttribute("type", "text");
+            unitfield.setAttribute("class", "form-control ingredient-unit");
+            unitfield.setAttribute("id", unitid);
+            unitfield.setAttribute("placeholder", "");
 
 
-        var minusid = "ingredient-minus-" + counter;
-        var minusfield = document.createElement("button");
-        minusfield.setAttribute("type", "text");
-        minusfield.setAttribute("class", "btn btn-primary ingredient-minus");
-        minusfield.setAttribute("id", minusid);
-        minusfield.setAttribute("placeholder", "");
-        minusfield.innerHTML = "x";
-        $(minusBox).append(minusfield);
+            var nameid = "ingredient-name-" + ingredientCounter;
+            var namefield = document.createElement("input");
+            namefield.setAttribute("type", "text");
+            namefield.setAttribute("class", "form-control ingredient-name");
+            namefield.setAttribute("id", nameid);
+            namefield.setAttribute("placeholder", "");
 
-        $('#recipe-add-ingredient').before(qtyBox, unitBox, nameBox, instructionBox, minusBox);
+
+
+            var instructionid = "ingredient-instruction-" + ingredientCounter;
+            var instructionfield = document.createElement("input");
+            instructionfield.setAttribute("type", "text");
+            instructionfield.setAttribute("class", "form-control ingredient-instruction");
+            instructionfield.setAttribute("id", instructionid);
+            instructionfield.setAttribute("placeholder", "");
+
+
+
+            var minusid = "ingredient-minus-" + ingredientCounter;
+
+            var minusfield = document.createElement("button");
+            minusfield.setAttribute("type", "text");
+            minusfield.setAttribute("class", "btn btn-primary ingredient-minus");
+            minusfield.setAttribute("id", minusid);
+            minusfield.setAttribute("placeholder", "");
+            minusfield.innerHTML = "x";
+
+            $(ingredientGroup).append(qtyfield, unitfield, namefield, instructionfield, minusfield);
+
+
+            $("#recipe-add-ingredient").before(ingredientGroup);
+            var element = document.getElementsByClassName("ingredient-minus");
+            for (var i = 0; i < element.length; i++) {
+
+                element[i].addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var idtag = $(this).attr("id");
+                    var idstr = idtag.substring(17);
+                    var idnum = parseInt(idstr);
+
+                    var target = "#ingredient-group-" + idnum;
+                    $(target).remove();
+                });
+            }
+
+
+
+
+        });
+
+        $("#recipe-add-instruction").click(function () {
+            instructionCounter++;
+            id = "recipe-instruction-" + instructionCounter;
+            var instructionGroup = document.createElement("div");
+            instructionGroup.setAttribute("class", "recipe-instruction");
+            instructionGroup.setAttribute("id", id);
+
+
+            var step = document.createElement("input");
+            var stepid = "recipe-instruction-step-" + instructionCounter;
+            step.setAttribute("id", stepid);
+            step.setAttribute("class", "form-control recipe-instruction-step");
+            step.setAttribute("placeholder", "Step");
+
+
+            var time = document.createElement("input");
+            var timeid = "recipe-instruction-time-" + instructionCounter;
+            time.setAttribute("id", timeid);
+            time.setAttribute("class", "form-control recipe-instruction-time");
+            time.setAttribute("placeholder", "Time");
+
+            var instructionMinus = document.createElement("button");
+            var instructionminusid = "recipe-instruction-minus-" + instructionCounter
+            instructionMinus.setAttribute("type", "text");
+            instructionMinus.setAttribute("class", "btn btn-primary recipe-instruction-minus");
+            instructionMinus.setAttribute("id", instructionminusid);
+            instructionMinus.setAttribute("placeholder", "");
+            instructionMinus.innerHTML = "x";
+
+
+            var description = document.createElement("textarea");
+            descriptionid = "recipe-instruction-description-" + instructionCounter;
+            description.setAttribute("class", "form-control recipe-instruction-description");
+            description.setAttribute("id", descriptionid);
+            description.setAttribute("rows", "2");
+            description.setAttribute("placeholder", "Instructions");
+
+            $(instructionGroup).append(step, time, instructionMinus, description);
+
+
+            $("#recipe-add-instruction").before(instructionGroup);
+
+            var instructions = document.getElementsByClassName("recipe-instruction-minus");
+            for (var i = 0; i < instructions.length; i++) {
+
+    $("#submit-button").click(function (submit) {
+        submit.preventDefault();
+        var title = $("#recipe-title").val();
+        var userid = "";
+        var author = $("#recipe-author").val();
+        var prepTime = $("#recipe-prep-time").val();
+        var specialInstructions = $("#recipe-special-instructions").val();
+        var ingredients = document.getElementsByClassName("ingredient-group");
+        var ingredientlist = [];
+        for (var i = 0; i < ingredients.length; i++) {
+
+            var ingredientindex = $(ingredients[i]).attr("id");
+            console.log(ingredientindex);
+            var idstr = ingredientindex.substring(17);
+            var idnum = parseInt(idstr);
+
+            console.log(idstr);
+
+            var myqty = $("#ingredient-quantity-" + idnum).val();
+            var myunit = $("#ingredient-unit-" + idnum).val();
+            var myname = $("#ingredient-name-" + idnum).val();
+            var myinstruction = $("#ingredient-instruction-" + idnum).val();
+            var ingredientObject = { qty: myqty, unit: myunit, name: myname, instruction: myinstruction };
+
+            ingredientlist.push(ingredientObject);
+        };
+        var instructions = document.getElementsByClassName("recipe-instruction");
+        var instructionlist = [];
+        for (var i = 0; i < instructions.length; i++) {
+            var instag = $(instructions[i]).attr("id");
+            var insstr = instag.substring(19);
+            var insnum = parseInt(insstr);
+
+            var mystep = $("#recipe-step-" + insnum).val();
+            var mytime = $("#recipe-step-time-" + insnum).val();
+            var myinstruction = $("#recipe-instruction-desciption-" + insnum).val();
+            var instructionobject = { step: mystep, time: mytime, instruction: myinstruction };
+            instructionlist.push(instructionobject);
+        };
+
+        $("#submit-button").click(function (submit) {
+            submit.preventDefault();
+
+        var myrecipe = {
+            title: title, author: author, id: userid
+            , prepTime: prepTime, specialInstructions: specialInstructions,
+            ingredients: ingredientstring, instructions: instructionstring
+        };
+
+        console.log(myrecipe);
+
+
+
+        // sending title, author, userid, prepTime, myrecipe
+
+
 
 
 
 
     });
 
-    var element = document.getElementsByClassName("ingredient-minus");
 
-    var DeleteGroup = function () {
-        DeleteGroup.preventDefault();
-        var groupNum = this.getAttribute("classdata-id");
-        var target = ".ingredient-group-" + groupNum;
+            var title = $("#recipe-title").val();
+            console.log(title);
+            var userid = user;
+            var author = $("#recipe-author").val();
+            var prepTime = $("#recipe-prep-time").val();
+            var specialInstructions = $("#recipe-special-instructions").val();
+            var ingredients = document.getElementsByClassName("ingredient-group");
+            var ingredientlist = [];
+            for (var i = 0; i < ingredients.length; i++) {
+                var ingredientindex = $(ingredients[i]).attr("id");
+                var idstr = ingredientindex.substring(17);
+                var idnum = parseInt(idstr);
 
-        $(target).remove();
-    };
+                var myqty = $("#ingredient-quantity-" + idnum).val();
+                var myunit = $("#ingredient-unit-" + idnum).val();
+                var myname = $("#ingredient-name-" + idnum).val();
+                var myinstruction = $("#ingredient-instruction-" + idnum).val();
+                var ingredientObject = { qty: myqty, unit: myunit, name: myname, instruction: myinstruction };
 
-    for (var i = 0; i < element.length; i++) {
-        element[i].addEventListener('click', DeleteGroup);
+                ingredientlist.push(ingredientObject);
+            };
+            var instructions = document.getElementsByClassName("recipe-instruction");
+            var instructionlist = [];
+            for (var i = 0; i < instructions.length; i++) {
+                var instag = $(instructions[i]).attr("id");
+                var insstr = instag.substring(19);
+                var insnum = parseInt(insstr);
+
+                var mystep = $("#recipe-step-" + insnum);
+                var mytime = $("#recipe-step-time-" + insnum);
+                var myinstruction = $("#recipe-instruction-desciption-" + insnum);
+                var instructionobject = { step: mystep, time: mytime, instruction: myinstruction };
+                instructionlist.push(instructionobject);
+            };
+
+            var ingredientstring = JSON.stringify(ingredientlist);
+            var instructionstring = JSON.stringify(instructionlist);
+
+
+            var myrecipe = {
+                title: title,
+                author: author,
+                id: userid,
+                prepTime: prepTime,
+                specialInstructions: specialInstructions,
+                ingredients: ingredientstring,
+                instructions: instructionstring
+            };
+
+            console.log(ingredientstring);
+            console.log(instructionstring);
+            console.log(myrecipe);
+            // sending title, author, userid, prepTime, myrecipe
+
+            function writeRecipes() {
+                var recipeRef = db.collection("recipes");
+                recipeRef.add({ "recipe": myrecipe });
+            }
+            writeRecipes();
+
+
+        });
+    })
+});
+
+$(document).keypress(
+    function (event) {
+        if (event.which == '13') {
+            event.preventDefault();
+        }
     }
+);
+//Query to implement later
+// function recipeQuery() {
+//     db.collection("recipes")
+//         //can query the recipe name to user input
+//         .where("RecipeTitle", "==", "Snake Meat Pie")
+//         .get()
+//         .then((querySnapshot) => {
+//             querySnapshot.forEach((doc) => {
+//                 // doc.data() is never undefined for query doc snapshots
+//                 //console.log(doc.data());
+//                 var recipe = doc.data();
+//                 console.log(recipe);
+//                 //prints out the object will have to directly move everything
+//                 //dynamically update recipe page
+//                 str = JSON.stringify(recipe)
+//                 document.getElementById("testingRecipe").innerHTML = str;
 
-})
+//             })
+//         })
+// }
