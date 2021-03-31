@@ -172,12 +172,8 @@ $(document).ready(function () {
         var instructionlist = [];
         for (var i = 0; i < instructions.length; i++) {
             var instag = $(instructions[i]).attr("id");
-            console.log(instag);
             var insstr = instag.substring(19);
-            console.log(insstr);
             var insnum = parseInt(insstr);
-
-            console.log(insstr);
 
             var mystep = $("#recipe-step-" + insnum).val();
             var mytime = $("#recipe-step-time-" + insnum).val();
