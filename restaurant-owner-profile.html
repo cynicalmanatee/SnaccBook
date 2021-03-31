@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My BCIT Project</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
+
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/navbar.css" rel="stylesheet">
+
+
+    <!-- Optional styles and scripts of your own -->
+
+
+</head>
+
+<body>
+
+    <!-------------------------------------->
+    <!-- The following is HTML for layout -->
+    <!-------------------------------------->
+    <!-- Header Navigation Bar -->
+    <div id="navbar">
+        <div class="nav-item dropdown" id="hamburger">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="images/list.png" width="25">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="#">Default Location</a></li>
+                <hr class="dropdown-divider">
+                <li><a class="dropdown-item" href="main.html">Home</a></li>
+                <li><a class="dropdown-item" href="recipe.html">Recipes</a></li>
+                <li><a class="dropdown-item" href="#">Reviews</a></li>
+                <li><a class="dropdown-item" href="#">Promotions</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                <li><a class="dropdown-item" href="profile-edit.html">Settings</a></li>
+                <li><a class="dropdown-item" href="index.html">Logout</a></li>
+            </ul>
+        </div>
+        <a href="main.html" id="nav-logo"><img src="images/Logo.png" width="25" /></a>
+
+        <div class="nav-item dropdown" id="nav-location">
+            <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Default Location
+      </span>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </ul>
+        </div>
+        <div id="nav-center">
+            <div id="blank"></div>
+            <a href="main.html"><img src="images/home.png" width="60%"></a>
+            <a href="recipe.html"><img src="images/recipe.png" width="60%"></a>
+            <a href="#"><img src="images/feedback.png" width="60%"></a>
+            <a href="#"><img src="images/megaphone.png" width="60%"></a>
+        </div>
+        <div id="nav-right">
+            <div id="blank"></div>
+            <a href="profile.html"><img src="images/user.png" width="60%"></a>
+            <a href="profile-edit.html"><img src="images/cogwheel.png" width="60%"></a>
+            <a href="index.html"><img src="images/exit.png" width="60%"></a>
+        </div>
+        <form class="d-flex" id="nav-search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+
+    </div>
+
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+
+
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+
+</body>
+
+</html>
