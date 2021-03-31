@@ -1,39 +1,113 @@
-.recipe-instruction{
-    display: grid; 
-    grid-template-columns: 25% 70% 5%; 
+body {
+    background-image: url(/images/background.jpg);
+    background-size: 100%;
+    background-position: center;
+}
+
+#recipe-form {
+    padding: 0% 10%;
+}
+
+#steps {
+    padding: 0% 10%;
+}
+
+#submit {
+    padding: 0% 10%;
+}
+
+#ingredient {
+    padding: 0% 10%;
+}
+
+.recipe-instruction {
+    display: grid;
+    grid-template-columns: 25% 70% 5%;
     grid-template-rows: auto auto;
 }
 
-.recipe-instruction-step{
-    grid-column-start: 1; grid-row-start:1;
-}
-.recipe-instruction-time{
-    grid-column-start: 1; grid-row-start:2;
-}
-.recipe-instruction-description{
-    grid-column-start: 2;
-    grid-row:1/span 2;
-}
-.recipe-instruction-minus{
-    grid-column-start: 3; grid-row:2;
+.recipe-instruction-step {
+    grid-column-start: 1;
+    grid-row-start: 1;
 }
 
-.ingredient-group{
+.recipe-instruction-time {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.recipe-instruction-description {
+    grid-column-start: 2;
+    grid-row: 1/span 2;
+}
+
+.recipe-instruction-minus {
+    grid-column-start: 3;
+    grid-row: 2;
+}
+
+.ingredient-group {
     display: grid;
     grid-template-columns: 10% 10% 20% 55% 5%;
 }
-.ingredient-quantity{
+
+.ingredient-quantity {
     grid-column-start: 1;
 }
-.ingredient-unit{
+
+.ingredient-unit {
     grid-column-start: 2;
 }
-.ingredient-name{
+
+.ingredient-name {
     grid-column-start: 3;
 }
-.ingredient-instruction{
+
+.ingredient-instruction {
     grid-column-start: 4;
 }
-.ingredient-minus{
+
+.ingredient-minus {
     grid-column-start: 5;
+}
+
+#header {
+    text-align: center;
+}
+
+#recipe-title {
+    background-color: antiquewhite;
+}
+
+#recipe-author {
+    background-color: antiquewhite;
+}
+
+#recipe-prep-time {
+    background-color: antiquewhite;
+}
+
+#recipe-special-instructions {
+    background-color: antiquewhite;
+}
+
+#ingredient-table {
+    display: grid;
+    grid-template-columns: calc(100%/6) calc(100%/12) calc(100%/4) calc(100%/2);
+}
+
+#ingredient {
+    text-align: center;
+}
+
+#steps {
+    text-align: center;
+}
+
+@media screen and (max-width: 599px) {
+    body {
+        background-image: url(/images/recipebackground.jpg);
+        /* background-: 460px; */
+        background-position: center;
+    }
 }
