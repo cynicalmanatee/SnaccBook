@@ -25,9 +25,6 @@ $(document).ready(function () {
         qtyfield.setAttribute("id", qtyid);
         qtyfield.setAttribute("placeholder", "");
 
-
-
-
         var unitid = "ingredient-unit-" + ingredientCounter;
         var unitfield = document.createElement("input");
         unitfield.setAttribute("type", "text");
