@@ -1,4 +1,4 @@
-//Authentication and pulls the unique userID from the database
+Authentication and pulls the unique userID from the database
 function sayHello() {
     firebase.auth().onAuthStateChanged(function (somebody) {
         if (somebody) {
@@ -32,14 +32,14 @@ function postForm(e) {
             if (user) {
                 console.log(user.uid);
                 db.collection("users")
-                .doc(user.uid)
-                .get()
-                .then(function(doc){
-                    console.log(doc.data().name);                
-                    //change 
-                    db.collection("posts").add( {userpost: post, userName: doc.data().name, date: date, time: time});
-                    
-                })
+                    .doc(user.uid)
+                    .get()
+                    .then(function (doc) {
+                        console.log(doc.data().name);
+                        //change 
+                        db.collection("posts").add({ userpost: post, userName: doc.data().name, date: date, time: time });
+
+                    })
             }
 
         })
@@ -48,22 +48,24 @@ function postForm(e) {
 }
 // getting the current date and time
 var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 //
 
 
 
-            //displaying content and writting it to first comment box..
-            function displayContent() {
-                db.collection("posts").get()
-                    .then(function (snap) {
-                        snap.forEach(function (doc) {
-                            var m = doc.data().userPost;             //gets the name field
-                            console.log(m);
-                            document.getElementById(userPost).innerText = m;
-                        })
+//displaying content and writting it to first comment box..
+function displayProfile() {
+    db.collection("posts").get()
+        .then(function (snap) {
+            snap.forEach(function (doc) {
+                var m = doc.data().userPost;             //gets the name field
+                console.log(m);
+                document.getElementById(userPost).innerText = m;
+            })
 
-                    })
-            }
-            displayContent()
+        })
+}
+displayProfile();
+
+
