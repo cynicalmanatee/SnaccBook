@@ -1,0 +1,43 @@
+#body{
+    margin-left: 10%;
+    margin-right: 10%;
+    display: grid;
+    grid-template-columns:25% 55%;
+}
+.panel{
+    display: grid;
+    grid-template-rows: 30vw 45vw 55vw;
+    gap: 6%
+}
+#legend{
+
+}
+.name{
+    display: grid;
+    gap: 8%;
+    grid-template-rows: auto auto auto auto;
+    
+}
+.name span{
+    margin: auto auto auto 0%;
+}
+.about{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 8%
+}
+.about span{
+    margin: auto auto auto 0%;
+}
+.socials{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 5%
+}
+.socials span{
+    margin: auto auto auto 0%;
+
+}
+#submit{
+    margin-left: auto;
+}
