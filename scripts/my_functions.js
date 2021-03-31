@@ -1,4 +1,4 @@
-Authentication and pulls the unique userID from the database
+//Authentication and pulls the unique userID from the database
 function sayHello() {
     firebase.auth().onAuthStateChanged(function (somebody) {
         if (somebody) {

@@ -127,23 +127,67 @@ $(document).ready(function () {
             var instructions = document.getElementsByClassName("recipe-instruction-minus");
             for (var i = 0; i < instructions.length; i++) {
 
-                instructions[i].addEventListener('click', function (event) {
-                    event.preventDefault();
-                    var instag = $(this).attr("id");
-                    var insstr = instag.substring(25);
-                    var insnum = parseInt(insstr);
+    $("#submit-button").click(function (submit) {
+        submit.preventDefault();
+        var title = $("#recipe-title").val();
+        var userid = "";
+        var author = $("#recipe-author").val();
+        var prepTime = $("#recipe-prep-time").val();
+        var specialInstructions = $("#recipe-special-instructions").val();
+        var ingredients = document.getElementsByClassName("ingredient-group");
+        var ingredientlist = [];
+        for (var i = 0; i < ingredients.length; i++) {
 
-                    var instarget = "#recipe-instruction-" + insnum;
-                    $(instarget).remove();
-                });
-            }
+            var ingredientindex = $(ingredients[i]).attr("id");
+            console.log(ingredientindex);
+            var idstr = ingredientindex.substring(17);
+            var idnum = parseInt(idstr);
 
+            console.log(idstr);
 
-        });
+            var myqty = $("#ingredient-quantity-" + idnum).val();
+            var myunit = $("#ingredient-unit-" + idnum).val();
+            var myname = $("#ingredient-name-" + idnum).val();
+            var myinstruction = $("#ingredient-instruction-" + idnum).val();
+            var ingredientObject = { qty: myqty, unit: myunit, name: myname, instruction: myinstruction };
+
+            ingredientlist.push(ingredientObject);
+        };
+        var instructions = document.getElementsByClassName("recipe-instruction");
+        var instructionlist = [];
+        for (var i = 0; i < instructions.length; i++) {
+            var instag = $(instructions[i]).attr("id");
+            var insstr = instag.substring(19);
+            var insnum = parseInt(insstr);
+
+            var mystep = $("#recipe-step-" + insnum).val();
+            var mytime = $("#recipe-step-time-" + insnum).val();
+            var myinstruction = $("#recipe-instruction-desciption-" + insnum).val();
+            var instructionobject = { step: mystep, time: mytime, instruction: myinstruction };
+            instructionlist.push(instructionobject);
+        };
 
         $("#submit-button").click(function (submit) {
             submit.preventDefault();
 
+        var myrecipe = {
+            title: title, author: author, id: userid
+            , prepTime: prepTime, specialInstructions: specialInstructions,
+            ingredients: ingredientstring, instructions: instructionstring
+        };
+
+        console.log(myrecipe);
+
+
+
+        // sending title, author, userid, prepTime, myrecipe
+
+
+
+
+
+
+    });
 
 
             var title = $("#recipe-title").val();
