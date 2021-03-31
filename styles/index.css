@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(238, 192, 205);
+    background-image: url(/images/background.jpg);
+    background-size: 100%;
+    /* background-size: 1000px; */
+    /* background-repeat: no-repeat; */
+}
+
+#carouselControls {
+    width: 50%;
+    margin-left: 25%;
+}
+
+#search-button {
+    text-align: center;
+}
