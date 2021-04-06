@@ -126,9 +126,8 @@
 
                 <input type="text" class="form-control" id="profile-reddit" placeholder="">
             </div>
-            <div id="submit">
-                <button class="btn btn-primary" id="submit-button">Submit</button>
-            </div>
+            <button type="button" class="btn btn-primary" id="confirm">Submit</button>
+            <span id="uid" style="display: hidden; visibility: hidden"></span>
 
 
 
@@ -143,6 +142,7 @@
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
@@ -152,11 +152,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
-    <script src="scripts/api_key.js"></script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+    <script src="scripts/firebase_api_josh.js"></script>
 
 
 
@@ -164,7 +160,6 @@
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
     <script src="scripts/profile-form.js"></script>
-
 </body>
 
 </html>
