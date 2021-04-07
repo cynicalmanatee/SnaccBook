@@ -1,15 +1,16 @@
 //Authentication and pulls the unique userID from the database
 function sayHello() {
-    firebase.auth().onAuthStateChanged(function (somebody) {
+    firebase.auth().onAuthStateChanged(function(somebody) {
         if (somebody) {
             console.log(somebody.uid);
             db.collection("users")
                 .doc(somebody.uid)
                 .get()
-                .then(function (doc) {
+                .then(function(doc) {
                     //console.log(doc.data().name);
                     var n = doc.data().name;
-                    $("#name-goes-here").text(n);
+                    $("#name-goes-here1").text(n);
+                    $("#name-goes-here2").text(n);
                     //get other things and do other things per this user.
                 })
         }
@@ -28,13 +29,13 @@ function postForm(e) {
     console.log(post);
 
     function writePostToDb() {
-        firebase.auth().onAuthStateChanged(function (user) {
+        firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 console.log(user.uid);
                 db.collection("users")
                     .doc(user.uid)
                     .get()
-                    .then(function (doc) {
+                    .then(function(doc) {
                         console.log(doc.data().name);
                         //change 
                         db.collection("posts").add({ userpost: post, userName: doc.data().name, date: date, time: time });
@@ -57,9 +58,9 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 //displaying content and writting it to first comment box..
 function displayProfile() {
     db.collection("posts").get()
-        .then(function (snap) {
-            snap.forEach(function (doc) {
-                var m = doc.data().userPost;             //gets the name field
+        .then(function(snap) {
+            snap.forEach(function(doc) {
+                var m = doc.data().userPost; //gets the name field
                 console.log(m);
                 document.getElementById(userPost).innerText = m;
             })
@@ -68,4 +69,18 @@ function displayProfile() {
 }
 displayProfile();
 
+function changeName() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            console.log(user.uid);
+            db.collection("users")
+                .doc(user.uid)
+                .add({ name:"harry" });
+
+               
+        }
+
+    })
+}
+//changeName();
 

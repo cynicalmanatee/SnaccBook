@@ -177,7 +177,7 @@ $(document).ready(function () {
 
             var mystep = $("#recipe-step-" + insnum).val();
             var mytime = $("#recipe-step-time-" + insnum).val();
-            var myinstruction = $("#recipe-instruction-desciption-" + insnum).val();
+            var myinstruction = $("#recipe-instruction-description-" + insnum).val();
             var instructionobject = { step: mystep, time: mytime, instruction: myinstruction };
             instructionlist.push(instructionobject);
         };
@@ -193,19 +193,16 @@ $(document).ready(function () {
 
         console.log(myrecipe);
 
-
-
         // sending title, author, userid, prepTime, myrecipe
-
-
+        function writeRecipes() {
+            var recipeRef = db.collection("recipes");
+            recipeRef.add( myrecipe);
+        }
         writeRecipes();
 
 
 
     });
-
-
-
 
 });
 
@@ -216,10 +213,7 @@ $(document).keypress(
         }
     }
 );
-function writeRecipes() {
-    var recipeRef = db.collection("recipes");
-    recipeRef.add({ "recipe": myrecipe });
-}
+
 
 //Query to implement later
 // function recipeQuery() {
