@@ -10,7 +10,8 @@
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="jquery-3.5.1.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 
 
@@ -29,7 +30,8 @@
     <!-- Header Navigation Bar -->
     <div id="navbar">
         <div class="nav-item dropdown" id="hamburger">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="images/list.png" width="25">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -50,9 +52,10 @@
         <a href="main.html" id="nav-logo"><img src="images/Logo.png" width="25" /></a>
 
         <div class="nav-item dropdown" id="nav-location">
-            <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Default Location
-      </span>
+            <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Default Location
+            </span>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -69,7 +72,7 @@
         <div id="nav-right">
             <div id="blank"></div>
             <a href="profile.html"><img src="images/user.png" width="60%"></a>
-            <a href="profile-edit.html"><img src="images/cogwheel.png" width="60%"></a>
+            <a href="profile-form.html"><img src="images/cogwheel.png" width="60%"></a>
             <a href="index.html"><img src="images/exit.png" width="60%"></a>
         </div>
         <form class="d-flex" id="nav-search">
@@ -90,7 +93,8 @@
             <h1 id="header-text">Sign Up And Join Your Fellow Foodies Today!</h1>
             </br>
             </br>
-            <a id="login-button" href="login.html" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Let's Get You Signed Up Today!</a>
+            <a id="login-button" href="login.html" class="btn btn-secondary btn-lg active" role="button"
+                aria-pressed="true">Let's Get You Signed Up Today!</a>
         </div>
 
         </br>
@@ -108,13 +112,15 @@
                     <img src="/images/ramen.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
         </div>
 
@@ -130,8 +136,9 @@
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
 
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
@@ -162,7 +169,7 @@
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
         var uiConfig = {
             callbacks: {
-                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                signInSuccessWithAuthResult: function (authResult, redirectUrl) {
                     // User successfully signed in.
                     // Return type determines whether we continue the redirect automatically
                     // or whether we leave that to developer to handle.
@@ -177,13 +184,13 @@
                     var user = authResult.user;
                     if (authResult.additionalUserInfo.isNewUser) { //if new user
                         db.collection("users").doc(user.uid).set({ //write to firestore
-                                name: user.displayName, //"users" collection
-                                email: user.email //with authenticated user's ID (user.uid)
-                            }).then(function() {
-                                console.log("New user added to firestore");
-                                window.location.assign("main.html"); //re-direct to main.html after signup
-                            })
-                            .catch(function(error) {
+                            name: user.displayName, //"users" collection
+                            email: user.email //with authenticated user's ID (user.uid)
+                        }).then(function () {
+                            console.log("New user added to firestore");
+                            window.location.assign("main.html"); //re-direct to main.html after signup
+                        })
+                            .catch(function (error) {
                                 console.log("Error adding new user: " + error);
                             });
                     } else {
@@ -191,7 +198,7 @@
                     }
                     return false;
                 },
-                uiShown: function() {
+                uiShown: function () {
                     // The widget is rendered.
                     // Hide the loader.
                     document.getElementById('loader').style.display = 'none';
