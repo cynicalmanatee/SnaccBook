@@ -67,6 +67,5 @@ function getDetails() {
             $("#procedure").append(instructionsList);
         }
     })
-
 }
 getDetails();
