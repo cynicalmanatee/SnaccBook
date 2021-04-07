@@ -197,13 +197,10 @@ $(document).ready(function () {
 
         console.log(myrecipe);
 
-        // sending title, author, userid, prepTime, myrecipe
-        function writeRecipes() {
-            var recipeRef = db.collection("recipes");
-            recipeRef.add(myrecipe);
-        }
-        // writeRecipes();
+        var recipeRef = db.collection("recipes");
+        recipeRef.add(myrecipe);
 
+        window.location.href = "main.html";
 
 
     });
