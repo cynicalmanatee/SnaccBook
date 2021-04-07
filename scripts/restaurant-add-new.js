@@ -36,6 +36,7 @@ $(document).ready(function () {
             db.collection("restaurants").add(newRestaurant);
 
         };
+        window.location.href = "profile.html";
     });
 
 });

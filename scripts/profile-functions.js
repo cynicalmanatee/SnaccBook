@@ -21,14 +21,22 @@ $(document).ready(function () {
         console.log($("#uid").html());
         db.collection("restaurants")
             //can query the recipe name to user input
-            .where("uid", "==", $("#uid").html())
+            .where("owner", "==", $("#uid").html())
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
 
                     var restaurant = doc.data();
                     console.log(restaurant);
-
+                    var box = document.createElement("div");
+                    box.setAttribute("class", "link");
+                    var restaurantLink = document.createElement("a");
+                    var resturl = "restaurant-owner-profile.html?uid=" + doc.id;
+                    console.log(resturl);
+                    restaurantLink.setAttribute("href", resturl);
+                    $(restaurantLink).html(restaurant.name);
+                    $(box).append($(restaurantLink));
+                    $("#add-restaurant").before($(box));
 
                 });
             });

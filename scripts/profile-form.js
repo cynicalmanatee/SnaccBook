@@ -15,8 +15,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().firstName;
                 console.log(name);
-                if(name != "") {
-                $("#profile-first-name").attr("placeholder", name);
+                if (typeof name !== 'undefined') {
+                    $("#profile-first-name").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user)
@@ -24,8 +24,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().lastName;
                 console.log(name);
-                if(name != "") {
-                $("#profile-last-name").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-last-name").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user)
@@ -33,8 +33,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().middleName;
                 console.log(name);
-                if(name != "") {
-                $("#profile-middle-name").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-middle-name").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user)
@@ -42,8 +42,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().title;
                 console.log(name);
-                if(name != "") {
-                $("#profile-title").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-title").attr("placeholder", name);
                 }
             });
 
@@ -52,8 +52,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().jobTitle;
                 console.log(name);
-                if(name != "") {
-                $("#profile-job-title").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-job-title").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user)
@@ -61,8 +61,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().bio;
                 console.log(name);
-                if(name != "") {
-                $("#profile-bio-description").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-bio-description").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user)
@@ -70,8 +70,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().skills;
                 console.log(name);
-                if(name != "") {
-                $("#profile-skills").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-skills").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user)
@@ -79,8 +79,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().location;
                 console.log(name);
-                if(name != "") {
-                $("#profile-location").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-location").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user)
@@ -88,8 +88,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().email;
                 console.log(name);
-                if(name != "") {
-                $("#profile-email").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-email").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user)
@@ -97,8 +97,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().website;
                 console.log(name);
-                if(name != "") {
-                $("#profile-website").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-website").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user)
@@ -106,8 +106,8 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().facebook;
                 console.log(name);
-                if(name != "") {
-                $("#profile-facebook").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-facebook").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user)
@@ -115,21 +115,21 @@ $(document).ready(function () {
             .then(function (doc) {
                 var name = doc.data().twitter;
                 console.log(name);
-                if(name != "") {
-                $("#profile-twitter").attr("placeholder", name);
+                if (name != "") {
+                    $("#profile-twitter").attr("placeholder", name);
                 }
             });
         db.collection("users").doc(user).get().then(function (doc) {
             var name = doc.data().instagram;
             console.log(name);
-            if(name != "") {
-            $("#profile-instagram").attr("placeholder", name);
+            if (name != "") {
+                $("#profile-instagram").attr("placeholder", name);
             }
         });
         db.collection("users").doc(user).get().then(function (doc) {
             var name = doc.data().reddit;
             console.log(name);
-            if(name != "") {
+            if (name != "") {
                 $("#profile-reddit").attr("placeholder", name);
             }
         });
@@ -145,22 +145,22 @@ $(document).ready(function () {
 
 
         var fName = $("#profile-first-name").val();
-        if(fName == ""){
+        if (fName == "") {
             fName = doc.data().firstName;
         }
 
         var lName = $("#profile-last-name").val();
-        if(lName == ""){
+        if (lName == "") {
             lName = doc.data().lastName;
         }
 
         var mName = $("#profile-middle-name").val();
-        if(mName == ""){
+        if (mName == "") {
             mName = doc.data().middleName;
         }
 
         var pronoun = $("#profile-title").val();
-        if(pronoun == ""){
+        if (pronoun == "") {
             pronoun = doc.data().title;
         }
 
@@ -172,53 +172,53 @@ $(document).ready(function () {
         console.log(uid)
 
         var jobTitle = $("#profile-job-title").val();
-        if(jobTitle == ""){
+        if (jobTitle == "") {
             jobTitle = doc.data().jobTitle;
         }
 
         var bio = $("#profile-bio-description").val();
-        if(bio == ""){
+        if (bio == "") {
             bio = doc.data().bio;
         }
 
         var skills = $("#profile-skills").val();
-        if(skills == ""){
+        if (skills == "") {
             skills = doc.data().skills;
         }
 
         var location = $("#profile-location").val();
-        if(location == ""){
+        if (location == "") {
             location = doc.data().location;
         }
 
 
         var email = $("#profile-email").val();
-        if(email == ""){
+        if (email == "") {
             email = doc.data().email;
         }
 
         var website = $("#profile-website").val();
-        if(website == ""){
+        if (website == "") {
             website = doc.data().website;
         }
 
         var facebook = $("#profile-facebook").val();
-        if(facebook == ""){
+        if (facebook == "") {
             facebook = doc.data().facebook;
         }
 
         var twitter = $("#profile-twitter").val();
-        if(twitter == ""){
+        if (twitter == "") {
             twitter = doc.data().twitter;
         }
 
         var instagram = $("#profile-instagram").val();
-        if(instagram == ""){
+        if (instagram == "") {
             instagram = doc.data().instagram;
         }
 
         var reddit = $("#profile-reddit").val();
-        if(reddit == ""){
+        if (reddit == "") {
             reddit = doc.data().reddit;
         }
 
@@ -232,7 +232,7 @@ $(document).ready(function () {
             pronoun, name, jobTitle, bio, skills, location, website,
             facebook, twitter, instagram, reddit, email) {
             db.collection("users").doc(userId).set({
-                
+
                 firstName: fname,
                 lastName: lname,
                 middleName: mname,
