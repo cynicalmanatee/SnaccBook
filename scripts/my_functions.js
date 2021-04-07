@@ -68,4 +68,18 @@ function displayProfile() {
 }
 displayProfile();
 
+function changeName() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            console.log(user.uid);
+            db.collection("users")
+                .doc(user.uid)
+                .add({ name:"harry" });
+
+               
+        }
+
+    })
+}
+//changeName();
 
