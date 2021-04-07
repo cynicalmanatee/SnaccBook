@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body {
+    font-family: "Bebas Neue", cursive;
+    background-image: linear-gradient(to top, white, #5f91f0);
+}
+
+#picture-gallery {
+    width: 50%;
+    margin-left: 25%;
+}
+
+#title {
+    background-color: whitesmoke;
+}
+
+#recipe-title {
+    font-size: 60pt;
+}
+
+#recipe-stuff {
+    background-color: tomato;
+    font-size: 20pt;
+}
+
+#container {
+    text-align: center;
+    font-size: 15pt;
+    margin: 0% 20%;
+}
+
+#information {
+    background-color: white;
+}
+
+#ingredients {
+    background-color: whitesmoke;
+}
+
+#procedure {
+    background-color: whitesmoke;
+}
+
+.titles {
+    background-color: rgb(192, 192, 192);
+}
+
+#totop {
+    padding-left: 45%;
+}
