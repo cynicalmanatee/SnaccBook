@@ -1,41 +1,51 @@
-#body{
-    margin-left: 10%;
-    margin-right: 10%;
-    display: grid;
-    grid-template-columns:25% 55%;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body {
+    font-family: 'Bebas Neue', cursive;
+    background-image: linear-gradient(to bottom, white, #5f91f0);
 }
-.panel{
+
+#form-container {
+    display: grid;
+    grid-template-columns: 25% 55%;
+}
+
+.panel {
+    grid-column: 2;
     display: grid;
     grid-template-rows: 30vw 45vw 55vw;
     gap: 6%
 }
 
-.name{
+.name {
     display: grid;
     gap: 8%;
     grid-template-rows: auto auto auto auto;
-    
 }
-.name span{
+
+.name span {
     margin: auto auto auto 0%;
 }
-.about{
+
+.about {
     display: grid;
     grid-template-rows: auto auto auto auto;
     gap: 8%
 }
-.about span{
+
+.about span {
     margin: auto auto auto 0%;
 }
-.socials{
+
+.socials {
     display: grid;
     grid-template-rows: auto auto auto auto;
     gap: 5%
 }
-.socials span{
-    margin: auto auto auto 0%;
 
+.socials span {
+    margin: auto auto auto 0%;
 }
-#submit{
+
+#submit {
     margin-left: auto;
 }

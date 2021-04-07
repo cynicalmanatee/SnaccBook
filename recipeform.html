@@ -36,7 +36,7 @@
                 <img src="images/list.png" width="25">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="#">Default Location</a></li>
+                <li><a class="dropdown-item" href="#">SnaccBook</a></li>
                 <hr class="dropdown-divider">
                 <li><a class="dropdown-item" href="main.html">Home</a></li>
                 <li><a class="dropdown-item" href="recipe.html">Recipes</a></li>
@@ -54,7 +54,7 @@
 
         <div class="nav-item dropdown" id="nav-location">
             <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Default Location
+        SnaccBook
       </span>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <form class="d-flex">
@@ -81,6 +81,8 @@
 
     </div>
 
+    <br><br><br>
+
     <form id="recipe-form">
         <div id="header">
             <h1>Share Your Recipe!</h1>
@@ -96,7 +98,7 @@
             <form class="row g-3" id="form1">
                 <div class="col-12">
                     <label for="recipe-title" class="form-label"><b>Title</b></label>
-                    <input type="text" class="form-control" id="recipe-title" placeholder="Macaroni and Cheese">
+                    <input type="text" class="form-control" id="recipe-title" placeholder="E.G. Macaroni and Cheese">
                 </div>
                 <div class="col-md-6">
                     <label for="recipe-author" class="form-label"><b>Author</b></label>
@@ -104,11 +106,11 @@
                 </div>
                 <div class="col-md-6">
                     <label for="recipe-prep-time" class="form-label"><b>Prep Time</b></label>
-                    <input type="text" class="form-control" id="recipe-prep-time" placeholder="00hr00min">
+                    <input type="text" class="form-control" id="recipe-prep-time" placeholder="00 hr , 00 min">
                 </div>
                 <div class="col-12">
                     <label for="recipe-special-instructions" class="form-label"><b>Special Instructions</b></label>
-                    <textarea class="form-control" id="recipe-special-instructions" rows="2" placeholder="Fill in here"></textarea>
+                    <textarea class="form-control" id="recipe-special-instructions" rows="2" placeholder="E.g. use chicken bones to make stock"></textarea>
                 </div>
             </form>
         </div>
@@ -128,13 +130,13 @@
             <form class="row g-3" id="ingredient-form">
                 <div id="ingredient-group-1" class="ingredient-group">
 
-                    <input type="text" class="form-control ingredient-quantity" id="ingredient-quantity-1" placeholder="">
+                    <input type="text" class="form-control ingredient-quantity" id="ingredient-quantity-1" placeholder="quantity">
 
-                    <input type="text" class="form-control ingredient-unit" id="ingredient-unit-1" placeholder="">
+                    <input type="text" class="form-control ingredient-unit" id="ingredient-unit-1" placeholder="amount">
 
-                    <input type="text" class="form-control ingredient-name" id="ingredient-name-1" placeholder="">
+                    <input type="text" class="form-control ingredient-name" id="ingredient-name-1" placeholder="Name">
 
-                    <input type="text" class="form-control ingredient-instruction" id="ingredient-instruction-1" placeholder="">
+                    <input type="text" class="form-control ingredient-instruction" id="ingredient-instruction-1" placeholder="instructions">
 
                     <button type="button" class="btn btn-primary ingredient-minus" id="ingredient-minus-1">x</button>
 
@@ -173,6 +175,8 @@
             <button class="btn btn-primary" id="submit-button">Submit</button>
         </div>
     </form>
+
+    <br><br>
 
 
     <!----------------------------------------------->

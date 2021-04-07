@@ -1,18 +1,21 @@
-@media screen and (max-width: 599px) {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@media screen and (max-width: 799px) {
     #navbar {
-        background-color: #db3b30;
+        /* background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%); */
         color: black;
         display: grid;
         grid-template-columns: 5% 5% auto 5% 5%;
     }
     #hamburger {
         display: block;
-        width: 0px;
+        width: 100px;
         grid-column-start: 2;
     }
     #nav-logo {
         grid-column-start: 4;
-        margin: auto;
+        /* margin: auto; */
+        width: 80px;
+        padding-top: 10px;
     }
     #nav-location {
         display: none;
@@ -38,9 +41,9 @@
     }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
     #navbar {
-        background-color: #db3b30;
+        /* background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%); */
         color: black;
         display: grid;
         grid-template-columns: 5% 5% 20% 40% 15% 15%;

@@ -1,26 +1,40 @@
 body {
-    background-color: rgb(238, 192, 205);
-    background-image: url(/images/background.jpg);
-    background-size: 100%;
-    /* background-size: 1000px; */
-    background-repeat: no-repeat;
+    background: linear-gradient(-45deg, #ff5050, #f8f8f8, #5f91f0, #f3caca);
+    background-size: 450% 450%;
+    animation: gradient 15s ease infinite;
+    font-family: 'Bebas Neue', cursive;
 }
 
-#carouselControls {
-    width: 80%;
-    margin-left: 10%;
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #search-button {
     text-align: center;
 }
 
+#header-text {
+    background-image: linear-gradient(to right, #ff5050, #5f91f0);
+    color: whitesmoke;
+    max-width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    font-size: 50pt;
+}
+
+
+/* 
 @media screen and (max-width: 599px) {
     body {
         background-color: rgb(238, 192, 205);
-        background-image: url(/images/recipebackground.jpg);
-        background-size: 100%;
-        /* background-size: 1000px; */
         background-repeat: no-repeat;
     }
-}
+} */

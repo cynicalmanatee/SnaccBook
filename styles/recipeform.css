@@ -1,11 +1,13 @@
 body {
-    background-image: url(/images/background.jpg);
-    background-size: 100%;
-    background-position: center;
+    /* background-size: 100%;
+    background-position: center; */
+    font-family: 'Bebas Neue', cursive;
+    background-image: linear-gradient(to bottom, white, #5f91f0);
 }
 
 #recipe-form {
     padding: 0% 10%;
+    font-weight: 100;
 }
 
 #steps {
