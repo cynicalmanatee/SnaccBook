@@ -85,7 +85,11 @@ $(document).ready(function () {
 
     $("#recipe-add-instruction").click(function () {
         instructionCounter++;
+
+
         id = "recipe-instruction-" + instructionCounter;
+
+        console.log(id);
         var instructionGroup = document.createElement("div");
         instructionGroup.setAttribute("class", "recipe-instruction");
         instructionGroup.setAttribute("id", id);
@@ -175,8 +179,8 @@ $(document).ready(function () {
             var insstr = instag.substring(19);
             var insnum = parseInt(insstr);
 
-            var mystep = $("#recipe-step-" + insnum).val();
-            var mytime = $("#recipe-step-time-" + insnum).val();
+            var mystep = $("#recipe-instruction-step-" + insnum).val();
+            var mytime = $("#recipe-instruction-time-" + insnum).val();
             var myinstruction = $("#recipe-instruction-description-" + insnum).val();
             var instructionobject = { step: mystep, time: mytime, instruction: myinstruction };
             instructionlist.push(instructionobject);
@@ -196,9 +200,9 @@ $(document).ready(function () {
         // sending title, author, userid, prepTime, myrecipe
         function writeRecipes() {
             var recipeRef = db.collection("recipes");
-            recipeRef.add( myrecipe);
+            recipeRef.add(myrecipe);
         }
-        writeRecipes();
+        // writeRecipes();
 
 
 

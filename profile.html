@@ -10,7 +10,8 @@
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link rel="stylesheet" href="styles/profile.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -33,7 +34,8 @@
     <!-- Header Navigation Bar -->
     <div id="navbar">
         <div class="nav-item dropdown" id="hamburger">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="images/list.png" width="25">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -54,7 +56,8 @@
         <a href="main.html" id="nav-logo"><img src="images/Logo.png" width="25" /></a>
 
         <div class="nav-item dropdown" id="nav-location">
-            <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 Default Location
             </span>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -119,7 +122,8 @@
                 <div class="mb-3">
                     <label for="post" class="form-label">Post</label>
                     <textarea class="form-control" id="post" rows="3" placeholder="Share"></textarea>
-                    <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-toolbar justify-content-between" role="toolbar"
+                        aria-label="Toolbar with button groups">
                         <div class="btn-group btn-group-sm" role="group" aria-label="First group">
                             <div class="container text-center py-3">
                                 <input type="file" id="mypic-input" accept="image/*" />
@@ -149,58 +153,61 @@
                         <img src="/images/ramen.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            </div>
-
-
-            <div class="content">
-                <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
-                <span class="postText"></span>
-                <div class="mb-3 comment">
-                    <!-- this is where the ID is pointing to for the post -->
-                    <textarea class="form-control" id="post1" rows="1" placeholder="comment"></textarea>
-                </div>
-            </div>
-            <div class="content">
-                <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
-                <span class="postText"></span>
-                <div class="mb-3 comment">
-                    <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
-                </div>
-            </div>
-            <div class="content">
-                <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
-                <span class="postText"></span>
-                <div class="mb-3 comment">
-                    <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
-                </div>
-            </div>
-
-
         </div>
-        <div id="right">
-            <div class="contact">
-                <img class="contactProfile" src="https://dummyimage.com/600x400/000/fff" width="100%">
-                <span id="name-goes-here">John Doe</span>
-            </div>
 
+
+        <div class="content">
+            <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
+            <span class="postText"></span>
+            <div class="mb-3 comment">
+                <!-- this is where the ID is pointing to for the post -->
+                <textarea class="form-control" id="post1" rows="1" placeholder="comment"></textarea>
+            </div>
         </div>
+        <div class="content">
+            <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
+            <span class="postText"></span>
+            <div class="mb-3 comment">
+                <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
+            </div>
+        </div>
+        <div class="content">
+            <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
+            <span class="postText"></span>
+            <div class="mb-3 comment">
+                <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="right">
+        <div class="contact">
+            <img class="contactProfile" src="https://dummyimage.com/600x400/000/fff" width="100%">
+            <span id="name-goes-here">John Doe</span>
+        </div>
+
+    </div>
     </div>
 
 
     <!----------------------------------------------->
     <!-- JS: Boostrap, JQuery, Firebase, API related-->
     <!----------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
