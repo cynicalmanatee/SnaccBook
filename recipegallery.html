@@ -8,8 +8,7 @@
     <meta name="author" content="Harry He, Steven Nguyen, Joshua Martinez">
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/"> -->
 
@@ -27,7 +26,7 @@
             -moz-user-select: none;
             user-select: none;
         }
-
+        
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -43,8 +42,7 @@
     <header>
         <div id="navbar">
             <div class="nav-item dropdown" id="hamburger">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="images/list.png" width="25">
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -58,15 +56,14 @@
                         <hr class="dropdown-divider">
                     </li>
                     <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-                    <li><a class="dropdown-item" href="profile-edit.html">Settings</a></li>
+                    <li><a class="dropdown-item" href="profile-form.html">Settings</a></li>
                     <li><a class="dropdown-item" href="index.html">Logout</a></li>
                 </ul>
             </div>
             <a href="main.html" id="nav-logo"><img src="images/Logo.png" width="25" /></a>
 
             <div class="nav-item dropdown" id="nav-location">
-                <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Default Location
                 </span>
                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -106,8 +103,7 @@
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-light">Recipe Gallery</h1>
-                    <p class="lead text-muted">These are current all the recipes that are in the database. Pick one and
-                        enjoy it</p>
+                    <p class="lead text-muted">These are current all the recipes that are in the database. Pick one and enjoy it</p>
                     <p>
                         <a href="#" class="btn btn-primary my-2" id="">Will try to do a query search here</a>
                     </p>
@@ -122,9 +118,7 @@
 
                     <div class="col" id="template">
                         <div class="card shadow-sm">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                                 <title>Placeholder</title>
                                 <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
                                     dy=".3em">Thumbnail</text>
@@ -134,8 +128,7 @@
                                 <p class="card-text" id="tempName">"Tonkotsu Ramen"</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary"
-                                            id="templink">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" id="templink">View</button>
                                     </div>
                                 </div>
                             </div>
@@ -151,9 +144,8 @@
     <!----------------------------------------------->
     <!-- JS: Boostrap, JQuery, Firebase, API related-->
     <!----------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
