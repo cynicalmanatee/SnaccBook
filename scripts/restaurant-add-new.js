@@ -26,7 +26,7 @@ $(document).ready(function () {
 
         function createRestaurant(a, b, c, d, e, f) {
             var newRestaurant = {
-                uid: a,
+                owner: a,
                 name: b,
                 address: c,
                 city: d,

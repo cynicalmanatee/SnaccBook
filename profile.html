@@ -16,13 +16,8 @@
     <link rel="stylesheet" href="styles/profile.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Optional styles and scripts of your own -->
-    <link rel="stylesheet" href="styles/navbar.css" />
-    <style>
-        #name-goes-here {
-            font-size: 30pt;
-            font-weight: 800;
-        }
-    </style>
+    <link href="styles/navbar.css" rel="stylesheet">
+
 
 </head>
 
@@ -164,42 +159,38 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </div>
+            <div class="content">
+                <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
+                <span class="postText"></span>
+                <div class="mb-3 comment">
+                    <!-- this is where the ID is pointing to for the post -->
+                    <textarea class="form-control" id="post1" rows="1" placeholder="comment"></textarea>
+                </div>
+            </div>
+            <div class="content">
+                <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
+                <span class="postText"></span>
+                <div class="mb-3 comment">
+                    <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
+                </div>
+            </div>
+            <div class="content">
+                <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
+                <span class="postText"></span>
+                <div class="mb-3 comment">
+                    <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
+                </div>
 
 
-        <div class="content">
-            <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
-            <span class="postText"></span>
-            <div class="mb-3 comment">
-                <!-- this is where the ID is pointing to for the post -->
-                <textarea class="form-control" id="post1" rows="1" placeholder="comment"></textarea>
             </div>
         </div>
-        <div class="content">
-            <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
-            <span class="postText"></span>
-            <div class="mb-3 comment">
-                <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
-            </div>
-        </div>
-        <div class="content">
-            <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
-            <span class="postText"></span>
-            <div class="mb-3 comment">
-                <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
-            </div>
-        </div>
 
-
-    </div>
-    <div id="right">
-        <div class="contact">
-            <img class="contactProfile" src="https://dummyimage.com/600x400/000/fff" width="100%">
-            <span id="name-goes-here">John Doe</span>
+        <div id="right">
+            <a id="add-restaurant" href="restaurant-add-new.html">New Restaurant</a>
         </div>
 
     </div>
-    </div>
+    <span id="uid" style="visibility: hidden"></span>
 
 
     <!----------------------------------------------->
@@ -227,7 +218,7 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-    <script src="scripts/my_functions.js"></script>
+    <script src="scripts/profile-functions.js"></script>
 
 </body>
 

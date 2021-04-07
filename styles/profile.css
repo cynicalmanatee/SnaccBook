@@ -1,6 +1,15 @@
 #main{
-    display:grid;
+    display: grid;
     grid-template-columns: 30% 40% 30%;
+}
+#left{
+    grid-column-start: 1;
+}
+#middle{
+    grid-column-start: 2;
+}
+#right{
+    grid-column-start: 3;
 }
 
 .content{
