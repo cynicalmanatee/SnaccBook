@@ -109,11 +109,3 @@ body {
 #steps {
     text-align: center;
 }
-
-@media screen and (max-width: 599px) {
-    body {
-        background-image: url(/images/recipebackground.jpg);
-        /* background-: 460px; */
-        background-position: center;
-    }
-}

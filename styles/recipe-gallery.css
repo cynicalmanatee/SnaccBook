@@ -1,0 +1,52 @@
+body {
+    background: linear-gradient(-45deg, #ffffff, #bebebe, #747474, #e2e2e2);
+    background-size: 450% 450%;
+    animation: gradient 10s ease infinite;
+    font-family: 'Bebas Neue', cursive;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#caption {
+    color: black;
+    background-color: white;
+    font-size: 40pt;
+}
+
+#text {
+    color: white;
+    font-size: 30pt;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media screen and (max-width: 799px) {
+    #gallery-start {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+/* <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="galleryStart">
+
+                    <div class="col" id="template"> */
+
+
+/* <p class="card-text" id="tempName">"Tonkotsu Ramen"</p> */
