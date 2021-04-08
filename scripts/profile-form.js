@@ -146,22 +146,22 @@ $(document).ready(function () {
 
         var fName = $("#profile-first-name").val();
         if (fName == "") {
-            fName = doc.data().firstName;
+            fName = ("#profile-first-name").attr("placeholder");
         }
 
         var lName = $("#profile-last-name").val();
         if (lName == "") {
-            lName = doc.data().lastName;
+            lName = $("#profile-last-name").attr("placeholder");
         }
 
         var mName = $("#profile-middle-name").val();
         if (mName == "") {
-            mName = doc.data().middleName;
+            mName = $("#profile-middle-name").attr("placeholder");
         }
 
         var pronoun = $("#profile-title").val();
         if (pronoun == "") {
-            pronoun = doc.data().title;
+            pronoun = $("#profile-title").attr("placeholder");
         }
 
 
@@ -173,53 +173,53 @@ $(document).ready(function () {
 
         var jobTitle = $("#profile-job-title").val();
         if (jobTitle == "") {
-            jobTitle = doc.data().jobTitle;
+            jobTitle = $("#profile-job-title").attr("placeholder");
         }
 
         var bio = $("#profile-bio-description").val();
         if (bio == "") {
-            bio = doc.data().bio;
+            bio = $("#profile-bio-description").attr("placeholder");
         }
 
         var skills = $("#profile-skills").val();
         if (skills == "") {
-            skills = doc.data().skills;
+            skills = $("#profile-skills").attr("placeholder");
         }
 
         var location = $("#profile-location").val();
         if (location == "") {
-            location = doc.data().location;
+            location =  $("#profile-location").attr("placeholder");
         }
 
 
         var email = $("#profile-email").val();
         if (email == "") {
-            email = doc.data().email;
+            email = $("#profile-email").attr("placeholder");
         }
 
         var website = $("#profile-website").val();
         if (website == "") {
-            website = doc.data().website;
+            website = $("#profile-website").attr("placeholder");
         }
 
         var facebook = $("#profile-facebook").val();
         if (facebook == "") {
-            facebook = doc.data().facebook;
+            facebook = $("#profile-facebook").attr("placeholder");
         }
 
         var twitter = $("#profile-twitter").val();
         if (twitter == "") {
-            twitter = doc.data().twitter;
+            twitter = $("#profile-twitter").attr("placeholder");
         }
 
         var instagram = $("#profile-instagram").val();
         if (instagram == "") {
-            instagram = doc.data().instagram;
+            instagram = $("#profile-instagram").attr("placeholder");
         }
 
         var reddit = $("#profile-reddit").val();
         if (reddit == "") {
-            reddit = doc.data().reddit;
+            reddit = $("#profile-reddit").attr("placeholder");
         }
 
         writeUserData(uid, fName, lName, mName,

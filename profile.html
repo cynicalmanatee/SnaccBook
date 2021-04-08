@@ -85,20 +85,11 @@
             <br />
             <span id="name-goes-here1">John Doe</span>
             <br />
-            <span>Some Job Title</span>
+            <span id="jobTitle">Some Job Title</span>
             <br />
-            <table>
-                <tr>
-                    <td>skill 1</td>
-                    <td>skill 2</td>
-                    <td>skill 3</td>
-                </tr>
-                <tr>
-                    <td>skill 4</td>
-                    <td>skill 5</td>
-                    <td>skill 6</td>
-                </tr>
-            </table>
+            <span id="skills">Skills</span>
+            <hr />
+            <span>About me: </span><span id="bio">About me</span>
             <hr />
             <span>Location:</span> <span id="location"> some location</span>
             <br />
@@ -106,6 +97,13 @@
             <span>Email:</span> <span id="email"> some@email.address</span>
             <br />
             <span>Website:</span> <span id="website"> https://www.some.website</span>
+            <br />
+            <span>Reddit:</span> <span id="reddit"> https://www.some.website</span>
+            <br />
+            <span>Facebook:</span> <span id="facebook"> https://www.some.website</span>
+            <br />
+            <span>Twitter:</span> <span id="twitter"> https://www.some.website</span>
+            <br />
             <br />
             <button type="button" id="edit" class="btn btn-primary" href="profile-form.html">Edit</button>
 
@@ -120,7 +118,7 @@
                         aria-label="Toolbar with button groups">
                         <div class="btn-group btn-group-sm" role="group" aria-label="First group">
                             <div class="container text-center py-3">
-                                <input type="file" id="mypic-input" accept="image/*" />
+                                <input type="file" id="mypic-input" accept="image/*">
                             </div>
                             <!-- <button type="button" class="btn btn-outline-secondary" type="file" id="imgFile"
                                 accept="image/*"><img src="images/pictureicon.png" width="20px" /></button> -->
@@ -159,38 +157,26 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <div class="content">
-                <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
-                <span class="postText"></span>
-                <div class="mb-3 comment">
-                    <!-- this is where the ID is pointing to for the post -->
-                    <textarea class="form-control" id="post1" rows="1" placeholder="comment"></textarea>
+            <br /><br />
+            <div id="content-goes-here">
+                <!-- can delete this div... only here for reference-->
+                <div class="content">
+                    <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
+                    <div id="comment">I had such a good time at mcDonalds today</div>
+                    <div>april</div>
                 </div>
-            </div>
-            <div class="content">
-                <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
-                <span class="postText"></span>
-                <div class="mb-3 comment">
-                    <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
-                </div>
-            </div>
-            <div class="content">
-                <img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%" />
-                <span class="postText"></span>
-                <div class="mb-3 comment">
-                    <textarea class="form-control" id="post" rows="1" placeholder="comment"></textarea>
-                </div>
-
-
+                <!-- button for likes to do later when i figure how to do this..... -->
+                <button type="button" class="btn btn-primary" id=likeID>Likes<span id="likes"> 0</span></button>
+                <br /><br />
             </div>
         </div>
 
 
-        <div id="right">
-            <div class="link">
-                <a id="add-restaurant" href="restaurant-add-new.html">New Restaurant</a>
-            </div>
+    <div id="right">
+        <div class="link">
+            <a id="add-restaurant" href="restaurant-add-new.html">New Restaurant</a>
         </div>
+    </div>
 
     </div>
     <span id="uid" style="visibility: hidden"></span>

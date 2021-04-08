@@ -16,6 +16,7 @@
     display: grid;
     grid-template-columns: 15% 85%;
     grid-template-rows: auto auto;
+    border-style: groove;
 }
 
 .profilePicture{
@@ -38,3 +39,5 @@
     display: grid;
     grid-template-columns: 15% 85%;
 }
+
+
