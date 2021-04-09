@@ -1,10 +1,10 @@
 function createRecipeGallery() {
-    var x=0;
+    var x = 0;
     db.collection("recipes")
         .get()  //READ asynch all the data
         .then(function (snapcollection) {
             snapcollection.forEach(function (doc) {
-               $('#template').hide;
+                $('#template').hide;
                 var docID = doc.id;
                 var name = doc.data().title;
                 var recipename = JSON.stringify(name);
@@ -12,14 +12,14 @@ function createRecipeGallery() {
                 console.log(docID);
                 x++;
                 createTemplate();
-                document.getElementById("recipeName"+ x).innerText = recipename;
-                document.getElementById("linkID"+x).setAttribute("id", docID);
-                
+                document.getElementById("recipeName" + x).innerText = recipename;
+                document.getElementById("linkID" + x).setAttribute("id", docID);
+
                 function createTemplate() {
                     var temp = $("#template").clone();
-                    temp.attr("id", "new" +x);
-                    temp.find('#templink').attr("id", "linkID"+x);
-                    temp.find('#tempName').attr("id","recipeName" + x);
+                    temp.attr("id", "new" + x);
+                    temp.find('#templink').attr("id", "linkID" + x);
+                    temp.find('#tempName').attr("id", "recipeName" + x);
                     $("#galleryStart").append(temp);
                 }
                 linkToRecipePage(docID);
@@ -39,4 +39,5 @@ function linkToRecipePage(docID) {
             //when we redirect,tack on after "?" the id of the webcame
             window.location.href = "recipe.html?id=" + docID;
         });
-    }
+}
+
