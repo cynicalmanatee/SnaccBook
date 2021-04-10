@@ -91,73 +91,73 @@ $(document).ready(function () {
                 });
             });
 
-            function displayPost() {
-                
-                
-                db.collection("posts")
-                .where("userID","==", somebody.uid)
+        function displayPost() {
+
+
+            db.collection("posts")
+                .where("userID", "==", somebody.uid)
                 //.orderBy("date","desc")
                 .get()
                 .then(function (snapcollection) {
-                        snapcollection.forEach(function (doc) {
-                            var message = doc.data().userpost;
-                            var date = doc.data().date;
-                            var time = doc.data().time;
-                            var likeID = "like" + doc.id;
-                            var likeNumber = "likeNumber" + doc.id;
-                            var id = doc.id;
-            
-                            console.log(doc.id);
-                            var postCollection = '<div class="content">';
-                            postCollection += '<img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%"/>';
-                            postCollection += '<div id="comment">'+ message +'</div>';
-                            postCollection += '<div id = "date">' + date + '<br/>' + time + '</div>';
-                            postCollection += '</div>';
-                            postCollection += '<button type="button" class="btn btn-primary" id="'+likeID+'">Likes <span id="'+likeNumber+'"></span></button>'
-                            postCollection += '<br/><br/>'
-                            $("#content-goes-here").append(postCollection);
-                            addLikeListener(id, likeID);
-                            var likes = doc.data().likes;
-                            $('#'+ likeNumber).html(likes);
-                        });
-        
-                    });
-            };
-            displayPost();
+                    snapcollection.forEach(function (doc) {
+                        var message = doc.data().userpost;
+                        var date = doc.data().date;
+                        var time = doc.data().time;
+                        var likeID = "like" + doc.id;
+                        var likeNumber = "likeNumber" + doc.id;
+                        var id = doc.id;
 
-            function addLikeListener(id, likeId){
-                document.getElementById(likeId).addEventListener("click", function(){
-                    console.log("like was click!");
-                    db.collection("posts")
+                        console.log(doc.id);
+                        var postCollection = '<div class="content">';
+                        postCollection += '<img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%"/>';
+                        postCollection += '<div id="comment">' + message + '</div>';
+                        postCollection += '<div id = "date">' + date + '<br/>' + time + '</div>';
+                        postCollection += '</div>';
+                        postCollection += '<button type="button" class="btn btn-primary" id="' + likeID + '">Likes <span id="' + likeNumber + '"></span></button>'
+                        postCollection += '<br/><br/>'
+                        $("#content-goes-here").append(postCollection);
+                        addLikeListener(id, likeID);
+                        var likes = doc.data().likes;
+                        $('#' + likeNumber).html(likes);
+                    });
+
+                });
+        };
+        displayPost();
+
+        function addLikeListener(id, likeId) {
+            document.getElementById(likeId).addEventListener("click", function () {
+                console.log("like was click!");
+                db.collection("posts")
                     .doc(id)
                     .update({
                         likes: firebase.firestore.FieldValue.increment(1) //increments the field!
                     })
-                    .then(function(){
+                    .then(function () {
                         console.log("increment increased by 1");
 
                     })
-                    
-                })
-                
-            }
-   
+
+            })
+
+        }
+
     });
 
 
     //Listen for for submit in profile post form
     document.getElementById('userPost').addEventListener('submit', postForm);
-    
+
     // Submit form function
     function postForm(e) {
         e.preventDefault();
         //Get Values from the post
         var post = document.getElementById('post').value;
         console.log(post);
-        
+
 
         function writePostToDb() {
-           
+
             firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
                     console.log(user.uid);
@@ -167,7 +167,7 @@ $(document).ready(function () {
                         .then(function (doc) {
                             console.log(doc.data().name);
                             //change 
-                            db.collection("posts").add({ userpost: post, userID: user.uid, date: date, time: time  });
+                            db.collection("posts").add({ userpost: post, userID: user.uid, date: date, time: time });
 
                         })
                 };
@@ -180,7 +180,7 @@ $(document).ready(function () {
     var today = new Date();
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-   
+
 });
 
 

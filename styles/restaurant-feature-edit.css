@@ -1,0 +1,22 @@
+#main{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.feature-card{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: auto auto;
+}
+.feature-name{
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+.feature-description{
+    grid-row-start: 2;
+    grid-column-start: 1;
+
+}
+.minus{
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
