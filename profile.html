@@ -32,7 +32,7 @@
                 <img src="images/list.png" width="25">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="#">Default Location</a></li>
+                <li><a class="dropdown-item" href="#">SnaccBook</a></li>
                 <hr class="dropdown-divider">
                 <li><a class="dropdown-item" href="main.html">Home</a></li>
                 <li><a class="dropdown-item" href="recipe.html">Recipes</a></li>
@@ -50,7 +50,7 @@
 
         <div class="nav-item dropdown" id="nav-location">
             <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Default Location
+                SnaccBook
             </span>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <form class="d-flex">
@@ -76,6 +76,8 @@
         </form>
 
     </div>
+
+    <br><br>
     <div id="main">
         <div id="left">
             <img src="https://dummyimage.com/600x400/000/fff" width="80%">
@@ -102,7 +104,7 @@
             <span>Twitter:</span> <span id="twitter"> https://www.some.website</span>
             <br />
             <br />
-            <button type="button" id="edit" class="btn btn-primary" href="profile-form.html">Edit</button>
+            <button type="button" id="edit" class="btn btn-primary" onclick="window.location.href='profile-form.html';">Edit</button>
 
         </div>
 
@@ -116,13 +118,6 @@
                             <div class="container text-center py-3">
                                 <input type="file" id="mypic-input" accept="image/*">
                             </div>
-                            <!-- <button type="button" class="btn btn-outline-secondary" type="file" id="imgFile"
-                                accept="image/*"><img src="images/pictureicon.png" width="20px" /></button> -->
-                            <!-- <button type="button" class="btn btn-outline-secondary"><img src="images/videoicon.png"
-                                    width="20px" /></button>
-                            <button type="button" class="btn btn-outline-secondary"><img src="images/audioicon.png"
-                                    width="20px" /></button> -->
-
                         </div>
                         <div class="btn-group btn-group-sm" role="group" aria-label="Second group">
                             <button type="submit" class="btn btn-outline-secondary">Post</button>
@@ -197,6 +192,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+
+
 
     <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebase_api_josh.js"></script>

@@ -31,7 +31,8 @@ $(document).ready(function () {
                 address: c,
                 city: d,
                 province: e,
-                postalCode: f
+                postalCode: f,
+                ratings: ""
             };
             db.collection("restaurants").add(newRestaurant);
 

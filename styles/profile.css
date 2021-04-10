@@ -1,43 +1,51 @@
-#main{
-    display: grid;
-    grid-template-columns: 30% 40% 30%;
+body {
+    background: linear-gradient(-45deg, #ffffff, #bebebe, #747474, #e2e2e2);
+    background-size: 450% 450%;
+    animation: gradient 10s ease infinite;
+    font-family: 'Bebas Neue', cursive;
 }
-#left{
+
+#main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#left {
     grid-column-start: 1;
 }
-#middle{
+
+#middle {
     grid-column-start: 2;
 }
-#right{
+
+#right {
     grid-column-start: 3;
 }
 
-.content{
+.content {
     display: grid;
     grid-template-columns: 15% 85%;
     grid-template-rows: auto auto;
     border-style: groove;
 }
 
-.profilePicture{
+.profilePicture {
     grid-column-start: 1;
     grid-row-start: 1;
 }
 
-.postText{
+.postText {
     grid-column-start: 2;
     grid-row-start: 1;
 }
 
-.comment{
+.comment {
     grid-row-start: 2;
     grid-column-start: 1;
     grid-column-end: span 2;
 }
 
-.contact{
+.contact {
     display: grid;
     grid-template-columns: 15% 85%;
 }
-
-
