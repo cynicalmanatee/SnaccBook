@@ -74,3 +74,10 @@ $(document).ready(function () {
 
 
 });
+
+const parsedUrl = new URL(window.location.href);
+console.log(parsedUrl.searchParams.get("id")); // "123"
+
+// extract id from url, assign to variable
+var id = parsedUrl.searchParams.get("id");
+console.log(id);

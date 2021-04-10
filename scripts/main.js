@@ -1,6 +1,4 @@
 function createRecipeCards() {
-    var x = 0;
-
     db.collection("recipes")
         .get()  //READ asynch all the data
         .then(function (snapcollection) {
@@ -36,6 +34,45 @@ function linkToRecipePage(docID) {
             //window.location.href="details.html";
             //when we redirect,tack on after "?" the id of the webcame
             window.location.href = "recipe.html?id=" + docID;
+        });
+}
+
+function createRestaurantTable() {
+    db.collection("restaurants")
+        .get()  //READ asynch all the data
+        .then(function (snapcollection) {
+            snapcollection.forEach(function (doc) {
+
+                var restID = doc.id;
+                var restName = doc.data().name;
+                //promo goes here
+                //var promo = doc.data().promo;
+                var preptime = doc.data().prepTime;
+                console.log(restName);
+                console.log(restID);
+                var restTable = '<tr>';
+                restTable += '<td>'+restName+'</td>';
+                //promo line goes here
+                restTable += '<td>'+"promo"+'</td>';
+                restTable += '<td><button type="button" class="btn btn-danger" id='+restID+'>Lets Go</button></td>';
+                restTable += '</tr>';
+
+
+                $('#tableStart').append(restTable);
+                linkToRestPage(restID);
+
+            })
+        })
+}
+createRestaurantTable();
+
+function linkToRestPage(restID) {
+    document.getElementById(restID)
+        .addEventListener("click", function () {
+            console.log(restID + "was clicked!")
+            //window.location.href="details.html";
+            //when we redirect,tack on after "?" the id of the webcame
+            window.location.href = "restaurant-profile.html?id=" + restID;
         });
 }
 
