@@ -79,6 +79,6 @@ $(document).ready(function () {
         }, { merge: true });
 
         console.log("finished");
-        //window.location.href = "/restaurant-owner-profile.html?uid=" + uid;
+        window.location.href = "/restaurant-owner-profile.html?uid=" + uid;
     });
 });

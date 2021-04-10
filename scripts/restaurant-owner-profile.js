@@ -37,6 +37,12 @@ $(document).ready(function () {
         window.location.href = "restaurant-feature-edit.html?uid=" + uid;
 
     });
+    var button = $("#edit-restaurant-menu");
+    $(button).click(function nextPage(e) {
+        e.preventDefault();
+        window.location.href = "restaurant-menu-edit.html?uid=" + uid;
+
+    });
 
 
 });
