@@ -34,6 +34,7 @@ $(document).ready(function () {
                 postalCode: f,
                 ratings: ""
             };
+            console.log(newRestaurant);
             db.collection("restaurants").add(newRestaurant);
 
         };

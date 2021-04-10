@@ -1,0 +1,17 @@
+#main{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: auto;
+}
+#form1{
+    grid-row-start:1;
+    width: auto
+
+}
+#main button{
+    grid-row-start:2;
+}
+.input-box{
+    width:80vw;
+    border-radius: .25rem;
+}
