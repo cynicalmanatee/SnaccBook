@@ -1,0 +1,15 @@
+body {
+    font-family: 'Bebas Neue', cursive;
+    background-color: bisque;
+}
+
+#creation-form {
+    background-color: aquamarine;
+    padding: 0% 20%;
+    font-size: 20pt;
+}
+
+#add-restaurant {
+    padding: 0% 20%;
+    margin-left: 25%;
+}

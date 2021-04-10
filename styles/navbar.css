@@ -1,21 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @media screen and (max-width: 799px) {
+    body {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+    }
     #navbar {
         /* background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%); */
         color: black;
         display: grid;
-        grid-template-columns: 5% 5% auto 5% 5%;
+        grid-template-columns: 15% 15% auto 15% 15%;
     }
     #hamburger {
         display: block;
         width: 100px;
-        grid-column-start: 2;
+        grid-column: 1;
     }
     #nav-logo {
-        grid-column-start: 4;
+        grid-column: 5;
         /* margin: auto; */
-        width: 80px;
-        padding-top: 10px;
+        width: 100px;
+        /* padding-top: 10px; */
+    }
+    #snaccbook {
+        width: 50px;
+        /* padding-top: 10px; */
+        /* padding-right: 10px; */
     }
     #nav-location {
         display: none;
@@ -59,21 +70,21 @@
     }
     #hamburger {
         display: none;
-        width: 0px;
-        grid-column-start: 1;
+        /* width: 0px; */
+        grid-column: 1;
     }
     #nav-logo {
-        grid-column-start: 2;
+        grid-column: 2;
         margin: auto;
     }
     #nav-location {
-        grid-column-start: 3;
+        grid-column: 3;
         width: 20vw;
         font-size: 2vw;
         margin: auto;
     }
     #nav-center {
-        grid-column-start: 4;
+        grid-column: 4;
         display: grid;
         grid-template-columns: auto 4vw 4vw 4vw 4vw auto;
     }
@@ -81,7 +92,7 @@
         margin: auto;
     }
     #nav-right {
-        grid-column-start: 5;
+        grid-column: 5;
         display: grid;
         grid-template-columns: auto 4vw 4vw 4vw auto;
     }
@@ -89,7 +100,7 @@
         margin: auto;
     }
     #nav-search {
-        grid-column-start: 6;
+        grid-column: 6;
     }
     #footer {
         position: fixed;
@@ -98,7 +109,7 @@
         background-color: white;
         color: black;
         text-align: center;
-        width: auto;
+        width: 100%;
     }
 }
 

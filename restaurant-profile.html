@@ -12,9 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    <link href="styles/restaurant-profile.css" rel="stylesheet">
+
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/restaurant-profile.css">
 
 </head>
 
@@ -29,7 +30,7 @@
                 <img src="images/list.png" width="25">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="#">Default Location</a></li>
+                <li><a class="dropdown-item" href="#">SnaccBook</a></li>
                 <hr class="dropdown-divider">
                 <li><a class="dropdown-item" href="main.html">Home</a></li>
                 <li><a class="dropdown-item" href="recipe.html">Recipes</a></li>
@@ -47,7 +48,7 @@
 
         <div class="nav-item dropdown" id="nav-location">
             <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Default Location
+        SnaccBook
       </span>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <form class="d-flex">
@@ -74,6 +75,7 @@
 
     </div>
 
+    <br><br><br>
     <div id="base">
         <div id="banner">
             <div id="bannerName"><span>Some Generic Name For a Restaurant</span></div>
@@ -101,7 +103,7 @@
         <div id=content>
             <!--This is the features section-->
             <div id="content1">
-                <div style="display: grid; grid-template-rows: auto auto auto auto;">
+                <div id="info">
                     <span>Generic Amenity</span>
                     <span>Seating Capacity: ##</span>
                     <span>Ambience: Quiet</span>
@@ -119,7 +121,7 @@
 
             <!--This is the menu section-->
             <div id="content2">
-                <div style="display: grid; grid-template-rows: auto auto auto auto;">
+                <div id="info2">
                     <img class="menu-food-picture" src="" />
                     <span>Generic Dish Name</span>
                     <span>Generic Dish Price</span>
@@ -146,7 +148,7 @@
                             <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                 <div class="btn-group btn-group-sm" role="group" aria-label="First group">
                                     <input class="form-control-sm" type="file" id="imgFile" accept="image/*">
-                                    <button type="button" class="btn btn-outline-secondary" type="file" id="imgFile" accept="image/*"><img src="images/pictureicon.png" width="20px" /></button>
+                                    <button type="button" class="btn btn-outline-secondary" type="file" id="imgFile" accept="image/*"><img src="images/pictureicon.png" width="20%" /></button>
                                     <!-- <button type="button" class="btn btn-outline-secondary"><img src="images/videoicon.png"
                                                     width="20px" /></button>
                                             <button type="button" class="btn btn-outline-secondary"><img src="images/audioicon.png"
@@ -209,15 +211,19 @@
 
             </div>
         </div>
+    </div>
 
-        <div id="footer">
-            <span>Author: Group 20 of COMP 1800 in CST</span>
-            <br>
-            <span>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="scripts/restaurant-profile.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-        <script src="scripts/api_key.js"></script>
+    <div id="footer">
+        <span>Author: Group 20 of COMP 1800 in CST</span>
+        <br>
+        <span>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/restaurant-profile.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="scripts/api_key.js"></script>
 
 </body>
