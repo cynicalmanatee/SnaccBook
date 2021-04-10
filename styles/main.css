@@ -2,10 +2,10 @@
     text-align: center;
 }
 
-#search-button {
+/* #search-button {
     text-align: center;
     /* background-color:beige; */
-}
+} */
 
 #header-text {
     color: white;
@@ -14,7 +14,7 @@
 }
 
 
-div {
+#width80 {
     width: 80%;
     padding-left: auto;
     margin: auto;
@@ -28,16 +28,6 @@ div {
     background-color: #db3b30;
 }
 
-#gridLayout {
-    display: grid;
-    grid-template-rows: 10% 90%;
-}
 
-#navbar {
-    grid-row: 1;
-}
 
-#content {
-    grid-row: 2;
-}
 
