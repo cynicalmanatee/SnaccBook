@@ -76,9 +76,12 @@ $(document).ready(function () {
 
         db.collection("restaurants").doc(uid).set({
             feature: featureString
-        }, { merge: true });
+        }, { merge: true })
+        .then(function(){
+            window.location.href = "/restaurant-owner-profile.html?uid=" + uid
+        });
 
         console.log("finished");
-        window.location.href = "/restaurant-owner-profile.html?uid=" + uid;
+        //window.location.href = "/restaurant-owner-profile.html?uid=" + uid;
     });
 });

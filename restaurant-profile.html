@@ -10,11 +10,14 @@
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="styles/navbar.css" />
-    <link rel="stylesheet" href="styles/restaurant-profile.css">
+    <link href="styles/restaurant-profile.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+
 
 </head>
 
@@ -80,12 +83,9 @@
     <br><br><br>
     <div id="base">
         <div id="banner">
-            <div id="bannerName"><span>Some Generic Name For a Restaurant</span></div>
-            <div id="bannerSubtitle"><span>Some Generic Restaurant Description</span></div>
-            <div id="bannerReviews">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                <span>-Ciciero</span>
-            </div>
+            <div id="bannerName">Some Generic Name For a Restaurant</div>
+            <div id="bannerSubtitle">Some Generic Restaurant Description</div>
+            <div id="bannerMotto">Best food ever</div>
         </div>
         <!-- tabs -->
         <div id="tabs">
@@ -105,39 +105,18 @@
         <div id=content>
             <!--This is the features section-->
             <div id="content1">
+                <!-- No form for this section
                 <div id="info">
                     <span>Generic Amenity</span>
                     <span>Seating Capacity: ##</span>
                     <span>Ambience: Quiet</span>
                     <span>Avalability: Evenings Only</span>
-                </div>
-                <hr />
-                <div><span>placeholder C2</span></div>
-                <hr />
-                <div><span>placeholder C3</span></div>
-                <hr />
-                <div><span>placeholder C4</span></div>
-                <hr />
-                <div><span>placeholder C5</span></div>
+                </div> -->
             </div>
 
             <!--This is the menu section-->
             <div id="content2">
-                <div id="info2">
-                    <img class="menu-food-picture" src="" />
-                    <span>Generic Dish Name</span>
-                    <span>Generic Dish Price</span>
-                    <span>Generic Dish Description</span>
                 </div>
-                <hr />
-                <div><span>placeholder D2</span></div>
-                <hr />
-                <div><span>placeholder D3</span></div>
-                <hr />
-                <div><span>placeholder D4</span></div>
-                <hr />
-                <div><span>placeholder D5</span></div>
-            </div>
 
 
             <!--This is the review section-->
@@ -150,13 +129,10 @@
                             <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
                                 <div class="btn-group btn-group-sm" role="group" aria-label="First group">
                                     <input class="form-control-sm" type="file" id="imgFile" accept="image/*">
-                                    <button type="button" class="btn btn-outline-secondary" type="file" id="imgFile" accept="image/*"><img src="images/pictureicon.png" width="20%" /></button>
-                                    <!-- <button type="button" class="btn btn-outline-secondary"><img src="images/videoicon.png"
-                                                    width="20px" /></button>
-                                            <button type="button" class="btn btn-outline-secondary"><img src="images/audioicon.png"
-                                                    width="20px" /></button> -->
-
+                                    
                                 </div>
+
+
                                 <div class="btn-group btn-group-sm" role="group" aria-label="Second group">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1">
@@ -240,5 +216,14 @@
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
   <script src="scripts/restaurant-profile.js"></script>
+    <div id="footer">
+        <span>Author: Group 20 of COMP 1800 in CST</span>
+        <br>
+        <span>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
+    </div>
+
+
+
+
 
 </body>
