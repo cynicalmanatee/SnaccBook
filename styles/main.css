@@ -2,10 +2,10 @@
     text-align: center;
 }
 
-/* #search-button {
+#search-button {
     text-align: center;
-    /* background-color:beige; */
-} */
+    background-color:beige;
+}
 
 #header-text {
     color: white;

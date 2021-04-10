@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 
         };
-        //window.location.href = "profile.html";
+        window.location.href = "profile.html";
     });
 
 });

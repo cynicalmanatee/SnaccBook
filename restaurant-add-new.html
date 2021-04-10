@@ -12,12 +12,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="styles/navbar.css" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
     <!-- Optional styles and scripts of your own -->
-
+    <link href="styles/navbar.css" rel="stylesheet">
+    <link href="styles/restaurant-add-new.css" rel="stylesheet">
 
 </head>
 
@@ -33,7 +34,7 @@
                 <img src="images/list.png" width="25">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="#">Default Location</a></li>
+                <li><a class="dropdown-item" href="#">SnaccBook</a></li>
                 <hr class="dropdown-divider">
                 <li><a class="dropdown-item" href="main.html">Home</a></li>
                 <li><a class="dropdown-item" href="#">Recipes</a></li>
@@ -51,7 +52,7 @@
 
         <div class="nav-item dropdown" id="nav-location">
             <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Default Location
+                SnaccBook
             </span>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <form class="d-flex">
@@ -69,7 +70,7 @@
         <div id="nav-right">
             <div id="blank"></div>
             <a href="profile.html"><img src="images/user.png" width="60%"></a>
-            <a href="profile-edit.html"><img src="images/cogwheel.png" width="60%"></a>
+            <a href="profile-form.html"><img src="images/cogwheel.png" width="60%"></a>
             <a href="index.html"><img src="images/exit.png" width="60%"></a>
         </div>
         <form class="d-flex" id="nav-search">
@@ -92,14 +93,18 @@
             <input type="text" class="form-control" id="new-restaurant-postal" placeholder="Restaurant Postal Code">
 
         </form>
+        <br><br>
         <button type="button" class="btn btn-primary" id="add-restaurant">Submit</button>
     </div>
+
+
     <span id="uid" style="visibility: hidden"></span>
 
     <div id="footer">
         <span>Author: Group 20 of COMP 1800 in CST</span>
         <br>
-        <span>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
+        <span>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
     </div>
     <!----------------------------------------------->
     <!-- JS: Boostrap, JQuery, Firebase, API related-->
