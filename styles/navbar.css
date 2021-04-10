@@ -17,6 +17,9 @@
         width: 100px;
         grid-column: 1;
     }
+    img {
+        width: 60%;
+    }
     #nav-logo {
         grid-column: 5;
         /* margin: auto; */
@@ -111,8 +114,7 @@
         text-align: center;
         width: 100%;
     }
-}
-
-img {
-    width: 70%;
+    img {
+        width: 60%;
+    }
 }

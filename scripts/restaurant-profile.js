@@ -20,7 +20,7 @@ $(document).ready(function() {
     });
     $('#tab1').mouseleave(function() {
         $('#tab1').css({
-            'color': '#bed7fa'
+            'color': 'black'
         });
     });
     $("#tab2").mouseenter(function() {
@@ -30,7 +30,7 @@ $(document).ready(function() {
     });
     $('#tab2').mouseleave(function() {
         $('#tab2').css({
-            'color': '#bed7fa'
+            'color': 'black'
         });
     });
     $("#tab3").mouseenter(function() {
@@ -40,7 +40,7 @@ $(document).ready(function() {
     });
     $('#tab3').mouseleave(function() {
         $('#tab3').css({
-            'color': '#bed7fa'
+            'color': 'black'
         });
     });
 
@@ -49,27 +49,18 @@ $(document).ready(function() {
         $("#content2").css('visibility', 'hidden');
         $("#content3").css('visibility', 'hidden');
         $("#content1").css('visibility', 'visible');
-        $("#tab1 span").css('text-shadow', '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black');
-        $("#tab2 span").css('text-shadow', '0px 0 black, 0 0px black, 0px 0 black, 0 0px black');
-        $("#tab3 span").css('text-shadow', '0px 0 black, 0 0px black, 0px 0 black, 0 0px black');
     });
     $("#tab2").click(function() {
         $("#content").css(showC2);
         $("#content1").css('visibility', 'hidden');
         $("#content3").css('visibility', 'hidden');
         $("#content2").css('visibility', 'visible');
-        $("#tab2 span").css('text-shadow', '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black');
-        $("#tab1 span").css('text-shadow', '0px 0 black, 0 0px black, 0px 0 black, 0 0px black');
-        $("#tab3 span").css('text-shadow', '0px 0 black, 0 0px black, 0px 0 black, 0 0px black');
     });
     $("#tab3").click(function() {
         $("#content").css(showC3);
         $("#content2").css('visibility', 'hidden');
         $("#content1").css('visibility', 'hidden');
         $("#content3").css('visibility', 'visible');
-        $("#tab3 span").css('text-shadow', '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black');
-        $("#tab2 span").css('text-shadow', '0px 0 black, 0 0px black, 0px 0 black, 0 0px black');
-        $("#tab1 span").css('text-shadow', '0px 0 black, 0 0px black, 0px 0 black, 0 0px black');
     });
 
 
