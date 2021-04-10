@@ -135,5 +135,41 @@ function displayDetails() {
 }
 displayDetails();
 
+//Listen for for submit in profile post form
+document.getElementById('userPost').addEventListener('submit', postForm);
+
+// Submit form function
+function postForm(e) {
+   e.preventDefault();
+    //Get Values from the post
+    var review = document.getElementById('post').value;
+    var rating = document.getElementById('rating').value;
+    console.log(post+rating);
+
+
+    // function writePostToDb() {
+
+    //     firebase.auth().onAuthStateChanged(function (user) {
+    //         if (user) {
+    //             console.log(user.uid);
+    //             db.collection("users")
+    //                 .doc(user.uid)
+    //                 .get()
+    //                 .then(function (doc) {
+    //                     console.log(doc.data().name);
+    //                     //change 
+    //                     db.collection("posts").add({ userpost: post, userID: user.uid, date: date, time: time });
+
+    //                 })
+    //         };
+
+    //     });
+    // };
+    // writePostToDb();
+};
+// getting the current date and time
+var today = new Date();
+var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
 
