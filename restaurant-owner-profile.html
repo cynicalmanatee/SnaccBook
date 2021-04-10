@@ -9,9 +9,11 @@
 
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="styles/navbar.css" rel="stylesheet">
+    <link href="styles/restaurant-owner-profile.css" rel="stylesheet">
 
 
     <!-- Optional styles and scripts of your own -->
@@ -27,7 +29,8 @@
     <!-- Header Navigation Bar -->
     <div id="navbar">
         <div class="nav-item dropdown" id="hamburger">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="images/list.png" width="25">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -48,9 +51,10 @@
         <a href="main.html" id="nav-logo"><img src="images/Logo.png" width="25" /></a>
 
         <div class="nav-item dropdown" id="nav-location">
-            <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Default Location
-      </span>
+            <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Default Location
+            </span>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -76,26 +80,85 @@
 
     </div>
 
+    <div id="main">
+        <div id="left">
+            <span id="restaurant-name">Placeholder Restaurant</span>
+            <hr />
+            <span>Some fancy words that mean nothing in regards to the restaurant</span>
+            <hr />
+            <span>Some restaurant Street Address</span>
+            <br />
+            <span>the city the restaurant is in</span>
+            <span>the province the restaurant is in</span>
+            <br />
+            <span>the restaurant postal code</span>
+            <hr />
+            <span>Your favourite Review for your site, type it yourself.</span>
+            <button type="button" id="edit-restaurant-info" class="btn btn-primary" href="">Edit</button>
+        </div>
+        <div id="middle">
+            <div id="promotion">
+                <label for="promotion" class="form-label">Post</label>
+                <textarea class="form-control" id="promotion" rows="3" placeholder="Share"></textarea>
+                <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group btn-group-sm" role="group" aria-label="First group">
+                        <div class="container text-center py-3">
+                            <input type="file" id="promo-input" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Second group">
+                        <button type="submit" class="btn btn-outline-secondary">Post</button>
+                    </div>
+                </div>
+            </div>
+            <div id="reviews">
 
-    <div>
-        <input type="text">
+            </div>
+        </div>
+        <div id="right">
+            <span>Features</span>
+            <div id="features">
+                <button type="button" id="edit-restaurant-features" class="btn btn-primary" href="">Edit</button>
+            </div>
+            <hr />
+            <span>Menu</span>
+            <div id="menu">
+                <button type="button" id="edit-restaurant-Menu" class="btn btn-primary" href="">Edit</button>
+            </div>
+
+        </div>
     </div>
+
 
     <div id="footer">
         <span>Author: Group 20 of COMP 1800 in CST</span>
         <br>
-        <span>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
+        <span>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
     </div>
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
 
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebase_api_josh.js"></script>
 
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
+    <script src="scripts/restaurant-owner-profile.js"></script>
 
 </body>
 
