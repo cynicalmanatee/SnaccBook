@@ -4,7 +4,7 @@
 
 #search-button {
     text-align: center;
-    background-color:beige;
+    background-color: beige;
 }
 
 #header-text {
@@ -13,9 +13,9 @@
     font-size: 80pt;
 }
 
-
 #width80 {
     width: 80%;
+    font-size: 20pt;
     padding-left: auto;
     margin: auto;
 }
@@ -24,10 +24,6 @@
     height: 20%;
 }
 
-.navbar-custom {
-    background-color: #db3b30;
+.card-body {
+    text-align: right;
 }
-
-
-
-

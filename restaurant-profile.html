@@ -26,57 +26,55 @@
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-  
+
     <div id="navbar">
-      <div class="nav-item dropdown" id="hamburger">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          <img src="images/list.png" width="25">
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-          <li><a class="dropdown-item" href="#">SnaccBook</a></li>
-          <hr class="dropdown-divider">
-          <li><a class="dropdown-item" href="main.html">Home</a></li>
-          <li><a class="dropdown-item" href="recipe.html">Recipes</a></li>
-          <li><a class="dropdown-item" href="reviewform.html">Reviews</a></li>
-          <li><a class="dropdown-item" href="recipegallery.html">Gallery</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-          <li><a class="dropdown-item" href="profile-form.html">Settings</a></li>
-          <li><a class="dropdown-item" href="index.html">Logout</a></li>
-        </ul>
-      </div>
-      <a href="main.html" id="nav-logo"><img src="images/Logo.png" width="25" /></a>
-  
-      <div class="nav-item dropdown" id="nav-location">
-        <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-          data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="nav-item dropdown" id="hamburger">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="images/list.png" width="25">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="main.html">SnaccBook</a></li>
+                <hr class="dropdown-divider">
+                <li><a class="dropdown-item" href="main.html">Home</a></li>
+                <li><a class="dropdown-item" href="recipe.html">Recipes</a></li>
+                <li><a class="dropdown-item" href="reviewform.html">Reviews</a></li>
+                <li><a class="dropdown-item" href="recipegallery.html">Gallery</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                <li><a class="dropdown-item" href="profile-form.html">Edit Profile</a></li>
+                <li><a class="dropdown-item" href="index.html">Logout</a></li>
+            </ul>
+        </div>
+        <a href="main.html" id="nav-logo"><img src="images/Logo.png" width="25" /></a>
+
+        <div class="nav-item dropdown" id="nav-location">
+            <span class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           SnaccBook
         </span>
-        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-          <form class="d-flex">
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </ul>
+        </div>
+        <div id="nav-center">
+            <div id="blank"></div>
+            <a href="main.html"><img src="images/home.png" width="60%"></a>
+            <a href="recipeform.html"><img src="images/recipe.png" width="60%"></a>
+            <a href="recipe.html"><img src="images/feedback.png" width="60%"></a>
+            <a href="recipegallery.html"><img src="images/megaphone.png" width="60%"></a>
+        </div>
+        <div id="nav-right">
+            <div id="blank"></div>
+            <a href="profile.html"><img src="images/user.png" width="60%"></a>
+            <a href="profile-form.html"><img src="images/cogwheel.png" width="60%"></a>
+            <a href="index.html"><img src="images/exit.png" width="60%"></a>
+        </div>
+        <form class="d-flex" id="nav-search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          </form>
-        </ul>
-      </div>
-      <div id="nav-center">
-        <div id="blank"></div>
-        <a href="main.html"><img src="images/home.png" width="60%"></a>
-        <a href="recipeform.html"><img src="images/recipe.png" width="60%"></a>
-        <a href="recipe.html"><img src="images/feedback.png" width="60%"></a>
-        <a href="recipegallery.html"><img src="images/megaphone.png" width="60%"></a>
-      </div>
-      <div id="nav-right">
-        <div id="blank"></div>
-        <a href="profile.html"><img src="images/user.png" width="60%"></a>
-        <a href="profile-form.html"><img src="images/cogwheel.png" width="60%"></a>
-        <a href="index.html"><img src="images/exit.png" width="60%"></a>
-      </div>
-      <form class="d-flex" id="nav-search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
+        </form>
 
     </div>
 
@@ -116,7 +114,7 @@
 
             <!--This is the menu section-->
             <div id="content2">
-                </div>
+            </div>
 
 
             <!--This is the review section-->
@@ -126,10 +124,10 @@
                         <div class="mb-3">
                             <label for="post" class="form-label">Review</label>
                             <textarea class="form-control" id="post" rows="2" placeholder="Share your experiences:"></textarea>
-                            <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups"id="rating">
+                            <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups" id="rating">
                                 <div class="btn-group btn-group-sm" role="group" aria-label="First group">
                                     <input class="form-control-sm" type="file" id="imgFile" accept="image/*">
-                                    
+
                                 </div>
 
 
@@ -189,13 +187,15 @@
 
             </div>
         </div>
+
+        <div id="contentcontent"></div>
     </div>
 
-        <div id="footer">
-            <span>Author: Group 20 of COMP 1800 in CST</span>
-            <br>
-            <span>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
-        </div>
+    <div id="footer">
+        <span>Author: Group 20 of COMP 1800 in CST</span>
+        <br>
+        <span>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
+    </div>
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related    -->
     <!----------------------------------------------->
@@ -212,10 +212,10 @@
     <script src="scripts/firebase_api_josh.js"></script>
 
 
-  <!--------------------------------------------------------------------->
-  <!-- JS files: Your own JavaScript functions included here    -->
-  <!--------------------------------------------------------------------->
-  <script src="scripts/restaurant-profile.js"></script>
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script src="scripts/restaurant-profile.js"></script>
     <div id="footer">
         <span>Author: Group 20 of COMP 1800 in CST</span>
         <br>

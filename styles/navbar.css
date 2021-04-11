@@ -60,15 +60,17 @@
         color: black;
         text-align: center;
         width: 100%;
+        font-size: 10pt;
     }
-
 }
+
 @media screen and (min-width: 800px) {
     #navbar {
         /* background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%); */
         color: black;
         display: grid;
         grid-template-columns: 5% 5% 20% 40% 15% 15%;
+        box-shadow: 1px 1px 10px black;
     }
     #hamburger {
         display: none;

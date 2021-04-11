@@ -14,13 +14,15 @@ body {
 
 #bannerName {
     background-color: honeydew;
-    font-size: 30pt;
+    font-size: 50pt;
+    box-shadow: 1px 1px 5px black;
 }
 
 #tabs {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     font-size: 20pt;
+    box-shadow: 1px 1px 10px black;
 }
 
 #tab1 {
@@ -38,6 +40,8 @@ body {
 #content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    font-size: 10pt;
+    padding: 0% 20%;
 }
 
 #content1 {
