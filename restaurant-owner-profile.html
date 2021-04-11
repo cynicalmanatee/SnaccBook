@@ -99,20 +99,23 @@
             <button type="button" id="edit-restaurant-info" class="btn btn-primary">Edit</button>
         </div>
         <div id="middle">
-            <div id="promotion">
-                <label for="promotion" class="form-label">Post</label>
-                <textarea class="form-control" id="promotion" rows="3" placeholder="Share"></textarea>
-                <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="btn-group btn-group-sm" role="group" aria-label="First group">
-                        <div class="container text-center py-3">
-                            <input type="file" id="promo-input" accept="image/*">
+            <form id="promo">
+                <div>
+                    <label for="promotion" class="form-label">Any new promotions? Add them here!</label>
+                    <textarea class="form-control" id="promotion" rows="3" placeholder="Share Promos"></textarea>
+                    <div class="btn-toolbar justify-content-between" role="toolbar"
+                        aria-label="Toolbar with button groups">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="First group">
+                            <div class="container text-center py-3">
+                                <input type="file" id="promo-input" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Second group">
+                            <button type="submit" class="btn btn-outline-secondary">Post</button>
                         </div>
                     </div>
-                    <div class="btn-group btn-group-sm" role="group" aria-label="Second group">
-                        <button type="submit" class="btn btn-outline-secondary">Post</button>
-                    </div>
                 </div>
-            </div>
+            </form>
             <div id="reviews">
 
             </div>

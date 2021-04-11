@@ -44,6 +44,28 @@ $(document).ready(function () {
 
     });
 
+    //Listen for for submit in profile post form
+    document.getElementById('promo').addEventListener('submit', postForm);
 
+    // // Submit form function
+    function postForm(e) {
+        e.preventDefault();
+        //Get Values from the post
+        var post = document.getElementById('promotion').value;
+        console.log(post);
+
+
+        function writePostToDb() {
+
+
+            db.collection("restaurants").doc(uid).set({
+                promotion: post
+            }, { merge: true })
+                      
+        };
+
+       writePostToDb();
+    };
+    
 });
 
