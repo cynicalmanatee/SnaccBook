@@ -1,8 +1,8 @@
-$(document).ready(function () {
+$(document).ready(function() {
     const parsedUrl = new URL(window.location.href);
     uid = parsedUrl.searchParams.get("uid");
     var featureCounter = 1;
-    $("#add-feature").click(function (e) {
+    $("#add-feature").click(function(e) {
         e.preventDefault();
 
         featureCounter++;
@@ -31,7 +31,7 @@ $(document).ready(function () {
         var minus = document.createElement("button");
         minus.setAttribute("id", minusid);
         minus.setAttribute("class", "minus");
-        minus.innerHTML = "X";
+        minus.innerHTML = "Delete";
         $(box).append(minus);
 
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
         var element = document.getElementsByClassName("minus");
         for (var i = 0; i < element.length; i++) {
-            element[i].addEventListener('click', function (e) {
+            element[i].addEventListener('click', function(e) {
                 e.preventDefault();
                 var idtag = $(this).attr("id");
                 var idstr = idtag.substring(6);
@@ -53,7 +53,7 @@ $(document).ready(function () {
         }
 
     });
-    $("#submit").click(function (e) {
+    $("#submit").click(function(e) {
         e.preventDefault();
         var feature = document.getElementsByClassName("feature-card");
         var featurelist = [];
@@ -75,11 +75,11 @@ $(document).ready(function () {
         var featureString = JSON.stringify(featurelist);
 
         db.collection("restaurants").doc(uid).set({
-            feature: featureString
-        }, { merge: true })
-        .then(function(){
-            window.location.href = "/restaurant-owner-profile.html?uid=" + uid
-        });
+                feature: featureString
+            }, { merge: true })
+            .then(function() {
+                window.location.href = "/restaurant-owner-profile.html?uid=" + uid
+            });
 
         console.log("finished");
         //window.location.href = "/restaurant-owner-profile.html?uid=" + uid;

@@ -1,22 +1,51 @@
-#main{
-    margin-left: 10%;
-    margin-right: 10%;
+body {
+    background-image: linear-gradient(to right, white, rgb(212, 80, 80));
+    background-size: 150% 150%;
+    font-family: 'Bebas Neue', cursive;
 }
-.feature-card{
-    display: grid;
-    grid-template-columns: 80% 20%;
-    grid-template-rows: auto auto;
-}
-.feature-name{
-    grid-row-start: 1;
-    grid-column-start: 1;
-}
-.feature-description{
-    grid-row-start: 2;
-    grid-column-start: 1;
 
+#main {
+    margin: 0% 20%;
 }
-.minus{
-    grid-row-start: 2;
-    grid-column-start: 2;
+
+#title {
+    font-size: 30pt;
+}
+
+.feature-card {
+    display: grid;
+    grid-template-columns: 0.9fr 0.1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.feature-name {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.feature-description {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+#deleteButton {
+    grid-row: 1 / 2;
+    grid-column: 2;
+}
+
+button {
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+    border: 2px solid #cccccc;
+    /* Green */
+    font-size: 25px;
+    border-radius: 50%;
+}
+
+button:hover {
+    background-color: #4c5eaf;
+    /* Green */
+    color: white;
 }
