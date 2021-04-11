@@ -45,9 +45,13 @@ function createRestaurantTable() {
 
                 var restID = doc.id;
                 var restName = doc.data().name;
+                if(typeof doc.data().promotion === 'undefined'){
+                var promo = "No promos currently. Check back soon!"   
+                } else {
+                    var promo = doc.data().promotion;
+                }
               
-                var promo = doc.data().promotion;
-                var preptime = doc.data().prepTime;
+
                 console.log(restName);
                 console.log(restID);
                 var restTable = '<tr>';
