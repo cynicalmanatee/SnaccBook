@@ -14,30 +14,32 @@
     }
     #hamburger {
         display: block;
-        width: 100px;
+        width: 100%;
         grid-column: 1;
     }
     img {
-        width: 60%;
+        width: 100%;
     }
     #nav-logo {
         grid-column: 5;
         /* margin: auto; */
-        width: 100px;
+        width: 90%;
         /* padding-top: 10px; */
     }
-    #snaccbook {
+    /* #snaccbook {
         width: 50px;
         /* padding-top: 10px; */
         /* padding-right: 10px; */
-    }
+ */
     #nav-location {
         display: none;
         visibility: hidden;
+        width: 0px;
     }
     #nav-center {
         display: none;
         visibility: hidden;
+        width: 0px;
     }
     #nav-center a {
         margin: auto;
@@ -45,6 +47,7 @@
     #nav-right {
         display: none;
         visibility: hidden;
+        width: 0px;
     }
     #nav-right a {
         margin: auto;
@@ -52,6 +55,7 @@
     #nav-search {
         display: none;
         visibility: hidden;
+        width: 0px;
     }
     #footer {
         position: fixed;
@@ -62,8 +66,8 @@
         text-align: center;
         width: 100%;
     }
-}
 
+}
 @media screen and (min-width: 800px) {
     #navbar {
         /* background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%); */

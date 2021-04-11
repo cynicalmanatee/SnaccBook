@@ -110,24 +110,24 @@ function displayDetails() {
                 var menuDesc = menu[x].description;
                 var menuPrice = menu[x].price;
 
-                if(menuName == "") {
+                if (menuName == "") {
                     menuName == "";
                 }
-                if(menuDesc == "") {
+                if (menuDesc == "") {
                     menuDesc == "";
                 }
-                if(menuPrice == "undefined") {
+                if (menuPrice == "undefined") {
                     menuPrice == "Check for price later";
                 }
                 console.log(menuPrice);
 
                 //need to add all fields or undefined
                 var menuAdd = '<hr/>'
-                menuAdd += '<div><span>' +menuName+'</span></div>';
-                menuAdd += '<div><span>' +menuDesc+'</span></div>';
-                menuAdd += '<div><span>' +"$"+menuPrice+'</span></div>';
+                menuAdd += '<div><span>' + menuName + '</span></div>';
+                menuAdd += '<div><span>' + menuDesc + '</span></div>';
+                menuAdd += '<div><span>' + "$" + menuPrice + '</span></div>';
                 $("#content2").append(menuAdd);
-            }    
+            }
 
 
 
@@ -140,11 +140,18 @@ document.getElementById('userPost').addEventListener('submit', postForm);
 
 // Submit form function
 function postForm(e) {
-   e.preventDefault();
+    e.preventDefault();
     //Get Values from the post
     var review = document.getElementById('post').value;
-    var rating = document.getElementById('rating').value;
-    console.log(post+rating);
+    var radio = document.getElementsByClassName("form-check-input");
+    var rating = null;
+    for (var i = 0; i < radio.length; i++) {
+        if (radio[i].checked) {
+            rating = i + 1;
+        }
+    }
+    //write review
+    //write rating
 
 
     // function writePostToDb() {
