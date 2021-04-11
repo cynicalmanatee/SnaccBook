@@ -8,7 +8,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    height: 1000px;
+    /* height: 1000px; */
     gap: 10px 10px;
 }
 
@@ -43,7 +43,7 @@ body {
     #form-container {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        margin-left: 35%;
+        padding-left: 25%;
     }
     #about {
         grid-area: 1 / 1 / 2 / 2;

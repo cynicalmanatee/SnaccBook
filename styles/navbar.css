@@ -18,19 +18,14 @@
         grid-column: 1;
     }
     img {
-        width: 100%;
+        width: 60px;
     }
     #nav-logo {
         grid-column: 5;
-        /* margin: auto; */
-        width: 90%;
-        /* padding-top: 10px; */
+        padding-right: 60px;
+        width: 50%;
+        padding-top: 10px;
     }
-    /* #snaccbook {
-        width: 50px;
-        /* padding-top: 10px; */
-        /* padding-right: 10px; */
- */
     #nav-location {
         display: none;
         visibility: hidden;
