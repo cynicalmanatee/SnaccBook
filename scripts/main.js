@@ -45,15 +45,19 @@ function createRestaurantTable() {
 
                 var restID = doc.id;
                 var restName = doc.data().name;
-                //promo goes here
-                //var promo = doc.data().promo;
-                var preptime = doc.data().prepTime;
+                if(typeof doc.data().promotion === 'undefined'){
+                var promo = "No promos currently. Check back soon!"   
+                } else {
+                    var promo = doc.data().promotion;
+                }
+              
+
                 console.log(restName);
                 console.log(restID);
                 var restTable = '<tr>';
                 restTable += '<td>'+restName+'</td>';
                 //promo line goes here
-                restTable += '<td>'+"promo"+'</td>';
+                restTable += '<td>'+promo+'</td>';
                 restTable += '<td><button type="button" class="btn btn-danger" id='+restID+'>Lets Go</button></td>';
                 restTable += '</tr>';
 
