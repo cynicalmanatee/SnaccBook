@@ -35,11 +35,16 @@ $(document).ready(function () {
                 ratings: ""
             };
             console.log(newRestaurant);
-            db.collection("restaurants").add(newRestaurant);
+            db.collection("restaurants").add(newRestaurant).then(function(){
+                window.location.href = "profile.html";
+
+            }
+                
+                );
 
 
         };
-        window.location.href = "profile.html";
+        
     });
 
 });

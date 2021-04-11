@@ -142,41 +142,110 @@ document.getElementById('userPost').addEventListener('submit', postForm);
 function postForm(e) {
     e.preventDefault();
     //Get Values from the post
-    var review = document.getElementById('post').value;
+    var post = document.getElementById('post').value;
+    var p = JSON.stringify(post);
     var radio = document.getElementsByClassName("form-check-input");
     var rating = null;
     for (var i = 0; i < radio.length; i++) {
         if (radio[i].checked) {
             rating = i + 1;
         }
+
     }
-    //write review
+    var r = JSON.stringify(rating);
+    var d = JSON.stringify(date);
+
     //write rating
 
+    function writeReviewToDb() {
 
-    // function writePostToDb() {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                console.log(user.uid);
+                db.collection("users")
+                    .doc(user.uid)
+                    .get()
+                    .then(function (doc) {
+                        console.log(doc.data().name);
+                        var userName = JSON.stringify(doc.data().name);
 
-    //     firebase.auth().onAuthStateChanged(function (user) {
-    //         if (user) {
-    //             console.log(user.uid);
-    //             db.collection("users")
-    //                 .doc(user.uid)
-    //                 .get()
-    //                 .then(function (doc) {
-    //                     console.log(doc.data().name);
-    //                     //change 
-    //                     db.collection("posts").add({ userpost: post, userID: user.uid, date: date, time: time });
+                        db.collection("reviews")
+                            .doc()
+                            .set({
+                                review: post,
+                                ratings: r,
+                                user: userName,
+                                dateAdded: date,
+                                restaurantID: id
 
-    //                 })
-    //         };
+                            })
 
-    //     });
-    // };
-    // writePostToDb();
+                    })
+            };
+
+        });
+    };
+    writeReviewToDb();
+
 };
 // getting the current date and time
 var today = new Date();
 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
+var totalRating = 0;
+var ratingCounter = 0;
+function calcReview() {
+    db.collection("reviews")
+        .where("restaurantID", "==", id)
+        .get()
+        .then(function (snapcollection) {
+            snapcollection.forEach(function (doc) {
+                totalRating += parseInt(doc.data().ratings, 10);
+                ratingCounter++;
+                console.log(totalRating);
+                reviewScore();
+            })
+
+        })
+
+
+}
+calcReview();
+
+function reviewScore() {
+    var reviewScore = totalRating / ratingCounter;
+    $("#reviewScore").html("Ratings: " + reviewScore + "/5 Stars");
+}
+
+function postReview() {
+    db.collection("reviews")
+        .where("restaurantID", "==", id)
+        .get()
+        .then(function (snapcollection) {
+            snapcollection.forEach(function (doc) {
+                console.log(doc.data());
+                var r = doc.data().review;
+                var d = doc.data().dateAdded;
+                var n = doc.data().user;
+                var score = parseInt(doc.data().ratings, 10);
+
+                var reviewPost = '<hr/>'; 
+                reviewPost += '<span>Name: '+ n + '</span>';
+                reviewPost += '<br/>';
+                reviewPost += '<span>Review: '+r+'</span>';
+                reviewPost += '<br/>';
+                reviewPost += '<span>Rating: '+score+'/5 Stars</span>';
+                reviewPost += '<br/>';
+                reviewPost += '<span>Reviewed on: '+d+'</span>';
+                reviewPost += '<hr/>';
+
+                $('#reviewStart').append(reviewPost);
+
+
+            })
+
+        })
+}
+postReview();
 
