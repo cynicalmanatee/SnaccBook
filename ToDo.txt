@@ -3,8 +3,7 @@ This is a list of things to do:
 Please add any items that you think of to the list.
 If an item is complete, please delete from the list.
 
-- Restaurant User profile page  where the restaurant owners can change information and post things related to their restaurant
 - Log out button?
 - friends list/location page. manage things the user want to subscribe to (probably out of the scope of 1800).
 
-- In user profile, add a section for adding/managing restaurants. which links to the specific restaurant's dashboard.
+- In restaurant owner profile edit, make pages merge and do not merge empty boxes.
