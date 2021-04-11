@@ -21,6 +21,46 @@ $(document).ready(function () {
                 $("#restaurant-top-review").html(doc.data().topReview);
 
             }
+
+            var features = doc.data().feature;
+            var objects = JSON.parse(features);
+
+            objects.forEach(function (e) {
+
+                let box = document.createElement("div");
+                box.setAttribute("class", "feature-card");
+                let name = document.createElement("span");
+                name.setAttribute("class", "feature-name");
+                $(name).html(e.name);
+                let description = document.createElement("span");
+                description.setAttribute("class", "feature-description");
+                $(description).html(e.description);
+
+                $(box).append(name, description);
+
+                $("#features").after(box);
+
+            });
+
+            var menu = doc.data().menu;
+            var menuobjects = JSON.parse(menu);
+
+            menuobjects.forEach(function (e) {
+                let box = document.createElement("div");
+                box.setAttribute("class", "menu-card");
+                let name = document.createElement("span");
+                let price = document.createElement("span");
+                let description = document.createElement("span");
+                name.setAttribute("class", "menu-name");
+                price.setAttribute("class", "menu-price");
+                description.setAttribute("class", "menu-description");
+                $(name).html(e.name);
+                $(price).html(e.price);
+                $(description).html(e.description);
+
+                $(box).append(name, price, description);
+                $("#menu").after(box);
+            });
         });
 
 
@@ -61,11 +101,11 @@ $(document).ready(function () {
             db.collection("restaurants").doc(uid).set({
                 promotion: post
             }, { merge: true })
-                      
+
         };
 
-       writePostToDb();
+        writePostToDb();
     };
-    
+
 });
 
