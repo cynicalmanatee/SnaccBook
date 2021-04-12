@@ -198,9 +198,11 @@ $(document).ready(function () {
         console.log(myrecipe);
 
         var recipeRef = db.collection("recipes");
-        recipeRef.add(myrecipe);
+        recipeRef.add(myrecipe).then(function (f) {
+            window.location.href = "main.html"
+        });
 
-        window.location.href = "main.html";
+        ;
 
 
     });

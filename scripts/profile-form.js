@@ -188,7 +188,7 @@ $(document).ready(function () {
 
         var location = $("#profile-location").val();
         if (location == "") {
-            location =  $("#profile-location").attr("placeholder");
+            location = $("#profile-location").attr("placeholder");
         }
 
 
