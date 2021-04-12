@@ -64,6 +64,7 @@ body {
     }
     .link {
         padding: 0px 90px;
+        font-size: 2rem;
         /* background-color: tomato; */
     }
 }

@@ -53,7 +53,7 @@
         width: 0px;
     }
     #footer {
-        position: fixed;
+        position: static;
         bottom: 0;
         left: 0;
         background-color: white;
