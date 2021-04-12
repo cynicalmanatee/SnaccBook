@@ -53,7 +53,7 @@
         width: 0px;
     }
     #footer {
-        position: static;
+        position: relative;
         bottom: 0;
         left: 0;
         background-color: white;
@@ -107,7 +107,7 @@
         grid-column: 6;
     }
     #footer {
-        position: fixed;
+        position: relative;
         bottom: 0;
         left: 0;
         background-color: white;

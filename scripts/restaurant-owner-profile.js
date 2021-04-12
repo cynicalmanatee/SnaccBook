@@ -12,6 +12,7 @@ $(document).ready(function () {
             $("#restaurant-city").html(doc.data().city);
             $("#restaurant-province").html(doc.data().province);
             $("#restaurant-postal").html(doc.data().postalCode);
+            $("#restaurant-promotion").html(doc.data().promotion);
 
             if (doc.data().motto !== undefined) {
                 $("#restaurant-motto").html(doc.data().motto);
@@ -94,17 +95,11 @@ $(document).ready(function () {
         var post = document.getElementById('promotion').value;
         console.log(post);
 
-
-        function writePostToDb() {
-
-
-            db.collection("restaurants").doc(uid).set({
-                promotion: post
-            }, { merge: true })
-
-        };
-
-        writePostToDb();
+        db.collection("restaurants").doc(uid).set({
+            promotion: post
+        }, { merge: true }).then(function (e) {
+            // windows.location.href = parsedUrl; have the page refresh
+        });
     };
 
 });

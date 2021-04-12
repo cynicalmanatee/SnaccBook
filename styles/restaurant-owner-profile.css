@@ -11,6 +11,15 @@ body {
     grid-template-columns: 30% 40% 30%;
 }
 
+.feature-card{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.menu-card{
+    display: grid;
+    grid-template-columns: 30% 20% 50%;
+}
+
 @media screen and (max-width: 799px) {
     #main{
         grid-template-columns: auto;
