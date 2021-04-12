@@ -6,60 +6,60 @@
 
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     var showC1 = { 'grid-template-columns': '1fr 0fr 0fr' };
     var showC2 = { 'grid-template-columns': '0fr 1fr 0fr' };
     var showC3 = { 'grid-template-columns': '0fr 0fr 1fr' };
 
-    $("#tab1").mouseenter(function() {
+    $("#tab1").mouseenter(function () {
         $('#tab1').css({
             'color': 'grey'
         });
     });
-    $('#tab1').mouseleave(function() {
+    $('#tab1').mouseleave(function () {
         $('#tab1').css({
             'color': 'black'
         });
     });
-    $("#tab2").mouseenter(function() {
+    $("#tab2").mouseenter(function () {
         $('#tab2').css({
             'color': 'grey'
         });
     });
-    $('#tab2').mouseleave(function() {
+    $('#tab2').mouseleave(function () {
         $('#tab2').css({
             'color': 'black'
         });
     });
-    $("#tab3").mouseenter(function() {
+    $("#tab3").mouseenter(function () {
         $('#tab3').css({
             'color': 'grey'
         });
     });
-    $('#tab3').mouseleave(function() {
+    $('#tab3').mouseleave(function () {
         $('#tab3').css({
             'color': 'black'
         });
     });
 
-    $("#tab1").click(function() {
+    $("#tab1").click(function () {
         $("#content").css(showC1);
-        $("#content2").css('visibility', 'hidden');
-        $("#content3").css('visibility', 'hidden');
-        $("#content1").css('visibility', 'visible');
+        $("#content2").css('display', 'none');
+        $("#content3").css('display', 'none');
+        $("#content1").css('display', 'block');
     });
-    $("#tab2").click(function() {
+    $("#tab2").click(function () {
         $("#content").css(showC2);
-        $("#content1").css('visibility', 'hidden');
-        $("#content3").css('visibility', 'hidden');
-        $("#content2").css('visibility', 'visible');
+        $("#content1").css('display', 'none');
+        $("#content3").css('display', 'none');
+        $("#content2").css('display', 'block');
     });
-    $("#tab3").click(function() {
+    $("#tab3").click(function () {
         $("#content").css(showC3);
-        $("#content2").css('visibility', 'hidden');
-        $("#content1").css('visibility', 'hidden');
-        $("#content3").css('visibility', 'visible');
+        $("#content2").css('display', 'none');
+        $("#content1").css('display', 'none');
+        $("#content3").css('display', 'block');
     });
 
 
@@ -76,7 +76,7 @@ function displayDetails() {
     db.collection("restaurants")
         .doc(id)
         .get()
-        .then(function(doc) {
+        .then(function (doc) {
 
             var restName = doc.data().name;
             var motto = doc.data().motto;
@@ -194,6 +194,7 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 var totalRating = 0;
 var ratingCounter = 0;
+
 function calcReview() {
     db.collection("reviews")
         .where("restaurantID", "==", id)
@@ -229,14 +230,14 @@ function postReview() {
                 var n = doc.data().user;
                 var score = parseInt(doc.data().ratings, 10);
 
-                var reviewPost = '<hr/>'; 
-                reviewPost += '<span>Name: '+ n + '</span>';
+                var reviewPost = '<hr/>';
+                reviewPost += '<span>Name: ' + n + '</span>';
                 reviewPost += '<br/>';
-                reviewPost += '<span>Review: '+r+'</span>';
+                reviewPost += '<span>Review: ' + r + '</span>';
                 reviewPost += '<br/>';
-                reviewPost += '<span>Rating: '+score+'/5 Stars</span>';
+                reviewPost += '<span>Rating: ' + score + '/5 Stars</span>';
                 reviewPost += '<br/>';
-                reviewPost += '<span>Reviewed on: '+d+'</span>';
+                reviewPost += '<span>Reviewed on: ' + d + '</span>';
                 reviewPost += '<hr/>';
 
                 $('#reviewStart').append(reviewPost);
