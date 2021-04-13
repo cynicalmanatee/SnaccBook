@@ -1,13 +1,13 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    firebase.auth().onAuthStateChanged(function(somebody) {
+    firebase.auth().onAuthStateChanged(function (somebody) {
         var user = somebody.uid;
     });
 
     var ingredientCounter = 1;
     var instructionCounter = 1;
 
-    $("#recipe-add-ingredient").click(function() {
+    $("#recipe-add-ingredient").click(function () {
         ingredientCounter++;
         var classString = "ingredient-group-" + ingredientCounter;
 
@@ -20,14 +20,14 @@ $(document).ready(function() {
         qtyfield.setAttribute("type", "text");
         qtyfield.setAttribute("class", "form-control ingredient-quantity");
         qtyfield.setAttribute("id", qtyid);
-        qtyfield.setAttribute("placeholder", "quantity");
+        qtyfield.setAttribute("placeholder", "");
 
         var unitid = "ingredient-unit-" + ingredientCounter;
         var unitfield = document.createElement("input");
         unitfield.setAttribute("type", "text");
         unitfield.setAttribute("class", "form-control ingredient-unit");
         unitfield.setAttribute("id", unitid);
-        unitfield.setAttribute("placeholder", "unit");
+        unitfield.setAttribute("placeholder", "");
 
 
         var nameid = "ingredient-name-" + ingredientCounter;
@@ -35,7 +35,7 @@ $(document).ready(function() {
         namefield.setAttribute("type", "text");
         namefield.setAttribute("class", "form-control ingredient-name");
         namefield.setAttribute("id", nameid);
-        namefield.setAttribute("placeholder", "name");
+        namefield.setAttribute("placeholder", "");
 
 
 
@@ -44,7 +44,7 @@ $(document).ready(function() {
         instructionfield.setAttribute("type", "text");
         instructionfield.setAttribute("class", "form-control ingredient-instruction");
         instructionfield.setAttribute("id", instructionid);
-        instructionfield.setAttribute("placeholder", "instructions");
+        instructionfield.setAttribute("placeholder", "");
 
 
 
@@ -64,7 +64,7 @@ $(document).ready(function() {
         var element = document.getElementsByClassName("ingredient-minus");
         for (var i = 0; i < element.length; i++) {
 
-            element[i].addEventListener('click', function(event) {
+            element[i].addEventListener('click', function (event) {
                 event.preventDefault();
                 var idtag = $(this).attr("id");
                 var idstr = idtag.substring(17);
@@ -77,7 +77,7 @@ $(document).ready(function() {
 
     });
 
-    $("#recipe-add-instruction").click(function() {
+    $("#recipe-add-instruction").click(function () {
         instructionCounter++;
 
 
@@ -126,7 +126,7 @@ $(document).ready(function() {
         var instructions = document.getElementsByClassName("recipe-instruction-minus");
         for (var i = 0; i < instructions.length; i++) {
 
-            instructions[i].addEventListener('click', function(event) {
+            instructions[i].addEventListener('click', function (event) {
                 event.preventDefault();
                 var instag = $(this).attr("id");
                 var insstr = instag.substring(25);
@@ -140,7 +140,7 @@ $(document).ready(function() {
 
     });
 
-    $("#submit-button").click(function(submit) {
+    $("#submit-button").click(function (submit) {
         submit.preventDefault();
         var title = $("#recipe-title").val();
         var userid = "";
@@ -184,13 +184,9 @@ $(document).ready(function() {
         var instructionstring = JSON.stringify(instructionlist);
 
         var myrecipe = {
-            title: title,
-            author: author,
-            id: userid,
-            prepTime: prepTime,
-            specialInstructions: specialInstructions,
-            ingredients: ingredientstring,
-            instructions: instructionstring
+            title: title, author: author, id: userid
+            , prepTime: prepTime, specialInstructions: specialInstructions,
+            ingredients: ingredientstring, instructions: instructionstring
         };
 
         console.log(myrecipe);
@@ -200,16 +196,12 @@ $(document).ready(function() {
             .then(function () {
                 window.location.href = "main.html";
             });
-
-
-
-
     });
 
 });
 
 $(document).keypress(
-    function(event) {
+    function (event) {
         if (event.which == '13') {
             event.preventDefault();
         }
