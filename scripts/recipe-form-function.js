@@ -1,6 +1,3 @@
-//ctrl+f "author" to change the userid near it to the active user logged in who submitted the recipe.
-
-
 $(document).ready(function () {
 
     firebase.auth().onAuthStateChanged(function (somebody) {
@@ -77,9 +74,6 @@ $(document).ready(function () {
                 $(target).remove();
             });
         }
-
-
-
 
     });
 
@@ -198,11 +192,9 @@ $(document).ready(function () {
         console.log(myrecipe);
 
         var recipeRef = db.collection("recipes");
-        recipeRef.add(myrecipe).then(function (f) {
-            window.location.href = "main.html"
-        });
+        recipeRef.add(myrecipe);
 
-        ;
+        window.location.href = "main.html";
 
 
     });
