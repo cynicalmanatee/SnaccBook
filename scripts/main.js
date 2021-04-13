@@ -126,7 +126,7 @@ function postForm(e) {
                     .then(function (doc) {
                         console.log(doc.data().name);
                         //change 
-                        db.collection("posts").add({ userpost: post, userID: user.uid, date: date, time: time });
+                        db.collection("posts").add({ userpost: post, userID: user.uid, date: date, time: time, sort: Date.now() });
 
                     })
             };
