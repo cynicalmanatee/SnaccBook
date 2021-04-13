@@ -23,15 +23,22 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         text-align: center;
+        gap: 10px;
     }
     #left {
-        grid-column-start: 1;
+        grid-column: 1;
+        background-color: white;
+        box-shadow: 5px 5px 20px black;
     }
     #middle {
-        grid-column-start: 2;
+        grid-column: 2;
+        background-color: white;
+        box-shadow: 5px 5px 20px black;
     }
     #right {
-        grid-column-start: 3;
+        grid-column: 3;
+        background-color: white;
+        box-shadow: 5px 5px 20px black;
     }
     .content {
         display: grid;
@@ -75,7 +82,8 @@ body {
         grid-template-rows: 1fr 1fr 1fr;
         height: 200px;
         text-align: center;
-        gap: 10px;
+        gap: 20px;
+        padding: 0% 10%;
     }
     #left {
         grid-row: 1;
@@ -83,7 +91,10 @@ body {
         /* margin-bottom: 0%; */
         /* padding-bottom: 200px; */
         /* background-color: teal; */
-        box-shadow: 1px 1px 10px white;
+        /* box-shadow: 1px 1px 10px white; */
+        background-color: white;
+        box-shadow: 5px 5px 20px black;
+        padding: 10px 0px;
     }
     #profpic {
         width: 50%;
@@ -94,13 +105,17 @@ body {
     #middle {
         grid-row: 3;
         /* background-color: thistle; */
-        box-shadow: 1px 1px 10px white;
+        /* box-shadow: 1px 1px 10px white; */
+        background-color: white;
+        box-shadow: 5px 5px 20px black;
     }
     #right {
         grid-row: 2;
         /* background-color: wheat; */
         font-size: 15pt;
         /* box-shadow: 1px 1px 10px black; */
+        background-color: wheat;
+        box-shadow: 5px 5px 20px black;
     }
     #carouselExampleControls {
         display: none;

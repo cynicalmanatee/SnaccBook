@@ -99,7 +99,7 @@ $(document).ready(function () {
             promotion: post
         }, { merge: true })
             .then(function (e) {
-                // windows.location.href = parsedUrl; have the page refresh
+                refresh = location.reload();
             });
     };
 
