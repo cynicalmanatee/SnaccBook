@@ -1,15 +1,15 @@
 //Authentication and pulls the unique userID from the database
 
-$(document).ready(function () {
+$(document).ready(function() {
     //Updates profile page with elements from database
-    firebase.auth().onAuthStateChanged(function (somebody) {
+    firebase.auth().onAuthStateChanged(function(somebody) {
         if (somebody) {
             $("#uid").html(somebody.uid);
             console.log($("#uid").html());
             db.collection("users")
                 .doc(somebody.uid)
                 .get()
-                .then(function (doc) {
+                .then(function(doc) {
                     console.log(doc.data());
                     //pulling from database
                     var name = doc.data().name;
@@ -98,8 +98,8 @@ $(document).ready(function () {
                 .where("userID", "==", somebody.uid)
                 //.orderBy("date","desc")
                 .get()
-                .then(function (snapcollection) {
-                    snapcollection.forEach(function (doc) {
+                .then(function(snapcollection) {
+                    snapcollection.forEach(function(doc) {
                         var message = doc.data().userpost;
                         var date = doc.data().date;
                         var time = doc.data().time;
@@ -126,14 +126,14 @@ $(document).ready(function () {
         displayPost();
 
         function addLikeListener(id, likeId) {
-            document.getElementById(likeId).addEventListener("click", function () {
+            document.getElementById(likeId).addEventListener("click", function() {
                 console.log("like was click!");
                 db.collection("posts")
                     .doc(id)
                     .update({
                         likes: firebase.firestore.FieldValue.increment(1) //increments the field!
                     })
-                    .then(function () {
+                    .then(function() {
                         console.log("increment increased by 1");
 
                     })
@@ -141,6 +141,8 @@ $(document).ready(function () {
             })
 
         }
+
+
 
     });
 
@@ -158,13 +160,13 @@ $(document).ready(function () {
 
         function writePostToDb() {
 
-            firebase.auth().onAuthStateChanged(function (user) {
+            firebase.auth().onAuthStateChanged(function(user) {
                 if (user) {
                     console.log(user.uid);
                     db.collection("users")
                         .doc(user.uid)
                         .get()
-                        .then(function (doc) {
+                        .then(function(doc) {
                             console.log(doc.data().name);
                             //change 
                             db.collection("posts").add({ userpost: post, userID: user.uid, date: date, time: time });
@@ -182,7 +184,3 @@ $(document).ready(function () {
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
 });
-
-
-
-

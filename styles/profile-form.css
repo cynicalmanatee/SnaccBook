@@ -60,11 +60,11 @@ h3 {
         margin-left: 15%;
     }
     #about {
-        grid-area: 1 / 1 / 2 / 2;
+        grid-area: 2 / 1 / 2 / 2;
         padding: 0px 0px;
     }
     #name {
-        grid-area: 2 / 1 / 3 / 2;
+        grid-area: 1 / 1 / 3 / 2;
         padding: 0px 0px;
     }
     #socials {
