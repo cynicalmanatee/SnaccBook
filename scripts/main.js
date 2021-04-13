@@ -1,3 +1,6 @@
+/**
+ * Function gets recipe collections and recipe info on a card to display in carosel.
+ */
 function createRecipeCards() {
     db.collection("recipes")
         .get()  //READ asynch all the data
@@ -9,8 +12,7 @@ function createRecipeCards() {
                 var recipename = JSON.stringify(name);
                 var author = doc.data().author;
                 var preptime = doc.data().prepTime;
-                console.log(recipename);
-                console.log(docID);
+
                 var recipeCollection = '<div class="carousel-item">';
                 recipeCollection += '<div class="card w-75">';
                 recipeCollection += '<div class="card-body">';
@@ -21,22 +23,25 @@ function createRecipeCards() {
 
                 $('#recipeAttach').append(recipeCollection);
                 linkToRecipePage(docID);
-
             })
         })
 }
 createRecipeCards();
 
+/**
+ * Link for button to go to recipe page. Passes recipe UID to url.
+ * @param docID is the recipe UID
+ */
 function linkToRecipePage(docID) {
     document.getElementById(docID)
         .addEventListener("click", function () {
-            console.log(docID + "was clicked!")
-            //window.location.href="details.html";
-            //when we redirect,tack on after "?" the id of the webcame
             window.location.href = "recipe.html?id=" + docID;
         });
 }
 
+/**
+ * Grabs from collection of restaurants to display in main.html. Displays restaurant name, promo and a link to restaurant profile.
+ */
 function createRestaurantTable() {
     db.collection("restaurants")
         .get()  //READ asynch all the data
@@ -50,37 +55,31 @@ function createRestaurantTable() {
                 } else {
                     var promo = doc.data().promotion;
                 }
-
-
-                console.log(restName);
-                console.log(restID);
                 var restTable = '<tr>';
                 restTable += '<td>' + restName + '</td>';
-                //promo line goes here
                 restTable += '<td>' + promo + '</td>';
                 restTable += '<td><button type="button" class="btn btn-danger" id=' + restID + '>Lets Go</button></td>';
                 restTable += '</tr>';
 
-
                 $('#tableStart').append(restTable);
                 linkToRestPage(restID);
-
             })
         })
 }
 createRestaurantTable();
 
+/**
+ * Link for button to go to restaurant-profile page. Passes restaurant UID to url.
+ * @param restID is the restaurant-profile UID
+ */
 function linkToRestPage(restID) {
     document.getElementById(restID)
         .addEventListener("click", function () {
-            console.log(restID + "was clicked!")
-            //window.location.href="details.html";
-            //when we redirect,tack on after "?" the id of the webcame
             window.location.href = "restaurant-profile.html?id=" + restID;
         });
 }
 
-
+//Displays first name
 function sayHello() {
     firebase.auth().onAuthStateChanged(function (somebody) {
         if (somebody) {
@@ -94,7 +93,6 @@ function sayHello() {
                         n = doc.data().name;
                     }
                     $("#greetings").html(n);
-                    //get other things and do other things per this user.
                 })
         }
     })
@@ -112,11 +110,13 @@ function postForm(e) {
     e.preventDefault();
     //Get Values from the post
     var post = document.getElementById('post').value;
-    console.log(post);
     writePostToDb();
 
+    /**
+     * Function writes post value to post collection.
+     * Added a sort field to sort post from most recent. Sort value uses date value as a number.
+     */
     function writePostToDb() {
-
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 console.log(user.uid);
@@ -124,19 +124,18 @@ function postForm(e) {
                     .doc(user.uid)
                     .get()
                     .then(function (doc) {
-                        console.log(doc.data().name);
-                        //change 
                         db.collection("posts").add({ userpost: post, userID: user.uid, date: date, time: time, sort: Date.now() });
-
                     })
             };
-
         });
     };
 };
 
-db.collection("posts")
 
+/**
+ * Sorts post using the date/sort field. Displays to page in descending order.
+ */
+db.collection("posts")
 .orderBy("sort","desc")
 .get()
 .then(function (snapcollection) {
@@ -148,7 +147,6 @@ db.collection("posts")
         var likeNumber = "likeNumber" + doc.id;
         var id = doc.id;
 
-        console.log(doc.id);
         var postCollection = '<div class="content">';
         postCollection += '<img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%"/>';
         postCollection += '<div id="comment">' + message + '</div>';
@@ -161,10 +159,14 @@ db.collection("posts")
         var likes = doc.data().likes;
         $('#' + likeNumber).html(likes);
     });
-
 });
 displayPost();
 
+/**
+ * Like event listener that uses firebase increment to increase field when button is clicked.
+ * @param {*} id is the UID
+ * @param {*} likeId is the id selector to know what like button is being clicked
+ */
 function addLikeListener(id, likeId) {
 document.getElementById(likeId).addEventListener("click", function () {
 console.log("like was click!");
@@ -173,11 +175,6 @@ db.collection("posts")
     .update({
         likes: firebase.firestore.FieldValue.increment(1) //increments the field!
     })
-    .then(function () {
-        console.log("increment increased by 1");
-
-    })
-
 })
 
 }
