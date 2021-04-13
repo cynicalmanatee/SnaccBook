@@ -6,20 +6,34 @@ body {
     background-repeat: no-repeat;
 }
 
-#main{
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#main {
     margin-left: 10%;
     margin-right: 10%;
     width: auto;
 }
-#form1{
-    grid-row-start:1;
-    width: auto
 
+#form1 {
+    grid-row-start: 1;
+    width: auto
 }
-#main button{
-    grid-row-start:2;
+
+#main button {
+    grid-row-start: 2;
 }
-.input-box{
-    width:80vw;
+
+.input-box {
+    width: 80vw;
     border-radius: .25rem;
 }
