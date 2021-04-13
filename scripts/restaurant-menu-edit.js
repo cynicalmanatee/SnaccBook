@@ -1,8 +1,8 @@
-$(document).ready(function() {
+$(document).ready(function () {
     const parsedUrl = new URL(window.location.href);
     uid = parsedUrl.searchParams.get("uid");
     var menuCounter = 1;
-    $("#add-menu").click(function(e) {
+    $("#add-menu").click(function (e) {
         e.preventDefault();
 
         menuCounter++;
@@ -21,7 +21,7 @@ $(document).ready(function() {
 
         var priceid = "menu-price-" + menuCounter;
         var price = document.createElement("input");
-        price.setAttribute("id", nameid);
+        price.setAttribute("id", priceid);
         price.setAttribute("class", "menu-price");
         price.setAttribute("placeholder", "Item Price");
         $(box).append(price);
@@ -46,7 +46,7 @@ $(document).ready(function() {
 
         var element = document.getElementsByClassName("minus");
         for (var i = 0; i < element.length; i++) {
-            element[i].addEventListener('click', function(e) {
+            element[i].addEventListener('click', function (e) {
                 e.preventDefault();
                 var idtag = $(this).attr("id");
                 var idstr = idtag.substring(6);
@@ -60,7 +60,7 @@ $(document).ready(function() {
         }
 
     });
-    $("#submit").click(function(e) {
+    $("#submit").click(function (e) {
         e.preventDefault();
         var menu = document.getElementsByClassName("menu-card");
         var menulist = [];
@@ -84,7 +84,7 @@ $(document).ready(function() {
 
         db.collection("restaurants").doc(uid).set({
             menu: menuString
-        }, { merge: true }).then(function() {
+        }, { merge: true }).then(function () {
             window.location.href = "/restaurant-owner-profile.html?uid=" + uid;
         });
 
