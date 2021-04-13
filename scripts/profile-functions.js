@@ -1,7 +1,5 @@
-//Authentication and pulls the unique userID from the database
-
 $(document).ready(function () {
-    //Updates profile page with elements from database
+    //We use the UID alot in this page so we chained functions to be able to use the UID everywhere.
     firebase.auth().onAuthStateChanged(function (somebody) {
         if (somebody) {
             $("#uid").html(somebody.uid);
@@ -10,7 +8,7 @@ $(document).ready(function () {
                 .doc(somebody.uid)
                 .get()
                 .then(function (doc) {
-                    console.log(doc.data());
+
                     //pulling from database
                     var name = doc.data().name;
                     var jobTitle = doc.data().jobTitle;
@@ -36,7 +34,7 @@ $(document).ready(function () {
                     $("#bio").text(bio);
                     $("#facebook").text(facebook);
 
-                    //If field is empty, it will be hidden. Need this because of the place holder coding
+                    //If field is empty, it will be hidden. Need this because of the place holder coding.
                     if (jobTitle == "Job Title") {
                         $("#jobTitle").hide();
                     }
@@ -68,21 +66,21 @@ $(document).ready(function () {
                 });
         };
 
-        console.log(somebody.uid);
+        /**
+        * This pulls from the restaurant database of the newly created restaurant the user just created. It will have the owner unique ID in the restaurant
+        * to show that they are the owner and only they can edit it.
+        */
         db.collection("restaurants")
             //can query the recipe name to user input
             .where("owner", "==", $("#uid").html())
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-
                     var restaurant = doc.data();
-                    console.log(restaurant);
                     var box = document.createElement("div");
                     box.setAttribute("class", "link");
                     var restaurantLink = document.createElement("a");
                     var resturl = "restaurant-owner-profile.html?uid=" + doc.id;
-                    console.log(resturl);
                     restaurantLink.setAttribute("href", resturl);
                     $(restaurantLink).html(restaurant.name);
                     $(box).append($(restaurantLink));
@@ -91,9 +89,11 @@ $(document).ready(function () {
                 });
             });
 
+        /**
+         * Function pulls post from current user and displays it on the post wall.
+         * Also creates a like button for user interactions.
+         */
         function displayPost() {
-
-
             db.collection("posts")
                 .where("userID", "==", somebody.uid)
                 .orderBy("sort","desc")
@@ -125,51 +125,54 @@ $(document).ready(function () {
         };
         displayPost();
 
+        /**
+         * Function uses the increment function from firebase to increase like number 
+         * @param {} id is the the unique userID
+         * @param {*} likeId is the button UID to know which button is being clicked through the event listener
+         */
         function addLikeListener(id, likeId) {
             document.getElementById(likeId).addEventListener("click", function () {
-                console.log("like was click!");
                 db.collection("posts")
                     .doc(id)
                     .update({
                         likes: firebase.firestore.FieldValue.increment(1) //increments the field!
                     })
                     .then(function () {
+                        //To see if it works
                         console.log("increment increased by 1");
-
                     })
-
             })
-
         }
     });
 
-
-    //Listen for for submit in profile post form
+    /** Event listener for when submitting a post */
     document.getElementById('userPost').addEventListener('submit', postForm);
 
-    // Submit form function
+    /**
+     * This function grabs the post value when post button is clicked
+     * @param {*} e to prevent default
+     */
     function postForm(e) {
         e.preventDefault();
         //Get Values from the post
         var post = document.getElementById('post').value;
-        console.log(post);
 
 
+        /**
+         * This is the function that writes to the post collection
+         */
         function writePostToDb() {
 
             firebase.auth().onAuthStateChanged(function (user) {
                 if (user) {
-                    console.log(user.uid);
+
                     db.collection("users")
                         .doc(user.uid)
                         .get()
                         .then(function (doc) {
-                            console.log(doc.data().name);
-                            //change 
                             db.collection("posts").add({ userpost: post, userID: user.uid, date: date, time: time, sort: Date.now() }).then(function () {
                                 reload = location.reload()
                             });
-
                         })
                 };
 
@@ -177,10 +180,12 @@ $(document).ready(function () {
         };
         writePostToDb();
     };
-    // getting the current date and time
+
+    /**
+     * Find the current date and time to use for the post collection
+     */
     var today = new Date();
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var sort = Date.now();
-
 });

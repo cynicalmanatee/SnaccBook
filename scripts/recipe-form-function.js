@@ -7,6 +7,7 @@ $(document).ready(function() {
     var ingredientCounter = 1;
     var instructionCounter = 1;
 
+
     $("#recipe-add-ingredient").click(function() {
         ingredientCounter++;
         var classString = "ingredient-group-" + ingredientCounter;
@@ -37,16 +38,12 @@ $(document).ready(function() {
         namefield.setAttribute("id", nameid);
         namefield.setAttribute("placeholder", "name");
 
-
-
         var instructionid = "ingredient-instruction-" + ingredientCounter;
         var instructionfield = document.createElement("input");
         instructionfield.setAttribute("type", "text");
         instructionfield.setAttribute("class", "form-control ingredient-instruction");
         instructionfield.setAttribute("id", instructionid);
         instructionfield.setAttribute("placeholder", "instructions");
-
-
 
         var minusid = "ingredient-minus-" + ingredientCounter;
 
@@ -58,7 +55,6 @@ $(document).ready(function() {
         minusfield.innerHTML = "x";
 
         $(ingredientGroup).append(qtyfield, unitfield, namefield, instructionfield, minusfield);
-
 
         $("#recipe-add-ingredient").before(ingredientGroup);
         var element = document.getElementsByClassName("ingredient-minus");

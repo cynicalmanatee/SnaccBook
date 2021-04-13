@@ -1,11 +1,3 @@
-/**to do list:
-- ADD JS to make the font of the banner title dymanic to the lenth of the name 
-
-*/
-
-
-
-
 $(document).ready(function () {
 
     var showC1 = { 'grid-template-columns': '1fr 0fr 0fr' };
@@ -72,19 +64,22 @@ console.log(parsedUrl.searchParams.get("id")); // "123"
 var id = parsedUrl.searchParams.get("id");
 console.log(id);
 
+/**
+ * Function gets info from restaurant collection and displays relevent info
+ */
 function displayDetails() {
     db.collection("restaurants")
         .doc(id)
         .get()
         .then(function (doc) {
 
+            //Getting info from restaurant collection
             var restName = doc.data().name;
             var motto = doc.data().motto;
             var address = doc.data().address;
             var city = doc.data().city;
             var province = doc.data().province;
             var postalcode = doc.data().postalCode;
-
             var fullAddress = "" + address + "<br/>" + city + ", " + province +
                 '<br/>' + postalcode;
 
@@ -92,17 +87,18 @@ function displayDetails() {
             $("#bannerSubtitle").html(fullAddress);
             $("#bannerMotto").html(motto);
 
+            //Writes the features to page
             var feature = JSON.parse(doc.data().feature);
             for (var i = 0; i < feature.length; i++) {
                 var featureName = feature[i].name;
                 var featureDesc = feature[i].description;
-                console.log(featureName + featureDesc);
-
                 var featureAdd = '<hr/>';
                 featureAdd += '<div><span>' + featureName + '</span></div>'
                 featureAdd += '<div><span>' + featureDesc + '</span></div>'
                 $('#content1').append(featureAdd);
             }
+
+            //Writes menu to page
             var menu = JSON.parse(doc.data().menu);
             for (var x = 0; x < feature.length; x++) {
                 var menuName = menu[x].name;
@@ -118,18 +114,13 @@ function displayDetails() {
                 if (menuPrice == "undefined") {
                     menuPrice == "Check for price later";
                 }
-                console.log(menuPrice);
 
-                //need to add all fields or undefined
                 var menuAdd = '<hr/>'
                 menuAdd += '<div><span>' + menuName + '</span></div>';
                 menuAdd += '<div><span>' + menuDesc + '</span></div>';
                 menuAdd += '<div><span>' + "$" + menuPrice + '</span></div>';
                 $("#content2").append(menuAdd);
             }
-
-
-
         })
 }
 displayDetails();
@@ -149,15 +140,17 @@ function postForm(e) {
         if (radio[i].checked) {
             rating = i + 1;
         }
-
     }
+    //Makes rating and dates a string to store in database
     var r = JSON.stringify(rating);
     var d = JSON.stringify(date);
 
     //write rating
 
+    /**
+     * Gets the users UID and writes the review to a collection of Reviews.
+     */
     function writeReviewToDb() {
-
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 console.log(user.uid);
@@ -165,7 +158,6 @@ function postForm(e) {
                     .doc(user.uid)
                     .get()
                     .then(function (doc) {
-                        console.log(doc.data().name);
                         var userName = JSON.stringify(doc.data().name);
 
                         db.collection("reviews")
@@ -177,24 +169,26 @@ function postForm(e) {
                                 dateAdded: date,
                                 restaurantID: id,
                                 sort: Date.now()
-
                             }).then(function () {
                                 reload = location.reload();
                             })
-
                     })
             };
-
         });
     };
     writeReviewToDb();
-
 };
+
 // getting the current date and time
 var today = new Date();
 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
+
+/**
+ * This function calculates the aggregate user review for the restaurant.
+ * First it grabs all the ratings and adds it up. It has a counter for how many people added the rating.
+ */
 var totalRating = 0;
 var ratingCounter = 0;
 
@@ -206,21 +200,24 @@ function calcReview() {
             snapcollection.forEach(function (doc) {
                 totalRating += parseInt(doc.data().ratings, 10);
                 ratingCounter++;
-                console.log(totalRating);
                 reviewScore();
             })
-
         })
-
-
 }
 calcReview();
 
+/**
+ * Helper function. It takes the total rating that was added and diviveds it by the number of people
+ * for the review score.
+ */
 function reviewScore() {
     var reviewScore = totalRating / ratingCounter;
     $("#reviewScore").html("Ratings: " + reviewScore + "/5 Stars");
 }
 
+/**
+ * Function grabs all the reviews for the unique restaurant and adds it to the page in the review section.
+ */
 function postReview() {
     db.collection("reviews")
         .where("restaurantID", "==", id)
@@ -242,12 +239,8 @@ function postReview() {
                 reviewPost += '<br/>';
                 reviewPost += '<span>Reviewed on: ' + d + '</span>';
                 reviewPost += '<hr/>';
-
                 $('#reviewStart').append(reviewPost);
-
-
             })
-
         })
 }
 postReview();
