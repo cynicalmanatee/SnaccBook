@@ -175,8 +175,11 @@ function postForm(e) {
                                 ratings: r,
                                 user: userName,
                                 dateAdded: date,
-                                restaurantID: id
+                                restaurantID: id,
+                                sort: Date.now()
 
+                            }).then(function () {
+                                reload = location.reload();
                             })
 
                     })
