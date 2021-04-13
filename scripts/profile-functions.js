@@ -96,7 +96,7 @@ $(document).ready(function () {
 
             db.collection("posts")
                 .where("userID", "==", somebody.uid)
-                //.orderBy("date","desc")
+                .orderBy("sort","desc")
                 .get()
                 .then(function (snapcollection) {
                     snapcollection.forEach(function (doc) {
