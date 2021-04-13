@@ -97,9 +97,10 @@ $(document).ready(function () {
 
         db.collection("restaurants").doc(uid).set({
             promotion: post
-        }, { merge: true }).then(function (e) {
-            // windows.location.href = parsedUrl; have the page refresh
-        });
+        }, { merge: true })
+            .then(function (e) {
+                // windows.location.href = parsedUrl; have the page refresh
+            });
     };
 
 });
