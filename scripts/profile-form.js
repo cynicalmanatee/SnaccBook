@@ -146,7 +146,7 @@ $(document).ready(function () {
 
         var fName = $("#profile-first-name").val();
         if (fName == "") {
-            fName = ("#profile-first-name").attr("placeholder");
+            fName = $("#profile-first-name").attr("placeholder");
         }
 
         var lName = $("#profile-last-name").val();
