@@ -141,9 +141,6 @@ $(document).ready(function () {
             })
 
         }
-
-
-
     });
 
 
@@ -185,4 +182,5 @@ $(document).ready(function () {
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var sort = Date.now();
+
 });

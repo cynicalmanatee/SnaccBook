@@ -135,3 +135,49 @@ function postForm(e) {
     };
 };
 
+db.collection("posts")
+
+.orderBy("sort","desc")
+.get()
+.then(function (snapcollection) {
+    snapcollection.forEach(function (doc) {
+        var message = doc.data().userpost;
+        var date = doc.data().date;
+        var time = doc.data().time;
+        var likeID = "like" + doc.id;
+        var likeNumber = "likeNumber" + doc.id;
+        var id = doc.id;
+
+        console.log(doc.id);
+        var postCollection = '<div class="content">';
+        postCollection += '<img class="profilePicture" src="https://dummyimage.com/600x400/000/fff" width="100%"/>';
+        postCollection += '<div id="comment">' + message + '</div>';
+        postCollection += '<div id = "date">' + date + '<br/>' + time + '</div>';
+        postCollection += '</div>';
+        postCollection += '<button type="button" class="btn btn-primary" id="' + likeID + '">Likes <span id="' + likeNumber + '"></span></button>'
+        postCollection += '<br/><br/>'
+       $("#postWall").append(postCollection);
+        addLikeListener(id, likeID);
+        var likes = doc.data().likes;
+        $('#' + likeNumber).html(likes);
+    });
+
+});
+displayPost();
+
+function addLikeListener(id, likeId) {
+document.getElementById(likeId).addEventListener("click", function () {
+console.log("like was click!");
+db.collection("posts")
+    .doc(id)
+    .update({
+        likes: firebase.firestore.FieldValue.increment(1) //increments the field!
+    })
+    .then(function () {
+        console.log("increment increased by 1");
+
+    })
+
+})
+
+}
