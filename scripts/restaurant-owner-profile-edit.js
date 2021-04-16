@@ -2,6 +2,11 @@ $(document).ready(function () {
     const parsedUrl = new URL(window.location.href);
     uid = parsedUrl.searchParams.get("uid");
 
+    /**
+     * Checks to see if field is empty. If it is not, it sets the place holder value as the current value.
+     * This is so that users dont always have to fill in everything again and they can see what values they currently have
+     * when filling out the form.
+    */
     var submit = $("#edit-submit");
     db.collection("restaurants")
         .doc(uid)
@@ -45,17 +50,15 @@ $(document).ready(function () {
             } else {
                 document.getElementById("restaurant-edit-postal").setAttribute("placeholder", doc.data().postalCode);
             }
-
         });
 
-
-
-
-
-
+    /**
+     * Function grabs out filled elements and merges it to the database. 
+     * Else it grabs the placeholder value which is a value that was filled earlier and sets it. 
+     * 
+     */
     $(submit).click(function submit(e) {
         e.preventDefault();
-
         if (document.getElementById("restaurant-edit-name").value.length == 0) {
             $("#restaurant-edit-name").val($("#restaurant-edit-name").attr("placeholder"));
         };
@@ -90,10 +93,8 @@ $(document).ready(function () {
             owner: $("#owner").html()
         }, { merge: true }).then(
             function (e) {
-                console.log("success!");
+                
                 window.location.href = "/restaurant-owner-profile.html?uid=" + uid;
             });
-
     });
-
 })

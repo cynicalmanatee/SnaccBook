@@ -80,8 +80,5 @@ $(document).ready(function() {
             .then(function() {
                 window.location.href = "/restaurant-owner-profile.html?uid=" + uid
             });
-
-        console.log("finished");
-        //window.location.href = "/restaurant-owner-profile.html?uid=" + uid;
     });
 });

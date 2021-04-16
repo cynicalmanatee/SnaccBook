@@ -1,14 +1,14 @@
 $(document).ready(function () {
     var submitbutton = $("#confirm");
-    console.log(submitbutton.html());
 
+    /**
+     * Displays placeholder as value from database. Else uses placeholders from HTML.
+     */
     firebase.auth().onAuthStateChanged(function (somebody) {
         var users = db.collection("users");
         var user;
         user = somebody.uid;
         $("#uid").html(user);
-        console.log(user);
-
 
         db.collection("users").doc(user)
             .get()
@@ -18,6 +18,7 @@ $(document).ready(function () {
                     $("#profile-first-name").attr("placeholder", name);
                 }
             });
+
         db.collection("users").doc(user)
             .get()
             .then(function (doc) {
@@ -122,6 +123,9 @@ $(document).ready(function () {
 
     });
 
+    /**
+     * Function gets value from field and writes it to database. If there is nothing there, it writes the placeholder value to database
+     */
     $(submitbutton).click(function submit(e) {
         e.preventDefault();
 
@@ -205,8 +209,26 @@ $(document).ready(function () {
             pronoun, name, jobTitle, bio, skills, location, website,
             facebook, twitter, instagram, reddit, email);
 
-
-
+        /**
+         * Gets the parameters and writes it to user collections.
+         * Parameters self explanatory.
+         * @param {*} userId 
+         * @param {*} fname 
+         * @param {*} lname 
+         * @param {*} mname 
+         * @param {*} pronoun 
+         * @param {*} name 
+         * @param {*} jobTitle 
+         * @param {*} bio 
+         * @param {*} skills 
+         * @param {*} location 
+         * @param {*} website 
+         * @param {*} facebook 
+         * @param {*} twitter 
+         * @param {*} instagram 
+         * @param {*} reddit 
+         * @param {*} email 
+         */
         function writeUserData(userId, fname, lname, mname,
             pronoun, name, jobTitle, bio, skills, location, website,
             facebook, twitter, instagram, reddit, email) {
@@ -227,12 +249,9 @@ $(document).ready(function () {
                 instagram: instagram,
                 reddit: reddit,
                 email: email
-
             })
                 .then(() => {
-                    console.log("Document successfully written!");
                     window.location.href = "/profile.html";
-
                 })
 
         }

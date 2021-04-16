@@ -1,6 +1,10 @@
 $(document).ready(function () {
     const parsedUrl = new URL(window.location.href);
     uid = parsedUrl.searchParams.get("uid");
+
+    /**
+     * This part of the code is to add extra fields and delete fields from the features form
+     */
     var menuCounter = 1;
     $("#add-menu").click(function (e) {
         e.preventDefault();
@@ -33,7 +37,6 @@ $(document).ready(function () {
         description.setAttribute("placeholder", "menu Description");
         $(box).append(description);
 
-
         var minusid = "minus-" + menuCounter;
         var minus = document.createElement("button");
         minus.setAttribute("id", minusid);
@@ -43,7 +46,6 @@ $(document).ready(function () {
 
 
         $("#add-menu").before(box);
-
         var element = document.getElementsByClassName("minus");
         for (var i = 0; i < element.length; i++) {
             element[i].addEventListener('click', function (e) {

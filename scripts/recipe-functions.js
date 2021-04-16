@@ -7,6 +7,10 @@ function getDetails() {
     var id = parsedUrl.searchParams.get("id");
     console.log(id);
 
+    /**
+     * Gets values from recipe collections using the UID passed from the URL.
+     * Dynamically adds details to relevent sections.
+     */
     db.collection("recipes")
         .doc(id)
         .get()
@@ -24,14 +28,11 @@ function getDetails() {
 
             var ingredients = JSON.parse(doc.data().ingredients);
 
-            console.log(ingredients);
-
             for (var x = 0; x < ingredients.length; x++) {
                 var qty = ingredients[x].qty;
                 var unit = ingredients[x].unit;
                 var name = ingredients[x].name;
                 var instructionsPrep = ingredients[x].instruction;
-                console.log(instructionsPrep);
 
                 var ingredientsList = '<div class="recipe-ingredient-item"></div>';
                 ingredientsList += '<span class="name">' + "Ingredient: " + name + '</span>';
