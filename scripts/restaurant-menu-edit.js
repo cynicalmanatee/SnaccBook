@@ -52,11 +52,8 @@ $(document).ready(function () {
 
 
         $("#add-menu").before(box);
-<<<<<<< HEAD
-=======
 
         // assign a click function to each dynamically generated minus button that removes the corresponding fields.
->>>>>>> a74b699b0e7614e2f1b386c85bbc8325f71a6f62
         var element = document.getElementsByClassName("minus");
         for (var i = 0; i < element.length; i++) {
             element[i].addEventListener('click', function (e) {
