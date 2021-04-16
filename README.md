@@ -1,4 +1,4 @@
-## My Web Application (Title)
+## My Web Application (SnaccBook)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -40,7 +40,6 @@ Content of the project folder:
 ├── restaurant-owner-profile-edit.html  # Edit page for restaurant profile only accessible to owner 
 ├── restaurant-owner-profile.html       # Restaurant owner profile page
 ├── restaurant-profile.html             # Restaurant profile page that displays features, menu, and reviews
-└── ToDo.txt
 
 It has the following subfolders and files:
 ├── .git                                # Folder for git repo

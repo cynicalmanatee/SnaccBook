@@ -1,3 +1,6 @@
+/**
+ * Loads the following functions when the pages is called.
+ */
 $(document).ready(function () {
     const parsedUrl = new URL(window.location.href);
     uid = parsedUrl.searchParams.get("uid");
@@ -6,6 +9,9 @@ $(document).ready(function () {
      * This part of the code is to add extra fields and delete fields from the features form
      */
     var menuCounter = 1;
+    /**
+     * Add a click funtion to the add menu item button that dynamically generate more user input fields.
+     */
     $("#add-menu").click(function (e) {
         e.preventDefault();
 
@@ -46,6 +52,11 @@ $(document).ready(function () {
 
 
         $("#add-menu").before(box);
+<<<<<<< HEAD
+=======
+
+        // assign a click function to each dynamically generated minus button that removes the corresponding fields.
+>>>>>>> a74b699b0e7614e2f1b386c85bbc8325f71a6f62
         var element = document.getElementsByClassName("minus");
         for (var i = 0; i < element.length; i++) {
             element[i].addEventListener('click', function (e) {
@@ -62,6 +73,10 @@ $(document).ready(function () {
         }
 
     });
+
+    /**
+     * Adds a click function that writes to the database and takes the user back to restaurant-owner-profile.html.
+     */
     $("#submit").click(function (e) {
         e.preventDefault();
         var menu = document.getElementsByClassName("menu-card");
@@ -84,6 +99,7 @@ $(document).ready(function () {
 
         var menuString = JSON.stringify(menulist);
 
+        // writes to the data base, merging the values, and leaving the other values alone.
         db.collection("restaurants").doc(uid).set({
             menu: menuString
         }, { merge: true }).then(function () {

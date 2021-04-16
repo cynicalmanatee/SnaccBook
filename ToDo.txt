@@ -1,9 +1,0 @@
-This is a list of things to do:
-
-Please add any items that you think of to the list.
-If an item is complete, please delete from the list.
-
-- Log out button?
-- friends list/location page. manage things the user want to subscribe to (probably out of the scope of 1800).
-
-- In restaurant owner profile edit, make pages merge and do not merge empty boxes.

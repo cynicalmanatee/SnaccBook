@@ -1,3 +1,6 @@
+/**
+ * Loads the following functions when the page is called.
+ */
 $(document).ready(function () {
     const parsedUrl = new URL(window.location.href);
     uid = parsedUrl.searchParams.get("uid");
@@ -8,6 +11,8 @@ $(document).ready(function () {
      * when filling out the form.
     */
     var submit = $("#edit-submit");
+
+    // set the placeholder for each input field if there is an existing value in the database.
     db.collection("restaurants")
         .doc(uid)
         .get()
@@ -55,7 +60,7 @@ $(document).ready(function () {
     /**
      * Function grabs out filled elements and merges it to the database. 
      * Else it grabs the placeholder value which is a value that was filled earlier and sets it. 
-     * 
+     * Adds a click function to the submit button. Writes the user input fields to the database.
      */
     $(submit).click(function submit(e) {
         e.preventDefault();

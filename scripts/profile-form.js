@@ -1,3 +1,4 @@
+/**Loads the following functions when the page is accessed */
 $(document).ready(function () {
     var submitbutton = $("#confirm");
 
@@ -9,7 +10,6 @@ $(document).ready(function () {
         var user;
         user = somebody.uid;
         $("#uid").html(user);
-
         db.collection("users").doc(user)
             .get()
             .then(function (doc) {
@@ -125,6 +125,7 @@ $(document).ready(function () {
 
     /**
      * Function gets value from field and writes it to database. If there is nothing there, it writes the placeholder value to database
+     * Adds a click funtion to the submit button. Writes the user input to the data base.
      */
     $(submitbutton).click(function submit(e) {
         e.preventDefault();
@@ -204,30 +205,29 @@ $(document).ready(function () {
         if (reddit == "") {
             reddit = $("#profile-reddit").attr("placeholder");
         }
-
         writeUserData(uid, fName, lName, mName,
             pronoun, name, jobTitle, bio, skills, location, website,
             facebook, twitter, instagram, reddit, email);
 
+
         /**
-         * Gets the parameters and writes it to user collections.
-         * Parameters self explanatory.
-         * @param {*} userId 
-         * @param {*} fname 
-         * @param {*} lname 
-         * @param {*} mname 
-         * @param {*} pronoun 
-         * @param {*} name 
-         * @param {*} jobTitle 
-         * @param {*} bio 
-         * @param {*} skills 
-         * @param {*} location 
-         * @param {*} website 
-         * @param {*} facebook 
-         * @param {*} twitter 
-         * @param {*} instagram 
-         * @param {*} reddit 
-         * @param {*} email 
+         * Writes to the database.
+         * @param {*} userId userid field
+         * @param {*} fname first name field
+         * @param {*} lname last name field
+         * @param {*} mname middle name field
+         * @param {*} pronoun pronoun field
+         * @param {*} name takes the fml and convert it into a single name
+         * @param {*} jobTitle job title field
+         * @param {*} bio description field
+         * @param {*} skills skills field
+         * @param {*} location location field, location preference
+         * @param {*} website user website field
+         * @param {*} facebook user facebook field
+         * @param {*} twitter user twitter field 
+         * @param {*} instagram user instagram field
+         * @param {*} reddit user reddit handle
+         * @param {*} email user email but does not currently overwrite login.
          */
         function writeUserData(userId, fname, lname, mname,
             pronoun, name, jobTitle, bio, skills, location, website,

@@ -1,14 +1,19 @@
-$(document).ready(function() {
+/**
+ * Loads the following functions when the page is called
+ */
+$(document).ready(function () {
 
-    firebase.auth().onAuthStateChanged(function(somebody) {
+    firebase.auth().onAuthStateChanged(function (somebody) {
         var user = somebody.uid;
     });
 
     var ingredientCounter = 1;
     var instructionCounter = 1;
 
-
-    $("#recipe-add-ingredient").click(function() {
+    /**
+     * Add a function to the add button for the ingredient field.
+     */
+    $("#recipe-add-ingredient").click(function () {
         ingredientCounter++;
         var classString = "ingredient-group-" + ingredientCounter;
 
@@ -21,14 +26,14 @@ $(document).ready(function() {
         qtyfield.setAttribute("type", "text");
         qtyfield.setAttribute("class", "form-control ingredient-quantity");
         qtyfield.setAttribute("id", qtyid);
-        qtyfield.setAttribute("placeholder", "quantity");
+        qtyfield.setAttribute("placeholder", "");
 
         var unitid = "ingredient-unit-" + ingredientCounter;
         var unitfield = document.createElement("input");
         unitfield.setAttribute("type", "text");
         unitfield.setAttribute("class", "form-control ingredient-unit");
         unitfield.setAttribute("id", unitid);
-        unitfield.setAttribute("placeholder", "unit");
+        unitfield.setAttribute("placeholder", "");
 
 
         var nameid = "ingredient-name-" + ingredientCounter;
@@ -36,14 +41,14 @@ $(document).ready(function() {
         namefield.setAttribute("type", "text");
         namefield.setAttribute("class", "form-control ingredient-name");
         namefield.setAttribute("id", nameid);
-        namefield.setAttribute("placeholder", "name");
+        namefield.setAttribute("placeholder", "");
 
         var instructionid = "ingredient-instruction-" + ingredientCounter;
         var instructionfield = document.createElement("input");
         instructionfield.setAttribute("type", "text");
         instructionfield.setAttribute("class", "form-control ingredient-instruction");
         instructionfield.setAttribute("id", instructionid);
-        instructionfield.setAttribute("placeholder", "instructions");
+        instructionfield.setAttribute("placeholder", "");
 
         var minusid = "ingredient-minus-" + ingredientCounter;
 
@@ -58,9 +63,10 @@ $(document).ready(function() {
 
         $("#recipe-add-ingredient").before(ingredientGroup);
         var element = document.getElementsByClassName("ingredient-minus");
+        // for each generated minus button, it is given a corresponding even that removes the added fields.
         for (var i = 0; i < element.length; i++) {
 
-            element[i].addEventListener('click', function(event) {
+            element[i].addEventListener('click', function (event) {
                 event.preventDefault();
                 var idtag = $(this).attr("id");
                 var idstr = idtag.substring(17);
@@ -73,13 +79,16 @@ $(document).ready(function() {
 
     });
 
-    $("#recipe-add-instruction").click(function() {
+    /**
+     * adds a click function to the corresponding add button for the instruction field.
+     */
+    $("#recipe-add-instruction").click(function () {
         instructionCounter++;
 
 
         id = "recipe-instruction-" + instructionCounter;
 
-        console.log(id);
+        //dynamically generating input fields.
         var instructionGroup = document.createElement("div");
         instructionGroup.setAttribute("class", "recipe-instruction");
         instructionGroup.setAttribute("id", id);
@@ -119,10 +128,11 @@ $(document).ready(function() {
 
         $("#recipe-add-instruction").before(instructionGroup);
 
+        // Adding a click function for each generated minus button that deletes the generated boxes.
         var instructions = document.getElementsByClassName("recipe-instruction-minus");
         for (var i = 0; i < instructions.length; i++) {
 
-            instructions[i].addEventListener('click', function(event) {
+            instructions[i].addEventListener('click', function (event) {
                 event.preventDefault();
                 var instag = $(this).attr("id");
                 var insstr = instag.substring(25);
@@ -136,7 +146,11 @@ $(document).ready(function() {
 
     });
 
-    $("#submit-button").click(function(submit) {
+    /**
+     * Add a click function to the submit button.
+     * It will aggrigate all the input fields and write to the database.
+     */
+    $("#submit-button").click(function (submit) {
         submit.preventDefault();
         var title = $("#recipe-title").val();
         var userid = "";
@@ -144,6 +158,8 @@ $(document).ready(function() {
         var prepTime = $("#recipe-prep-time").val();
         var specialInstructions = $("#recipe-special-instructions").val();
         var ingredients = document.getElementsByClassName("ingredient-group");
+
+        // Creates an array of ingredients from the input fields.
         var ingredientlist = [];
         for (var i = 0; i < ingredients.length; i++) {
 
@@ -162,6 +178,8 @@ $(document).ready(function() {
 
             ingredientlist.push(ingredientObject);
         };
+
+        //creates a instruction array from the instruction fields.
         var instructions = document.getElementsByClassName("recipe-instruction");
         var instructionlist = [];
         for (var i = 0; i < instructions.length; i++) {
@@ -176,36 +194,33 @@ $(document).ready(function() {
             instructionlist.push(instructionobject);
         };
 
+        // converts the generated arrays into a string to be stored in the database (temporary solution).
         var ingredientstring = JSON.stringify(ingredientlist);
         var instructionstring = JSON.stringify(instructionlist);
 
         var myrecipe = {
-            title: title,
-            author: author,
-            id: userid,
-            prepTime: prepTime,
-            specialInstructions: specialInstructions,
-            ingredients: ingredientstring,
-            instructions: instructionstring
+            title: title, author: author, id: userid
+            , prepTime: prepTime, specialInstructions: specialInstructions,
+            ingredients: ingredientstring, instructions: instructionstring
         };
 
         console.log(myrecipe);
 
+        //writes the whole object to to database.
         var recipeRef = db.collection("recipes");
         recipeRef.add(myrecipe)
             .then(function () {
                 window.location.href = "main.html";
             });
-
-
-
-
     });
 
 });
 
+/**
+ * disables the enter key for this page so the user does not accidentally submit a form by pressing enter.
+ */
 $(document).keypress(
-    function(event) {
+    function (event) {
         if (event.which == '13') {
             event.preventDefault();
         }
